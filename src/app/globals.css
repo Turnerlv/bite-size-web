@@ -1,10 +1,51 @@
 @import "tailwindcss";
 
+
 :root {
+
+  --primary: #3490dc;
+  /* Primary color */
+  --primary-light: #6cb2eb;
+  /* Lighter shade of primary */
+  --primary-dark: #2779bd;
+  /* Darker shade of primary */
+
+  --grey-100: #f7fafc;
+  --grey-200: #edf2f7;
+  --grey-300: #e2e8f0;
+  --grey-400: #cbd5e0;
+  --grey-500: #a0aec0;
+  --grey-600: #718096;
+  --grey-700: #4a5568;
+  --grey-800: #2d3748;
+  --grey-900: #1a202c;
+
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
+/* Dark Mode */
+[data-theme="dark"] {
+  --primary: #1d4ed8;
+  /* Primary color */
+  --primary-light: #60a5fa;
+  /* Lighter shade of primary */
+  --primary-dark: #1e40af;
+  /* Darker shade of primary */
+
+  --grey-100: #2d3748;
+  --grey-200: #4a5568;
+  --grey-300: #718096;
+  --grey-400: #a0aec0;
+  --grey-500: #cbd5e0;
+  --grey-600: #e2e8f0;
+  --grey-700: #edf2f7;
+  --grey-800: #f7fafc;
+  --grey-900: #ffffff;
+
+  --background: #121212;
+  --foreground: #f1f1f1;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -13,15 +54,17 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html[data-theme='dark'] .nav-logo {
+  content: url('/biteSize_outline_full.svg');
+}
+
+html[data-theme='light'] .nav-logo {
+  content: url('/biteSize_solid_full.svg');
 }

@@ -3,6 +3,11 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function Navigation() {
+
+    const imageSrc = theme === 'dark'
+        ? '/biteSize_outline_full.svg'
+        : '/biteSize_solid_full.svg';
+
     return (
         <div className="w-full flex justify-center">
             <div className="w-full flex flex-row gap-auto max-w-[1200px] justify-between py-3">
@@ -10,7 +15,7 @@ export default function Navigation() {
                     <li><Link href=".">
                         <Image
                             aria-hidden
-                            src="/biteSize_outline_full.svg"
+                            src={imageSrc}
                             alt="File icon"
                             height={32}
                             width={125}
