@@ -10,6 +10,19 @@
   --primary-dark: #2779bd;
   /* Darker shade of primary */
 
+  --yellow-a1: #cc990005;
+  --yellow-a2: #ffd10016;
+  --yellow-a3: #ffd90043;
+  --yellow-a4: #ffd30068;
+  --yellow-a5: #ffcc008b;
+  --yellow-a6: #eeb70090;
+  --yellow-a7: #d1a00099;
+  --yellow-a8: #c39800c6;
+  --yellow-a9: #ffd500;
+  --yellow-a10: #f7c700e7;
+  --yellow-a11: #947400;
+  --yellow-a12: #2a2000e0;
+
   --grey-100: #f7fafc;
   --grey-200: #edf2f7;
   --grey-300: #e2e8f0;
@@ -19,6 +32,21 @@
   --grey-700: #4a5568;
   --grey-800: #2d3748;
   --grey-900: #1a202c;
+
+  --gray-a1: #99660005;
+  --gray-a2: #a35d000b;
+  --gray-a3: #5a330014;
+  --gray-a4: #502c001d;
+  --gray-a5: #40240024;
+  --gray-a6: #3922002d;
+  --gray-a7: #331c0038;
+  --gray-a8: #2f1b004d;
+  --gray-a9: #2919007f;
+  --gray-a10: #2717008a;
+  --gray-a11: #1d1100a7;
+  --gray-a12: #110b00ea;
+
+  --gray-surface: #ffffffe6;
 
   --background: #ffffff;
   --foreground: #000000;
@@ -33,6 +61,19 @@
   --primary-dark: #1e40af;
   /* Darker shade of primary */
 
+  --yellow-a1: #00000000;
+  --yellow-a2: #f6d87d09;
+  --yellow-a3: #ffc2001a;
+  --yellow-a4: #faaf002a;
+  --yellow-a5: #fbb80037;
+  --yellow-a6: #fdc40046;
+  --yellow-a7: #ffcf305a;
+  --yellow-a8: #ffd23a77;
+  --yellow-a9: #ffd21efa;
+  --yellow-a10: #ffd000ef;
+  --yellow-a11: #ffd326fe;
+  --yellow-a12: #ffefb8fa;
+
   --grey-100: #2d3748;
   --grey-200: #4a5568;
   --grey-300: #718096;
@@ -43,28 +84,47 @@
   --grey-800: #f7fafc;
   --grey-900: #ffffff;
 
+  --gray-a1: #0012d805;
+  --gray-a2: #9daef70d;
+  --gray-a3: #e2e0fe15;
+  --gray-a4: #e7e5f91d;
+  --gray-a5: #f6edfc24;
+  --gray-a6: #fcf5ef2e;
+  --gray-a7: #fef0ea3e;
+  --gray-a8: #ffeee05a;
+  --gray-a9: #ffeedc69;
+  --gray-a10: #fff0df77;
+  --gray-a11: #fef5eab4;
+  --gray-a12: #fffcf9ef;
+
+  --gray-surface: #1212121a;
+
   --background: #121212;
   --foreground: #f1f1f1;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-html[data-theme='dark'] .nav-logo {
-  content: url('/biteSize_outline_full.svg');
+
+
+html[data-theme='light'] {
+  --bg-pattern: url('../../public/background_pattern_light.svg');
+
+  .nav-logo {
+    content: url('../../public/biteSize_solid_full.svg');
+  }
 }
 
-html[data-theme='light'] .nav-logo {
-  content: url('/biteSize_solid_full.svg');
+html[data-theme='dark'] {
+  --bg-pattern: url('../../public/background_pattern_dark.svg');
+
+  .nav-logo {
+    content: url('../../public/biteSize_outline_full.svg');
+  }
 }

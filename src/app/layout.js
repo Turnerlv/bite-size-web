@@ -1,6 +1,6 @@
 import { Rubik, Work_Sans } from "next/font/google";
 import "./globals.css";
-import Navigation from "./components/Navigation";
+import Navigation from "../components/Navigation";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -21,7 +21,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        data-theme='dark'
         className={`${rubik.variable} ${workSans.variable} antialiased`}
       >
         <Navigation />
