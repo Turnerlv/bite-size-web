@@ -11,7 +11,7 @@ export default function NavItem({ href, label }) {
     return (
         <Link
             href={href}
-            className={`font-[family-name:var(--font-work-sans)] text-lg align-text-top px-4 py-2 rounded hover:text-[var(--foreground)] hover:bg-[var(--gray-a2)] ${isActive ? 'bg-[var(--grey-100)] text-[var(--foreground)]' : 'bg-transparent text-[var(--grey-800)]'}
+            className={`font-[family-name:var(--font-work-sans)] text-lg align-text-top px-4 py-2 rounded-full hover:text-foreground hover:bg-gray-a-3 ${isActive ? 'bg-[var(--grey-100)] text-[var(--foreground)]' : 'bg-transparent text-foreground'}
                 }`}
         >
             {label}
