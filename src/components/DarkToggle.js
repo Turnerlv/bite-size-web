@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Button from "./Button";
+import Button from '@/components/Button';
 import { Moon, SunMedium } from 'lucide-react';
 
 export default function DarkToggle() {
@@ -18,6 +18,6 @@ export default function DarkToggle() {
     };
 
     return (
-        <Button variant="ghost" icon={theme === 'light' ? SunMedium : Moon} onClick={toggleTheme}></Button>
+        <Button variant='ghost' icon={theme === 'light' ? SunMedium : Moon} iconPosition='only' onClick={toggleTheme}></Button>
     );
 }

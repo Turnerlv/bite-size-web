@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @variant dark (&:where(.dark, .dark *));
 @variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
@@ -188,7 +188,7 @@
   /* Semantic colors*/
   --color-background: var(--background);
   --color-foreground: var(--color-gray-12);
-  --color-surface: --alpha(var(--color-background) / 60%);
+  --color-surface: --alpha(var(--color-background) / 90%);
   --color-border: var(--color-gray-6);
   --color-text-muted: var(--color-gray-10);
   --color-primary: var(--color-yellow-9);
