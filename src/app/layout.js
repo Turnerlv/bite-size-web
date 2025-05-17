@@ -1,6 +1,6 @@
 import { Rubik, Work_Sans } from "next/font/google";
 import "./globals.css";
-import Navigation from "../components/Navigation";
+import Navigation from "../components/navigation/Navigation";
 
 const rubik = Rubik({
   variable: "--font-rubik",

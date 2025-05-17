@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import NavItem from './NavItem'
+import { NavItemExpand } from './NavItemExpand';
 import DarkToggle from './DarkToggle';
 import Link from 'next/link'
-import Button from './Button'
+import Button from '../Button'
 import { Heart, Menu } from 'lucide-react';
 
 export default function Navigation() {
@@ -46,6 +47,7 @@ export default function Navigation() {
                     <ul className='flex flex-col sm:flex-row sm:gap-2'>
                         <li><NavItem href='/about' label='About' /></li>
                         <li><NavItem href='/bites' label='Bites' /></li>
+                        <li><NavItemExpand></NavItemExpand></li>
                     </ul>
                     <div className="flex flex-row gap-3">
                         <Button variant='subtle' icon={Heart} iconPosition='right'>Bond</Button>
