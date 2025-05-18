@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 
-export const useKeyboardNavigation = (itemCount) => {
+export const useKeyboardNavigation = (itemCount, onClose) => {
     const [focusedIndex, setFocusedIndex] = useState(-1);
     const itemRefs = useRef([]);
 
@@ -26,7 +26,8 @@ export const useKeyboardNavigation = (itemCount) => {
                 break;
             case 'Escape':
                 e.preventDefault();
-                setFocusedIndex(-1);
+                if (focusedIndex !== -1) setFocusedIndex(-1);
+                if (onClose) onClose();
                 break;
         }
     };

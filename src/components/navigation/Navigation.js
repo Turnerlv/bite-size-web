@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { NAV_ITEMS } from '@/config/navigation';
 import { NavItem } from './NavItem';
 import { MegaMenu } from './MegaMenu';
@@ -11,7 +11,21 @@ import { Heart, Menu } from 'lucide-react';
 
 export default function Navigation() {
     const [activeKey, setActiveKey] = useState(null);
+    const [isHovering, setIsHovering] = useState(false);
+    const [focusedIndex, setFocusedIndex] = useState(-1);
     const [menu, setMenu] = useState('hidden');
+
+    const triggerRefs = useRef({});
+
+    const handleOpen = (key) => {
+        setActiveKey(key);
+        setFocusedIndex(0);
+    };
+
+    const handleClose = (key) => {
+        setActiveKey(null);
+        setFocusedIndex(-1);
+    }
 
     //toggle dark mode  
     const toggleMenu = () => {
@@ -30,8 +44,8 @@ export default function Navigation() {
     }, []);
 
     return (
-        <div className={`w-full ${menu === 'flex' ? 'h-dvh' : 'h-auto'} flex justify-center fixed z-999 bg-surface backdrop-blur-xs border-b border-gray-a-4`} >
-            <div className='w-full flex flex-col sm:flex-row gap-4 max-w-[1200px] items-center py-4 mx-4 md:mx-8'>
+        <nav className={`w-full ${menu === 'flex' ? 'h-dvh' : 'h-auto'} flex flex-col justify-top sm:justify-center fixed z-999 bg-surface backdrop-blur-xs border-b border-gray-a-4`} >
+            <div className='w-full flex flex-col sm:flex-row gap-4 max-w-[1200px] items-center py-4 mx-auto px-4 md:px-8'>
                 <div className='w-full sm:w-fit flex h-[44px] justify-between items-center translate-y-[-1px]'>
                     <Link href='.'>
                         <img
@@ -54,8 +68,9 @@ export default function Navigation() {
                                 itemKey={nav.key}
                                 label={nav.label}
                                 isActive={activeKey === nav.key}
-                                onClick={(key) => setActiveKey(key)}
-                                onHover={(key) => setActiveKey(key)}
+                                onClick={() => handleOpen(nav.key)}
+                                onHover={() => handleOpen(nav.key)}
+                                ref={(el) => (triggerRefs.current[nav.key] = el)}
                             />
                         ))}
                     </ul>
@@ -71,8 +86,10 @@ export default function Navigation() {
                     itemKey={nav.key}
                     isActive={activeKey === nav.key}
                     items={nav.items}
+                    triggerRef={triggerRefs.current[nav.key]}
+                    onClose={handleClose}
                 />
             ))}
-        </div >
+        </nav >
     );
 }
