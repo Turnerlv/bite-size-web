@@ -61,7 +61,7 @@ export default function Hero() {
 
             {/* Content */}
             <div className="flex flex-col z-30 items-center">
-                <h1 className="mb-4 text-center relative text-5xl font-bold text-color-foreground font-[family-name:var(--font-rubik)]">
+                <h1 className="mb-4 text-center relative text-5xl font-bold text-color-foreground font-rubik">
                     Design meets code, one bite at a time.
                 </h1>
                 <p className="mb-12 text-[var(--foreground)] text-center max-w-2xl">

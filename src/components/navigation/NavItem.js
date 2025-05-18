@@ -1,20 +1,45 @@
-'use client';
-
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import React, { useRef } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
+export const NavItem = ({
+    label,
+    itemKey,
+    isActive,
+    onClick,
+    onHover,
+}) => {
+    const buttonRef = useRef();
 
-export default function NavItem({ href, label }) {
-    const pathname = usePathname();
-    const isActive = pathname === href;
+    const handleMouseEnter = () => {
+        onHover?.(itemKey);
+    };
+
+    const handleFocus = () => {
+        onHover?.(itemKey);
+    };
+
+    const handleClick = () => {
+        onClick?.(itemKey);
+    };
 
     return (
-        <div className={`flex flex-row justify-between gap-2 items-center font-[family-name:var(--font-work-sans) text-lg sm:text-base pl-8 pr-3 sm:pr-4 sm:pl-6 py-2 rounded-full cursor-pointer hover:text-foreground hover:bg-gray-a-3 ${isActive ? 'bg-[var(--grey-100)] text-[var(--foreground)]' : 'bg-transparent text-foreground'}
-        }`}>
-            <Link href={href}>{label}</Link>
+        <button
+            ref={buttonRef}
+            className={`flex flex-row items-center justify-between gap-2 
+                px-8 sm:px-6 pr-3 sm:pr-4 py-2 
+                rounded-full cursor-pointer 
+                font-work text-base sm:text-lg text-foreground 
+                hover:bg-gray-a-3 
+                ${isActive ? 'bg-gray-a-2' : 'bg-transparent'}`}
+            onMouseEnter={handleMouseEnter}
+            onFocus={handleFocus}
+            onClick={handleClick}
+            aria-haspopup="true"
+            aria-expanded={isActive}
+            aria-controls={`menu-${itemKey}`}
+        >
+            {label}
             <ChevronDown className='w-4 h-4' />
-        </div>
+        </button>
     );
-}
-
+};

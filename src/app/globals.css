@@ -197,7 +197,10 @@
   --color-secondary-contrast: var(--background);
   --color-mask: --alpha(var(--color-background) / 60%);
 
-
+  /* Semantic type */
+  --font-rubik: var(--font-rubik);
+  --font-work: var(--font-work-sans);
+  ;
 
 }
 

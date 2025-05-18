@@ -9,7 +9,7 @@ const Button = ({
     iconPosition = 'left',
     ...props
 }) => {
-    const baseStyles = 'inline-flex items-center gap-2 py-2 rounded-full align-text-top text-base font-medium focus:outline-none cursor-pointer';
+    const baseStyles = 'inline-flex items-center gap-2 py-2 rounded-full align-text-top font-work text-base font-medium focus:outline-none cursor-pointer';
 
     const variantStyles = {
         primary: 'bg-primary text-primary-contrast hover:bg-yellow-10',
