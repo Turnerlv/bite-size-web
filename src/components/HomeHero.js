@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Button from './Button';
 
 export default function Hero() {
     const maskRef = useRef(null);
@@ -64,16 +65,12 @@ export default function Hero() {
                 <h1 className="mb-4 text-center relative text-5xl font-bold text-color-foreground font-rubik">
                     Design meets code, one bite at a time.
                 </h1>
-                <p className="mb-12 text-[var(--foreground)] text-center max-w-2xl">
+                <p className="mb-10 text-foreground font-work text-center text-lg text-medium max-w-2xl">
                     A growing playground of smart, interactive UI patterns. Built for curious designers, developers, and creative coders who love the frontend.
                 </p>
                 <div className="flex gap-4 justify-center">
-                    <button className="p-3 rounded-full bg-primary text-primary-contrast font-semibold">
-                        Explore patterns
-                    </button>
-                    <button className="p-3 rounded-full border-1">
-                        Learn about us
-                    </button>
+                    <Button variant='primary' size='lg' >Explore patterns</Button>
+                    <Button variant='outline' size='lg' >Learn about us</Button>
                 </div>
             </div>
         </section>

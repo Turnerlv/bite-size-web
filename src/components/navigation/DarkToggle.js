@@ -33,9 +33,9 @@ export default function DarkToggle() {
 
     return (
         <Button
-            variant="ghost"
+            variant='ghost'
             icon={theme === 'light' ? SunMedium : Moon}
-            iconPosition="only"
+            iconPosition='only'
             onClick={toggleTheme}
         />
     );

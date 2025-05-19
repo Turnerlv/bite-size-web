@@ -61,7 +61,7 @@
   --yellow-a12: #2a2000e0;
 
   --background: #faf8f5;
-  --contrast: #000000;
+  --contrast: #0e0c0a;
 
   @variant dark {
     /* Gray dark */
@@ -121,7 +121,7 @@
     --yellow-a12: #ffefb8fa;
 
     --background: #0e0c0a;
-    --contrast: #ffffff;
+    --contrast: #faf8f5;
 
   }
 }
@@ -188,13 +188,13 @@
   /* Semantic colors*/
   --color-background: var(--background);
   --color-foreground: var(--color-gray-12);
-  --color-surface: --alpha(var(--color-background) / 90%);
-  --color-border: var(--color-gray-6);
+  --color-surface: --alpha(var(--color-background) / 80%);
+  --color-border: var(--color-gray-4);
   --color-text-muted: var(--color-gray-10);
   --color-primary: var(--color-yellow-9);
-  --color-primary-contrast: #000000;
+  --color-primary-contrast: #0e0c0a;
   --color-secondary: var(--contrast);
-  --color-secondary-contrast: var(--background);
+  --color-secondary-contrast: var(--color-gray-1);
   --color-mask: --alpha(var(--color-background) / 60%);
 
   /* Semantic type */

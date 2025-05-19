@@ -1,16 +1,14 @@
 import React, { forwardRef } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 
 export const NavItem = forwardRef(({
     label,
     itemKey,
     isOpen,
-    onOpen,
     onClick,
     onMouseEnter,
     onMouseLeave
 }, ref) => {
-
 
     return (
         <li >
@@ -19,7 +17,7 @@ export const NavItem = forwardRef(({
                 className={`flex flex-row items-center justify-between gap-2
                             px-8 sm:px-5 pr-3 sm:pr-4 py-2 
                             rounded-full cursor-pointer 
-                            font-work text-base sm:text-lg text-foreground 
+                            font-work text-base text-foreground 
                             hover:bg-gray-a-3 
                             ${isOpen ? 'bg-gray-a-2' : 'bg-transparent'}`}
                 onClick={() => onClick(itemKey)}
@@ -32,7 +30,8 @@ export const NavItem = forwardRef(({
                 {label}
                 <ChevronDown
                     className={`w-4 h-4
-                                ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
+                                transition duration-150 ease-out
+                                ${isOpen ? '-rotate-180' : 'rotate-0'}`} />
             </button>
         </li>
     );
