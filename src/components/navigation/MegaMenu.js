@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useRef } from 'react';
 import { useKeyboardNavigation } from '@/hooks/a11y/useKeyboardNavigation';
 import { useClickOutside } from '@/hooks/a11y/useClickOutside';
@@ -5,10 +7,12 @@ import { useFocusReturn } from '@/hooks/a11y/useFocusReturn';
 
 export const MegaMenu = ({
     itemKey,
-    isActive,
+    isOpen,
     triggerRef,
     items,
     onClose,
+    onMouseEnter,
+    onMouseLeave
 }) => {
     const panelRef = useRef();
     const {
@@ -23,24 +27,25 @@ export const MegaMenu = ({
         onClose();
     });
 
-    useFocusReturn(isActive, triggerRef);
+    useFocusReturn(isOpen, triggerRef);
 
     useEffect(() => {
-        if (isActive) {
+        if (isOpen) {
             panelRef.current?.focus();
         }
-    }, [isActive]);
+    }, [isOpen]);
 
-
-    if (!isActive) return null;
+    if (!isOpen) return null;
 
     return (
         <div
             id={`menu-${itemKey}`}
             role="menu"
-            tabIndex={-1}
+            tabIndex={1}
             ref={panelRef}
             onKeyDown={handleKeyDown}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
             aria-label={`${itemKey} submenu`}
             className="focus:outline-none"
         >
@@ -52,7 +57,7 @@ export const MegaMenu = ({
                         role="menuitem"
                         tabIndex={0}
                         ref={(el) => (itemRefs.current[index] = el)}
-                        className="block text-sm font-medium hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="block font-medium hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                         {item.label}
                     </a>
