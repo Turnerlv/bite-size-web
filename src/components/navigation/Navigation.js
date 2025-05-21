@@ -104,7 +104,7 @@ export default function Navigation() {
                         h-[44px] translate-y-[-2px]
                     '
                 >
-                    <Link href='.' className='focus:custom-focus'>
+                    <Link href='.' className='focus-visible:custom-focus'>
                         <img
                             aria-hidden
                             className="nav-logo min-w-[115px]"
@@ -130,7 +130,7 @@ export default function Navigation() {
                         justify-between
                     `}
                 >
-                    <ul className='flex flex-col sm:flex-row sm:gap-2'>
+                    <ul className='flex flex-col sm:flex-row gap-2'>
                         {NAV_ITEMS.map((nav) => (
                             <NavItem
                                 key={nav.key}

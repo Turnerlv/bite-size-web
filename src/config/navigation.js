@@ -46,16 +46,16 @@ export const NAV_ITEMS = [
                 description: 'Common components, coded cleanly',
             },
             {
-                label: 'Patterns',
-                href: '/bites/patterns',
-                icon: 'LayoutDashboard',
-                description: 'Proven, practical patterns',
-            },
-            {
                 label: 'Categories',
                 href: '/bites/categories',
                 icon: 'TableProperties',
                 description: 'Browse by bite type',
+            },
+            {
+                label: 'Technology',
+                href: '/bites/technology',
+                icon: 'FileCode',
+                description: 'Feasibility FTW',
             },
         ],
     },

@@ -17,7 +17,7 @@ const NavItemSecondary = forwardRef(({
             role="menuitem"
             tabIndex={0}
             ref={ref}
-            className="flex flex-row items-center p-3 rounded-xl gap-3 font-work hover:bg-gray-a-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex flex-row items-center p-3 rounded-xl gap-3 font-work hover:bg-gray-a-4 focus:custom-focus"
             {...props}
         >
             <IconComponent className="icon stroke-[1.25] w-8 h-8" />

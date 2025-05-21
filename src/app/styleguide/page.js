@@ -1,10 +1,13 @@
 // pages/style-guide.tsx
+import Button from "@/components/Button";
+import { Heart } from "lucide-react";
+
 export default function StyleGuide() {
     return (
-        <main className="p-8 space-y-12 bg-background text-white min-h-screen pt-19">
+        <main className="flex flex-col w-full p-8 space-y-12 bg-background text-white min-h-screen pt-19">
             {/* Typography */}
-            <section>
-                <h2 className="text-3xl font-bold mb-4">Typography</h2>
+            <section className="mx-auto w-full m-24 px-8 max-w-[1200px]">
+                <h2 className="text-3xl font-rubik font-bold mb-4">Typography</h2>
                 <div className="space-y-2">
                     <h1 className="text-5xl font-bold text-foreground">Heading 1</h1>
                     <h2 className="text-4xl font-semibold">Heading 2</h2>
@@ -58,17 +61,60 @@ export default function StyleGuide() {
             {/* Buttons */}
             <section>
                 <h2 className="text-3xl font-bold mb-4">Buttons</h2>
-                <div className="flex gap-4 flex-wrap">
-                    <button className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded">
-                        Primary Button
-                    </button>
-                    <button className="border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-black">
-                        Secondary Button
-                    </button>
-                    <button className="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded">
-                        Destructive
-                    </button>
-                    <button className="text-blue-400 underline">Text Button</button>
+                <div className="flex gap-4 items-start mb-8">
+                    <Button variant='primary' size='sm' iconPosition='default'>Button</Button>
+                    <Button variant='primary' size='sm' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='primary' size='sm' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='primary' size='md' iconPosition='default'>Button</Button>
+                    <Button variant='primary' size='md' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='primary' size='md' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='primary' size='lg' iconPosition='default'>Button</Button>
+                    <Button variant='primary' size='lg' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='primary' size='lg' icon={Heart} iconPosition='only'></Button>
+                </div>
+                <div className="flex gap-4 items-start mb-8">
+                    <Button variant='secondary' size='sm' iconPosition='default'>Button</Button>
+                    <Button variant='secondary' size='sm' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='secondary' size='sm' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='secondary' size='md' iconPosition='default'>Button</Button>
+                    <Button variant='secondary' size='md' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='secondary' size='md' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='secondary' size='lg' iconPosition='default'>Button</Button>
+                    <Button variant='secondary' size='lg' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='secondary' size='lg' icon={Heart} iconPosition='only'></Button>
+                </div>
+                <div className="flex gap-4 items-start mb-8">
+                    <Button variant='outline' size='sm' iconPosition='default'>Button</Button>
+                    <Button variant='outline' size='sm' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='outline' size='sm' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='outline' size='md' iconPosition='default'>Button</Button>
+                    <Button variant='outline' size='md' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='outline' size='md' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='outline' size='lg' iconPosition='default'>Button</Button>
+                    <Button variant='outline' size='lg' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='outline' size='lg' icon={Heart} iconPosition='only'></Button>
+                </div>
+                <div className="flex gap-4 items-start mb-8">
+                    <Button variant='subtle' size='sm' iconPosition='default'>Button</Button>
+                    <Button variant='subtle' size='sm' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='subtle' size='sm' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='subtle' size='md' iconPosition='default'>Button</Button>
+                    <Button variant='subtle' size='md' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='subtle' size='md' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='subtle' size='lg' iconPosition='default'>Button</Button>
+                    <Button variant='subtle' size='lg' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='subtle' size='lg' icon={Heart} iconPosition='only'></Button>
+                </div>
+                <div className="flex gap-4 items-start mb-8">
+                    <Button variant='ghost' size='sm' iconPosition='default'>Button</Button>
+                    <Button variant='ghost' size='sm' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='ghost' size='sm' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='ghost' size='md' iconPosition='default'>Button</Button>
+                    <Button variant='ghost' size='md' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='ghost' size='md' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='ghost' size='lg' iconPosition='default'>Button</Button>
+                    <Button variant='ghost' size='lg' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='ghost' size='lg' icon={Heart} iconPosition='only'></Button>
                 </div>
             </section>
 

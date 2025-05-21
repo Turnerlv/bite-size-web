@@ -14,9 +14,9 @@ export const NavItem = forwardRef(({
         <li >
             <button
                 ref={ref}
-                className={`flex flex-row items-center justify-between gap-2
+                className={`w-full sm:w-auto flex flex-row items-center justify-between gap-2
                             px-8 sm:px-5 pr-3 sm:pr-4 py-2 
-                            rounded-full cursor-pointer 
+                            sm:rounded-full cursor-pointer 
                             font-work text-base text-foreground 
                             hover:bg-gray-a-3 focus:custom-focus
                             ${isOpen ? 'bg-gray-a-2' : 'bg-transparent'}`}
@@ -30,8 +30,8 @@ export const NavItem = forwardRef(({
                 {label}
                 <ChevronDown
                     className={`w-4 h-4
-                                transition duration-150 ease-out
-                                ${isOpen ? '-rotate-180' : 'rotate-0'}`} />
+                                transition duration-150 ease-out rotate-270
+                                ${isOpen ? 'sm:-rotate-180' : 'sm:rotate-0'}`} />
             </button>
         </li>
     );

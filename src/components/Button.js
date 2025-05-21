@@ -14,13 +14,13 @@ const Button = ({
     inline-flex items-center justify-center gap-1
     rounded-full align-text-top
     font-work font-semibold
-    focus:custom-focus cursor-pointer
+    focus-visible:custom-focus cursor-pointer
   `;
 
     const variantStyles = {
         primary: 'bg-primary text-primary-contrast hover:bg-yellow-10',
-        secondary: 'bg-secondary  text-secondary-contrast hover:bg-gray-12',
-        outline: 'bg-transparent border border-foreground text-foreground hover:bg-gray-a-3',
+        secondary: 'bg-secondary text-secondary-contrast hover:bg-gray-12',
+        outline: 'bg-transparent inset-ring inset-ring-foreground text-foreground hover:bg-gray-a-3',
         subtle: 'bg-gray-a-3 text-foreground hover:bg-gray-a-5',
         ghost: 'bg-transparent text-foreground hover:bg-gray-a-3',
     };
@@ -35,21 +35,21 @@ const Button = ({
         const paddingMap = {
             sm: {
                 default: 'px-3',
-                left: 'pl-3 pr-5',
-                right: 'pl-5 pr-3',
-                only: 'px-2',
+                left: 'pl-2 pr-4',
+                right: 'pl-4 pr-2',
+                only: 'px-1',
             },
             md: {
                 default: 'px-4',
-                left: 'pl-4 pr-6',
-                right: 'pl-6 pr-4',
+                left: 'pl-3 pr-5',
+                right: 'pl-5 pr-3',
                 only: 'px-2',
             },
             lg: {
                 default: 'px-5',
                 left: 'pl-5 pr-7',
                 right: 'pl-7 pr-5',
-                only: 'px-2',
+                only: 'px-3',
             },
         };
 
@@ -66,7 +66,11 @@ const Button = ({
         lg: 'text-lg py-3',
     };
 
-    const iconSize = size === 'sm' ? 'w-4 h-4' : 'w-6 h-6';
+    const iconSize =
+        size === 'sm' ? 'w-5.5 h-5.5' :
+            size === 'lg' ? 'w-7 h-7' :
+                'w-6 h-6'; // default to 'md'
+
 
     const className = clsx(
         baseStyles,
