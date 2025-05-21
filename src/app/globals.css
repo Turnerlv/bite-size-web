@@ -200,9 +200,17 @@
   /* Semantic type */
   --font-rubik: var(--font-rubik);
   --font-work: var(--font-work-sans);
-  ;
 
 }
+
+/* Focus state */
+@utility custom-focus {
+  @apply outline-none ring-2 ring-offset-2 ring-yellow-10;
+}
+
+
+
+
 
 body {
   font-family: Arial,

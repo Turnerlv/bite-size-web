@@ -18,9 +18,9 @@ export const NavItem = forwardRef(({
                             px-8 sm:px-5 pr-3 sm:pr-4 py-2 
                             rounded-full cursor-pointer 
                             font-work text-base text-foreground 
-                            hover:bg-gray-a-3 
+                            hover:bg-gray-a-3 focus:custom-focus
                             ${isOpen ? 'bg-gray-a-2' : 'bg-transparent'}`}
-                onClick={() => onClick(itemKey)}
+                onClick={onClick}
                 aria-haspopup="true"
                 aria-expanded={isOpen}
                 aria-controls={`menu-${itemKey}`}

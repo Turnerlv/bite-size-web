@@ -51,7 +51,7 @@ export const MegaMenu = ({
             aria-label={`${itemKey} submenu`}
             className="focus:outline-none mx-auto w-full max-w-[1200px] pt-4"
         >
-            <div className='flex flex-col gap-4 max-w-7xl mx-auto px-8 py-6 border-t border-border'>
+            <div className='flex flex-col gap-4 max-w-7xl mx-auto sm:pl-12 sm:pr-4 md:pl-17 md:pr-8 py-6 border-t border-border'>
                 <h2 className='text-lg font-rubik font-semibold'>{label}</h2>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {items.map((item, index) => (

@@ -8,12 +8,13 @@ import { MegaMenu } from './MegaMenu';
 import DarkToggle from './DarkToggle';
 import Link from 'next/link';
 import Button from '../Button';
-import { Heart, Menu } from 'lucide-react';
+import { Heart, Menu, X } from 'lucide-react';
 
 export default function Navigation() {
     const { isOpen, open, close } = useDisclosure(false);
     const [activeKey, setActiveKey] = useState(null);
     const [focusedIndex, setFocusedIndex] = useState(-1);
+    const [suppressHover, setSuppressHover] = useState(false)
     const [isMobile, setIsMobile] = useState(false);
     const [menu, setMenu] = useState('hidden');
 
@@ -33,16 +34,17 @@ export default function Navigation() {
     };
 
     const handleToggle = (key) => {
-        if (activeKey === key) {
+        if (!suppressHover) {
+            setSuppressHover(true);
             handleClose();
         } else {
             handleOpen(key);
+            setSuppressHover(false);
         }
     };
 
-
     const handleMouseEnter = (key) => {
-        if (isMobile) return;
+        if (isMobile || suppressHover) return;
         clearTimeout(closeTimeoutRef.current);
         handleOpen(key);
     };
@@ -52,6 +54,7 @@ export default function Navigation() {
         closeTimeoutRef.current = setTimeout(() => {
             handleClose();
         }, 100);
+        setSuppressHover(false);
     };
 
     const toggleMenu = () => {
@@ -62,6 +65,7 @@ export default function Navigation() {
         const handleResize = () => {
             const isNowMobile = window.innerWidth < 640;
             setIsMobile(isNowMobile);
+            setSuppressHover(true);
             if (!isNowMobile) {
                 setMenu('hidden');
             }
@@ -71,6 +75,10 @@ export default function Navigation() {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    useEffect(() => {
+        console.log(activeKey)
+    }, [activeKey]);
 
     return (
         <nav
@@ -90,13 +98,13 @@ export default function Navigation() {
                 `}
             >
                 <div
-                    className="
+                    className='
                         w-full sm:w-fit 
                         flex items-center justify-between 
                         h-[44px] translate-y-[-2px]
-                    "
+                    '
                 >
-                    <Link href=".">
+                    <Link href='.' className='focus:custom-focus'>
                         <img
                             aria-hidden
                             className="nav-logo min-w-[115px]"
@@ -107,9 +115,9 @@ export default function Navigation() {
                     </Link>
                     <div className="sm:hidden">
                         <Button
-                            variant="ghost"
-                            icon={Menu}
-                            iconPosition="only"
+                            variant='ghost'
+                            icon={menu === 'flex' ? X : Menu}
+                            iconPosition='only'
                             onClick={toggleMenu}
                         />
                     </div>
@@ -122,22 +130,22 @@ export default function Navigation() {
                         justify-between
                     `}
                 >
-                    <ul className="flex flex-col sm:flex-row sm:gap-2">
+                    <ul className='flex flex-col sm:flex-row sm:gap-2'>
                         {NAV_ITEMS.map((nav) => (
                             <NavItem
                                 key={nav.key}
                                 itemKey={nav.key}
                                 label={nav.label}
                                 isOpen={activeKey === nav.key}
-                                onClick={handleToggle}
+                                onClick={() => handleToggle(nav.key)}
                                 ref={(el) => (triggerRefs.current[nav.key] = el)}
                                 onMouseEnter={() => handleMouseEnter(nav.key)}
                                 onMouseLeave={handleMouseLeave}
                             />
                         ))}
                     </ul>
-                    <div className="flex flex-row flex-wrap gap-3 content-around">
-                        <Button variant="subtle" icon={Heart} iconPosition="right">
+                    <div className='flex flex-row flex-wrap gap-3 content-around'>
+                        <Button variant='subtle' icon={Heart} iconPosition='right'>
                             Bond
                         </Button>
                         <DarkToggle />

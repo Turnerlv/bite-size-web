@@ -14,7 +14,7 @@ const Button = ({
     inline-flex items-center justify-center gap-1
     rounded-full align-text-top
     font-work font-semibold
-    focus:outline-none cursor-pointer
+    focus:custom-focus cursor-pointer
   `;
 
     const variantStyles = {
