@@ -14,14 +14,16 @@ export default function Navigation() {
     const { isOpen, open, close } = useDisclosure(false);
     const [activeKey, setActiveKey] = useState(null);
     const [focusedIndex, setFocusedIndex] = useState(-1);
-    const [suppressHover, setSuppressHover] = useState(false)
     const [isMobile, setIsMobile] = useState(false);
     const [menu, setMenu] = useState('hidden');
 
     const triggerRefs = useRef({});
     const closeTimeoutRef = useRef(null);
+    const previousOpenKey = useRef(null);
+
 
     const handleOpen = (key) => {
+        previousOpenKey.current = key;
         setActiveKey(key);
         setFocusedIndex(0);
         open();
@@ -34,17 +36,23 @@ export default function Navigation() {
     };
 
     const handleToggle = (key) => {
-        if (!suppressHover) {
-            setSuppressHover(true);
+        if (previousOpenKey.current === key) {
+            console.log("Closed by click")
+            previousOpenKey.current = null;
             handleClose();
         } else {
             handleOpen(key);
-            setSuppressHover(false);
+            console.log("Opened by click")
         }
-    };
+    }
+
+    // const handleBlur = () => {
+    //     previousOpenKey.current = null;
+    //     console.log("Lost focus")
+    // }
 
     const handleMouseEnter = (key) => {
-        if (isMobile || suppressHover) return;
+        if (isMobile) return;
         clearTimeout(closeTimeoutRef.current);
         handleOpen(key);
     };
@@ -54,7 +62,7 @@ export default function Navigation() {
         closeTimeoutRef.current = setTimeout(() => {
             handleClose();
         }, 100);
-        setSuppressHover(false);
+        previousOpenKey.current = null;
     };
 
     const toggleMenu = () => {
@@ -65,7 +73,6 @@ export default function Navigation() {
         const handleResize = () => {
             const isNowMobile = window.innerWidth < 640;
             setIsMobile(isNowMobile);
-            setSuppressHover(true);
             if (!isNowMobile) {
                 setMenu('hidden');
             }
@@ -76,9 +83,9 @@ export default function Navigation() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    useEffect(() => {
-        console.log(activeKey)
-    }, [activeKey]);
+    // useEffect(() => {
+    //     console.log(clickRef)
+    // }, [clickRef]);
 
     return (
         <nav
@@ -137,18 +144,18 @@ export default function Navigation() {
                                 itemKey={nav.key}
                                 label={nav.label}
                                 isOpen={activeKey === nav.key}
-                                onClick={() => handleToggle(nav.key)}
+                                onClick={(e) => handleToggle(nav.key)}
                                 ref={(el) => (triggerRefs.current[nav.key] = el)}
                                 onMouseEnter={() => handleMouseEnter(nav.key)}
                                 onMouseLeave={handleMouseLeave}
                             />
                         ))}
                     </ul>
-                    <div className='flex flex-row flex-wrap gap-3 content-around'>
-                        <Button variant='subtle' icon={Heart} iconPosition='right'>
+                    <div className='w-full sm:w-auto flex justify-items-stretch mt-6 pt-6 sm:mt-0 sm:pt-0 gap-3 border-t border-border sm:border-none'>
+                        <DarkToggle isMobile={isMobile} />
+                        <Button variant='surface' icon={Heart} iconPosition='right' responsive='true'>
                             Bond
                         </Button>
-                        <DarkToggle />
                     </div>
                 </div>
             </div>

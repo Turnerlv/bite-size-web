@@ -190,7 +190,7 @@
   --color-foreground: var(--color-gray-12);
   --color-surface: --alpha(var(--color-background) / 80%);
   --color-border: var(--color-gray-4);
-  --color-text-muted: var(--color-gray-10);
+  --color-text-muted: var(--color-gray-11);
   --color-primary: var(--color-yellow-9);
   --color-primary-contrast: #0e0c0a;
   --color-secondary: var(--contrast);

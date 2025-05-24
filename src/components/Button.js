@@ -8,20 +8,29 @@ const Button = ({
     onClick,
     icon: Icon,
     iconPosition = 'left',
+    responsive = 'false',
     ...props
 }) => {
+
+    const responsiveFlex = {
+        false: 'inline-flex',
+        true: 'flex flex-row sm:inline-flex justify-center grow',
+    }
+
     const baseStyles = `
-    inline-flex items-center justify-center gap-1
+    ${responsiveFlex[responsive]} items-center gap-1
     rounded-full align-text-top
-    font-work font-semibold
+    font-work font-medium
     focus-visible:custom-focus cursor-pointer
   `;
 
+
     const variantStyles = {
-        primary: 'bg-primary text-primary-contrast hover:bg-yellow-10',
-        secondary: 'bg-secondary text-secondary-contrast hover:bg-gray-12',
-        outline: 'bg-transparent inset-ring inset-ring-foreground text-foreground hover:bg-gray-a-3',
-        subtle: 'bg-gray-a-3 text-foreground hover:bg-gray-a-5',
+        primary: 'bg-primary text-primary-contrast hover:bg-yellow-11',
+        secondary: 'bg-secondary text-secondary-contrast hover:bg-gray-a-11',
+        outline: 'bg-transparent inset-ring inset-ring-foreground text-foreground hover:bg-gray-a-4',
+        soft: 'bg-gray-a-3 text-foreground hover:bg-gray-a-5',
+        surface: 'bg-gray-a-2 inset-ring inset-ring-gray-a-4 text-foreground hover:bg-gray-a-5',
         ghost: 'bg-transparent text-foreground hover:bg-gray-a-3',
     };
 
@@ -82,11 +91,11 @@ const Button = ({
     return (
         <button onClick={onClick} className={className} {...props}>
             {Icon && (iconPosition === 'left' || iconPosition === 'only') && (
-                <Icon className={clsx(iconSize, 'stroke-[2.5] px-1 py-1')} />
+                <Icon className={clsx(iconSize, 'stroke-[1.5] px-1 py-1')} />
             )}
             {iconPosition !== 'only' && children}
             {Icon && iconPosition === 'right' && (
-                <Icon className={clsx(iconSize, 'stroke-[2.5] px-1 py-1')} />
+                <Icon className={clsx(iconSize, 'stroke-[1.5] px-1 py-1')} />
             )}
         </button>
     );

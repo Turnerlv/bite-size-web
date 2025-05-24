@@ -16,8 +16,8 @@ export const NavItem = forwardRef(({
                 ref={ref}
                 className={`w-full sm:w-auto flex flex-row items-center justify-between gap-2
                             px-8 sm:px-5 pr-3 sm:pr-4 py-2 
-                            sm:rounded-full cursor-pointer 
-                            font-work text-base text-foreground 
+                            rounded-full cursor-pointer 
+                            font-work text-base text-foreground
                             hover:bg-gray-a-3 focus:custom-focus
                             ${isOpen ? 'bg-gray-a-2' : 'bg-transparent'}`}
                 onClick={onClick}

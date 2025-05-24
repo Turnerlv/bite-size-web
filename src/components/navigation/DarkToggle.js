@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import { Moon, SunMedium } from 'lucide-react';
 
-export default function DarkToggle() {
+export default function DarkToggle({ isMobile }) {
     const [theme, setTheme] = useState(null);
 
     // Load theme from localStorage on mount
@@ -35,8 +35,11 @@ export default function DarkToggle() {
         <Button
             variant='ghost'
             icon={theme === 'light' ? SunMedium : Moon}
-            iconPosition='only'
+            iconPosition={!isMobile ? 'only' : 'right'}
+            responsive='true'
             onClick={toggleTheme}
-        />
+        >
+            {!isMobile ? null : `${theme === 'light' ? 'Light' : 'Dark'} mode`}
+        </Button>
     );
 }
