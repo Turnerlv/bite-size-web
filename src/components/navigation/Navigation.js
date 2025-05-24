@@ -8,7 +8,7 @@ import { MegaMenu } from './MegaMenu';
 import DarkToggle from './DarkToggle';
 import Link from 'next/link';
 import Button from '../Button';
-import { Heart, Menu, X } from 'lucide-react';
+import { Heart, Menu, X, ChevronLeft } from 'lucide-react';
 
 export default function Navigation() {
     const { isOpen, open, close } = useDisclosure(false);
@@ -46,11 +46,6 @@ export default function Navigation() {
         }
     }
 
-    // const handleBlur = () => {
-    //     previousOpenKey.current = null;
-    //     console.log("Lost focus")
-    // }
-
     const handleMouseEnter = (key) => {
         if (isMobile) return;
         clearTimeout(closeTimeoutRef.current);
@@ -67,7 +62,28 @@ export default function Navigation() {
 
     const toggleMenu = () => {
         setMenu((prevMenu) => (prevMenu === 'hidden' ? 'flex' : 'hidden'));
+        previousOpenKey.current = null;
     };
+
+    const megaMenu = (
+        <>
+            {NAV_ITEMS.map((nav) => (
+                <MegaMenu
+                    label={nav.label}
+                    key={nav.key}
+                    itemKey={nav.key}
+                    isOpen={activeKey === nav.key}
+                    items={nav.items}
+                    triggerRef={triggerRefs.current[nav.key]}
+                    onClose={handleClose}
+                    focusedIndex={focusedIndex}
+                    setFocusedIndex={setFocusedIndex}
+                    onMouseEnter={() => handleMouseEnter(nav.key)}
+                    onMouseLeave={handleMouseLeave}
+                />
+            ))}
+        </>
+    );
 
     useEffect(() => {
         const handleResize = () => {
@@ -75,6 +91,7 @@ export default function Navigation() {
             setIsMobile(isNowMobile);
             if (!isNowMobile) {
                 setMenu('hidden');
+                handleClose();
             }
         };
 
@@ -82,10 +99,6 @@ export default function Navigation() {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-
-    // useEffect(() => {
-    //     console.log(clickRef)
-    // }, [clickRef]);
 
     return (
         <nav
@@ -100,7 +113,7 @@ export default function Navigation() {
             <div
                 className={`
                     mx-auto w-full max-w-[1200px] 
-                    flex flex-col sm:flex-row items-center 
+                    flex flex-col sm:flex-row sm:items-center 
                     gap-4 py-4 px-4 md:px-8 ${isOpen ? 'md:pb-0' : 'md:pb-4'} 
                 `}
             >
@@ -129,52 +142,39 @@ export default function Navigation() {
                         />
                     </div>
                 </div>
-
-                <div
-                    className={`
-                        ${menu} sm:flex 
-                        w-full flex-col sm:flex-row 
-                        justify-between
-                    `}
-                >
-                    <ul className='flex flex-col sm:flex-row gap-2'>
-                        {NAV_ITEMS.map((nav) => (
-                            <NavItem
-                                key={nav.key}
-                                itemKey={nav.key}
-                                label={nav.label}
-                                isOpen={activeKey === nav.key}
-                                onClick={(e) => handleToggle(nav.key)}
-                                ref={(el) => (triggerRefs.current[nav.key] = el)}
-                                onMouseEnter={() => handleMouseEnter(nav.key)}
-                                onMouseLeave={handleMouseLeave}
-                            />
-                        ))}
-                    </ul>
-                    <div className='w-full sm:w-auto flex justify-items-stretch mt-6 pt-6 sm:mt-0 sm:pt-0 gap-3 border-t border-border sm:border-none'>
-                        <DarkToggle isMobile={isMobile} />
-                        <Button variant='surface' icon={Heart} iconPosition='right' responsive='true'>
-                            Bond
-                        </Button>
+                <div className={`w-full gap-17 ${menu} ${isOpen ? '-translate-x-1/2 sm:translate-none' : 'translate-none'}  justify-center sm:flex transition-transform duration-150 ease-out`}>
+                    <div
+                        className={`
+                            flex 
+                            w-full flex-shrink-0 flex-col sm:flex-row 
+                            sm:justify-between
+                        `}
+                    >
+                        <ul className='flex flex-col sm:flex-row gap-2'>
+                            {NAV_ITEMS.map((nav) => (
+                                <NavItem
+                                    key={nav.key}
+                                    itemKey={nav.key}
+                                    label={nav.label}
+                                    isOpen={activeKey === nav.key}
+                                    onClick={(e) => handleToggle(nav.key)}
+                                    ref={(el) => (triggerRefs.current[nav.key] = el)}
+                                    onMouseEnter={() => handleMouseEnter(nav.key)}
+                                    onMouseLeave={handleMouseLeave}
+                                />
+                            ))}
+                        </ul>
+                        <div className='w-full sm:w-auto flex flex-col sm:flex-row justify-items-stretch mt-6 pt-6 sm:mt-0 sm:pt-0 gap-3 border-t border-border sm:border-none'>
+                            <Button variant='surface' icon={Heart} iconPosition='right' responsive='true'>
+                                Bond
+                            </Button>
+                            <DarkToggle isMobile={isMobile} />
+                        </div>
                     </div>
+                    {isMobile && megaMenu}
                 </div>
             </div>
-
-            {NAV_ITEMS.map((nav) => (
-                <MegaMenu
-                    label={nav.label}
-                    key={nav.key}
-                    itemKey={nav.key}
-                    isOpen={activeKey === nav.key}
-                    items={nav.items}
-                    triggerRef={triggerRefs.current[nav.key]}
-                    onClose={handleClose}
-                    focusedIndex={focusedIndex}
-                    setFocusedIndex={setFocusedIndex}
-                    onMouseEnter={() => handleMouseEnter(nav.key)}
-                    onMouseLeave={handleMouseLeave}
-                />
-            ))}
+            {!isMobile && megaMenu}
         </nav>
     );
 }

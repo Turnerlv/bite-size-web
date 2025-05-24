@@ -5,6 +5,8 @@ import NavItemSecondary from './NavItemSecondary';
 import { useKeyboardNavigation } from '@/hooks/a11y/useKeyboardNavigation';
 import { useClickOutside } from '@/hooks/a11y/useClickOutside';
 import { useFocusReturn } from '@/hooks/a11y/useFocusReturn';
+import Button from '../Button';
+import { ChevronLeft } from 'lucide-react';
 
 export const MegaMenu = ({
     label,
@@ -49,10 +51,13 @@ export const MegaMenu = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             aria-label={`${itemKey} submenu`}
-            className="focus:outline-none mx-auto w-full max-w-[1200px] pt-4"
+            className="focus:outline-none mx-auto w-full flex-shrink-0 max-w-[1200px] pt-4"
         >
-            <div className='flex flex-col gap-4 max-w-7xl mx-auto sm:pl-12 sm:pr-4 md:pl-17 md:pr-8 py-6 border-t border-border'>
-                <h2 className='text-lg font-rubik font-semibold'>{label}</h2>
+            <div className='flex flex-col gap-4 max-w-7xl mx-auto pr-8 sm:pl-12 sm:pr-4 md:pl-17 md:pr-8 sm:py-6 sm:border-t border-border'>
+                <div className='flex flex-row gap-1 -ml-10 sm:ml-0 items-center'>
+                    <div className='flex sm:hidden'><Button variant='ghost' icon={ChevronLeft} iconPosition='only' onClick={onClose}></Button></div>
+                    <h2 className='text-lg font-rubik font-medium'>{label}</h2>
+                </div>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {items.map((item, index) => (
                         <NavItemSecondary
