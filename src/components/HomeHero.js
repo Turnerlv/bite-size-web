@@ -61,8 +61,8 @@ export default function Hero() {
             />
 
             {/* Content */}
-            <div className="flex flex-col z-30 items-center">
-                <h1 className="mb-4 text-center relative text-5xl font-bold text-color-foreground font-rubik">
+            <div className="flex flex-col z-30 items-center page-padding">
+                <h1 className="mb-4 text-center relative heading-1 text-foreground">
                     Design meets code, one bite at a time.
                 </h1>
                 <p className="mb-10 text-foreground font-work text-center text-lg text-medium max-w-2xl">

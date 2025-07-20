@@ -62,6 +62,9 @@ export default function StyleGuide() {
             <section>
                 <h2 className="text-3xl font-bold mb-4">Buttons</h2>
                 <div className="flex gap-4 items-start mb-8">
+                    <Button variant='primary' size='xs' iconPosition='default'>Button</Button>
+                    <Button variant='primary' size='xs' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='primary' size='xs' icon={Heart} iconPosition='only'></Button>
                     <Button variant='primary' size='sm' iconPosition='default'>Button</Button>
                     <Button variant='primary' size='sm' icon={Heart} iconPosition='left'>Button</Button>
                     <Button variant='primary' size='sm' icon={Heart} iconPosition='only'></Button>
@@ -95,26 +98,26 @@ export default function StyleGuide() {
                     <Button variant='outline' size='lg' icon={Heart} iconPosition='only'></Button>
                 </div>
                 <div className="flex gap-4 items-start mb-8">
-                    <Button variant='subtle' size='sm' iconPosition='default'>Button</Button>
-                    <Button variant='subtle' size='sm' icon={Heart} iconPosition='left'>Button</Button>
-                    <Button variant='subtle' size='sm' icon={Heart} iconPosition='only'></Button>
-                    <Button variant='subtle' size='md' iconPosition='default'>Button</Button>
-                    <Button variant='subtle' size='md' icon={Heart} iconPosition='left'>Button</Button>
-                    <Button variant='subtle' size='md' icon={Heart} iconPosition='only'></Button>
-                    <Button variant='subtle' size='lg' iconPosition='default'>Button</Button>
-                    <Button variant='subtle' size='lg' icon={Heart} iconPosition='left'>Button</Button>
-                    <Button variant='subtle' size='lg' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='soft' size='sm' iconPosition='default'>Button</Button>
+                    <Button variant='soft' size='sm' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='soft' size='sm' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='soft' size='md' iconPosition='default'>Button</Button>
+                    <Button variant='soft' size='md' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='soft' size='md' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='soft' size='lg' iconPosition='default'>Button</Button>
+                    <Button variant='soft' size='lg' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='soft' size='lg' icon={Heart} iconPosition='only'></Button>
                 </div>
                 <div className="flex gap-4 items-start mb-8">
-                    <Button variant='ghost' size='sm' iconPosition='default'>Button</Button>
-                    <Button variant='ghost' size='sm' icon={Heart} iconPosition='left'>Button</Button>
-                    <Button variant='ghost' size='sm' icon={Heart} iconPosition='only'></Button>
-                    <Button variant='ghost' size='md' iconPosition='default'>Button</Button>
-                    <Button variant='ghost' size='md' icon={Heart} iconPosition='left'>Button</Button>
-                    <Button variant='ghost' size='md' icon={Heart} iconPosition='only'></Button>
-                    <Button variant='ghost' size='lg' iconPosition='default'>Button</Button>
-                    <Button variant='ghost' size='lg' icon={Heart} iconPosition='left'>Button</Button>
-                    <Button variant='ghost' size='lg' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='surface' size='sm' iconPosition='default'>Button</Button>
+                    <Button variant='surface' size='sm' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='surface' size='sm' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='surface' size='md' iconPosition='default'>Button</Button>
+                    <Button variant='surface' size='md' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='surface' size='md' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='surface' size='lg' iconPosition='default'>Button</Button>
+                    <Button variant='surface' size='lg' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='surface' size='lg' icon={Heart} iconPosition='only'></Button>
                 </div>
             </section>
 

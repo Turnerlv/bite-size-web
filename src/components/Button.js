@@ -26,7 +26,7 @@ const Button = ({
 
 
     const variantStyles = {
-        primary: 'bg-primary text-primary-contrast hover:bg-yellow-11',
+        primary: 'bg-primary text-primary-contrast hover:bg-yellow-10',
         secondary: 'bg-secondary text-secondary-contrast hover:bg-gray-a-11',
         outline: 'bg-transparent inset-ring inset-ring-foreground text-foreground hover:bg-gray-a-4',
         soft: 'bg-gray-a-3 text-foreground hover:bg-gray-a-5',
@@ -35,6 +35,7 @@ const Button = ({
     };
 
     const sizePadding = {
+        xs: 2,
         sm: 3,
         md: 4,
         lg: 5,
@@ -42,11 +43,17 @@ const Button = ({
 
     const getPaddingClass = () => {
         const paddingMap = {
+            xs: {
+                default: 'px-2 py-1',
+                left: 'pl-1 pr-3 py-[2px]',
+                right: 'pl-3 pr-1 py-[2px]',
+                only: 'px-[2px] py-[2px]',
+            },
             sm: {
-                default: 'px-3',
-                left: 'pl-2 pr-4',
-                right: 'pl-4 pr-2',
-                only: 'px-1',
+                default: 'px-3 py-1.5',
+                left: 'pl-2 pr-4 py-1.25',
+                right: 'pl-4 pr-2 py-1.25',
+                only: 'px-1.25 py-1.25',
             },
             md: {
                 default: 'px-4',
@@ -70,15 +77,17 @@ const Button = ({
 
 
     const sizeText = {
-        sm: 'text-sm py-1',
+        xs: 'text-xs',
+        sm: 'text-sm',
         md: 'text-base py-2',
         lg: 'text-lg py-3',
     };
 
     const iconSize =
-        size === 'sm' ? 'w-5.5 h-5.5' :
-            size === 'lg' ? 'w-7 h-7' :
-                'w-6 h-6'; // default to 'md'
+        size === 'xs' ? 'w-5 h-5' :
+            size === 'sm' ? 'w-5.5 h-5.5' :
+                size === 'lg' ? 'w-7 h-7' :
+                    'w-6 h-6'; // default to 'md'
 
 
     const className = clsx(

@@ -114,7 +114,7 @@ export default function Navigation() {
                 className={`
                     mx-auto w-full max-w-[1200px] 
                     flex flex-col sm:flex-row sm:items-center 
-                    gap-4 py-4 px-4 md:px-8 ${isOpen ? 'md:pb-0' : 'md:pb-4'} 
+                    gap-4 py-4 page-padding ${isOpen ? 'md:pb-0' : 'md:pb-4'} 
                 `}
             >
                 <div

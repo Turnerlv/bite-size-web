@@ -197,20 +197,36 @@
   --color-secondary-contrast: var(--color-gray-1);
   --color-mask: --alpha(var(--color-background) / 60%);
 
-  /* Semantic type */
+  /* Font family */
   --font-rubik: var(--font-rubik);
   --font-work: var(--font-work-sans);
-
+  --font-roboto: var(--font-roboto-mono);
 }
+
+/* Semantic headings */
+.heading-1 {
+  @apply font-rubik text-[2rem]/12 md:text-[2.5rem]/12 lg:text-[3rem]/15 font-bold;
+}
+
+.heading-2 {
+  @apply font-rubik text-[2rem]/10 font-bold;
+}
+
+.heading-3 {
+  @apply font-rubik text-[2rem]/10 font-bold;
+}
+
+@layer utilities {
+  .page-padding {
+    @apply px-4 md:px-8;
+  }
+}
+
 
 /* Focus state */
 @utility custom-focus {
   @apply outline-none ring-offset-2 ring-offset-background ring-2 ring-yellow-10;
 }
-
-
-
-
 
 body {
   font-family: Arial,
