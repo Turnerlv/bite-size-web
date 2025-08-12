@@ -253,3 +253,9 @@ html[data-theme='dark'] {
     content: url('../../public/biteSize_outline_full.svg');
   }
 }
+
+.lottie svg text {
+  font-family: "Roboto Mono", monospace !important;
+  font-weight: 400;
+  /* or 500/700 to match your AE layer */
+}
