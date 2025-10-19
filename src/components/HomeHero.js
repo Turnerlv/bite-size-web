@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Button from './Button';
+import Link from 'next/link';
 
 export default function Hero() {
     const maskRef = useRef(null);
@@ -69,7 +70,9 @@ export default function Hero() {
                     A growing playground of smart, interactive UI patterns. Built for curious designers, developers, and creative coders who love the frontend.
                 </p>
                 <div className="flex gap-4 justify-center">
-                    <Button variant='primary' size='lg' >Explore patterns</Button>
+                    <Link href="/bites">
+                        <Button variant='primary' size='lg' >Explore patterns</Button>
+                    </Link>
                     <Button variant='outline' size='lg' >Learn about us</Button>
                 </div>
             </div>

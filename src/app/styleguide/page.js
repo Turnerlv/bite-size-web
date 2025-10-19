@@ -9,12 +9,15 @@ export default function StyleGuide() {
             <section className="mx-auto w-full m-24 px-8 max-w-[1200px]">
                 <h2 className="text-3xl font-rubik font-bold mb-4">Typography</h2>
                 <div className="space-y-2">
-                    <h1 className="text-5xl font-bold text-foreground">Heading 1</h1>
-                    <h2 className="text-4xl font-semibold">Heading 2</h2>
-                    <h3 className="text-3xl font-medium">Heading 3</h3>
-                    <p className="text-base">Body text - base</p>
-                    <p className="text-sm">Small text</p>
-                    <p className="text-xs">Extra small text</p>
+                    <h1 className="heading-1 text-foreground">Heading 1</h1>
+                    <h2 className="heading-2 text-foreground">Heading 2</h2>
+                    <h3 className="heading-3 text-foreground">Heading 3</h3>
+                    <h4 className="heading-4 text-foreground">Heading 4</h4>
+                    <h5 className="heading-5 text-foreground">Heading 5</h5>
+                    <h6 className="heading-6 text-foreground">Heading 6</h6>
+                    <p className="body-lg">Body Large</p>
+                    <p className="body">Body text - base</p>
+                    <p className="body-sm">Body Small</p>
                 </div>
             </section>
 
@@ -23,18 +26,41 @@ export default function StyleGuide() {
                 <h2 className="text-3xl font-bold mb-4">Colors</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {[
-                        { name: 'Background', class: 'bg-[#121822]' },
-                        { name: 'White', class: 'bg-white text-black' },
-                        { name: 'Gray 100', class: 'bg-gray-100 text-black' },
-                        { name: 'Gray 800', class: 'bg-gray-800' },
-                        { name: 'Blue 400', class: 'bg-blue-400' },
-                        { name: 'Blue 600', class: 'bg-blue-600' },
-                        { name: 'Red 500', class: 'bg-red-500' },
-                        { name: 'Green 500', class: 'bg-green-500' },
+                        { name: 'Background', class: 'bg-background text-foreground' },
+                        { name: 'Foreground', class: 'bg-foreground text-background' },
+                        { name: 'Surface', class: 'bg-surface text-foreground' },
+                        { name: 'Border', class: 'bg-border text-foreground' },
+                        { name: 'Text Muted', class: 'bg-background text-text-muted' },
+                        { name: 'Primary', class: 'bg-primary text-primary-contrast' },
+                        { name: 'Secondary', class: 'bg-secondary text-secondary-contrast' },
+                        { name: 'Gray 1', class: 'bg-gray-1 text-gray-12' },
+                        { name: 'Gray 2', class: 'bg-gray-2 text-gray-12' },
+                        { name: 'Gray 3', class: 'bg-gray-3 text-gray-12' },
+                        { name: 'Gray 4', class: 'bg-gray-4 text-gray-12' },
+                        { name: 'Gray 5', class: 'bg-gray-5 text-gray-12' },
+                        { name: 'Gray 6', class: 'bg-gray-6 text-gray-12' },
+                        { name: 'Gray 7', class: 'bg-gray-7 text-gray-12' },
+                        { name: 'Gray 8', class: 'bg-gray-8 text-gray-12' },
+                        { name: 'Gray 9', class: 'bg-gray-9 text-gray-1' },
+                        { name: 'Gray 10', class: 'bg-gray-10 text-gray-1' },
+                        { name: 'Gray 11', class: 'bg-gray-11 text-gray-1' },
+                        { name: 'Gray 12', class: 'bg-gray-12 text-gray-1' },
+                        { name: 'Yellow 1', class: 'bg-yellow-1 text-yellow-12' },
+                        { name: 'Yellow 2', class: 'bg-yellow-2 text-yellow-12' },
+                        { name: 'Yellow 3', class: 'bg-yellow-3 text-yellow-12' },
+                        { name: 'Yellow 4', class: 'bg-yellow-4 text-yellow-12' },
+                        { name: 'Yellow 5', class: 'bg-yellow-5 text-yellow-12' },
+                        { name: 'Yellow 6', class: 'bg-yellow-6 text-yellow-12' },
+                        { name: 'Yellow 7', class: 'bg-yellow-7 text-yellow-12' },
+                        { name: 'Yellow 8', class: 'bg-yellow-8 text-yellow-12' },
+                        { name: 'Yellow 9', class: 'bg-yellow-9 text-yellow-12' },
+                        { name: 'Yellow 10', class: 'bg-yellow-10 text-yellow-12' },
+                        { name: 'Yellow 11', class: 'bg-yellow-11 text-yellow-1' },
+                        { name: 'Yellow 12', class: 'bg-yellow-12 text-yellow-1' },
                     ].map((color, i) => (
                         <div
                             key={i}
-                            className={`${color.class} h-20 rounded-lg flex items-center justify-center border border-white/10`}
+                            className={`${color.class} h-20 rounded-lg flex items-center justify-center`}
                         >
                             <span className="text-sm font-medium">{color.name}</span>
                         </div>

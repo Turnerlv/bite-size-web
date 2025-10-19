@@ -63,6 +63,8 @@ export default function AnimatedIllustration({
         };
     }, [inView, prefersReduced, jsonPath]);
 
+
+
     return (
         <div
             ref={containerRef}
@@ -80,6 +82,7 @@ export default function AnimatedIllustration({
                 <Lottie
                     animationData={animationData}
                     loop={loop}
+                    speed={1}
                     autoplay={autoplay}
                     className="w-full h-full"
                     rendererSettings={{ preserveAspectRatio: "xMidYMid meet" }}

@@ -204,17 +204,29 @@
 }
 
 /* Semantic headings */
-.heading-1 {
-  @apply font-rubik text-[2rem]/12 md:text-[2.5rem]/12 lg:text-[3rem]/15 font-bold;
+/* In a CSS file processed by Tailwind (e.g., globals.css, styles.css) */
+@layer components {
+  .heading-1 {
+    @apply font-rubik font-bold text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .heading-2 {
+    @apply font-rubik font-bold text-xl md:text-2xl lg:text-3xl;
+  }
+
+  .heading-3 {
+    @apply font-rubik font-bold text-lg md:text-xl lg:text-2xl;
+  }
+
+  .heading-4 {
+    @apply font-rubik font-bold text-base md:text-lg lg:text-xl;
+  }
+
+  .heading-5 {
+    @apply font-rubik font-bold text-base md:text-base lg:text-base;
+  }
 }
 
-.heading-2 {
-  @apply font-rubik text-[2rem]/10 font-bold;
-}
-
-.heading-3 {
-  @apply font-rubik text-[2rem]/10 font-bold;
-}
 
 @layer utilities {
   .page-padding {
@@ -254,7 +266,7 @@ html[data-theme='dark'] {
   }
 }
 
-.lottie svg text {
+svg text {
   font-family: "Roboto Mono", monospace !important;
   font-weight: 400;
   /* or 500/700 to match your AE layer */
