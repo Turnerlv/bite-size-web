@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import AnimatedIllustration from "@/components/AnimatedIllustration";
 
 export default function ValueProp() {
@@ -13,7 +12,7 @@ export default function ValueProp() {
                     </p>
                 </div>
                 <AnimatedIllustration
-                    jsonPath="/bite_size_hero2.json"
+                    jsonPath="/bite_size_hero3.json"
                     fallbackSrc="/value_prop_illustration.png"
                 />
 

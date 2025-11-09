@@ -17,6 +17,7 @@ export default function AnimatedIllustration({
     const [inView, setInView] = useState(false);
     const [animationData, setAnimationData] = useState(null);
     const containerRef = useRef(null);
+    const lottieRef = useRef();
 
     // Detect reduced motion
     useEffect(() => {
@@ -63,8 +64,6 @@ export default function AnimatedIllustration({
         };
     }, [inView, prefersReduced, jsonPath]);
 
-
-
     return (
         <div
             ref={containerRef}
@@ -80,12 +79,13 @@ export default function AnimatedIllustration({
                 />
             ) : (
                 <Lottie
+                    lottieRef={lottieRef}
                     animationData={animationData}
                     loop={loop}
-                    speed={1}
                     autoplay={autoplay}
                     className="w-full h-full"
                     rendererSettings={{ preserveAspectRatio: "xMidYMid meet" }}
+                    onDOMLoaded={() => lottieRef.current?.setSpeed(2)}
                 />
             )}
         </div>

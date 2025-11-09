@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Button from './Button';
+import Button from '../Button';
 import Link from 'next/link';
 
 export default function Hero() {
