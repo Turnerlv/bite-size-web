@@ -101,39 +101,39 @@ export default function Navigation() {
     }, []);
 
     return (
-        <nav
-            className={`
-                fixed z-999 w-full 
-                ${menu === 'flex' ? 'h-dvh' : 'h-auto'} 
-                flex flex-col justify-top sm:justify-center 
-                border-b border-border 
-                bg-surface backdrop-blur-md
-            `}
-        >
-            <div
-                className={`
-                    mx-auto w-full max-w-[1200px] 
-                    flex flex-col sm:flex-row sm:items-center 
-                    gap-4 py-4 page-padding ${isOpen ? 'md:pb-0' : 'md:pb-4'} 
-                `}
-            >
-                <div
-                    className='
-                        w-full sm:w-fit 
-                        flex items-center justify-between 
-                        h-[44px] translate-y-[-2px]
-                    '
-                >
-                    <Link href='.' className='focus-visible:custom-focus'>
+        <nav className="
+            /* Size */ w-full
+            /* Position */ fixed z-999
+            /* Layout */ flex flex-col justify-top sm:justify-center
+            /* Border */ border-b border-border
+            /* Background */ bg-surface backdrop-blur-md
+        ">
+            <div className={`
+                /* Size */ w-full max-w-[1200px]
+                /* Layout */ flex flex-col gap-4 py-4 page-padding sm:flex-row sm:items-center
+                /* Spacing */ ${isOpen ? "md:pb-0" : "md:pb-4"}
+                /* Positioning */ mx-auto
+            `}>
+                <div className="
+                    /* Size */ w-full h-[44px]
+                    /* Layout */ flex items-center justify-between
+                    /* Transforms & Animation */ translate-y-[-2px] sm:w-fit
+                ">
+                    <Link href='.' className="
+                        /* State/ARIA/Data */ focus-visible:custom-focus
+                    ">
                         <img
                             aria-hidden
-                            className="nav-logo min-w-[115px]"
+                            className="
+                                /* Size */ min-w-[115px]
+                                /* Other */ nav-logo
+                            "
                             alt="File icon"
                             height={32}
                             width={115}
                         />
                     </Link>
-                    <div className="sm:hidden">
+                    <div className="/* Interactivity */ sm:hidden">
                         <Button
                             variant='ghost'
                             icon={menu === 'flex' ? X : Menu}
@@ -142,15 +142,18 @@ export default function Navigation() {
                         />
                     </div>
                 </div>
-                <div className={`w-full gap-17 ${menu} ${isOpen ? '-translate-x-1/2 sm:translate-none' : 'translate-none'}  justify-center sm:flex transition-transform duration-150 ease-out`}>
-                    <div
-                        className={`
-                            flex 
-                            w-full flex-shrink-0 flex-col sm:flex-row 
-                            sm:justify-between
-                        `}
-                    >
-                        <ul className='flex flex-col sm:flex-row gap-2'>
+                <div className={`
+                    /* Size */ w-full
+                    /* Layout */ ${menu} gap-17 flex justify-center sm:flex
+                    /* Transforms & Animation */ transition-transform duration-150 ease-out ${isOpen ? "-translate-x-1/2 sm:translate-none" : "translate-none"}
+                `}>
+                    <div className="
+                        /* Size */ w-full
+                        /* Layout */ flex flex-shrink-0 flex-col sm:flex-row sm:justify-between
+                    ">
+                        <ul className="
+                            /* Layout */ gap-2 flex flex-col sm:flex-row
+                        ">
                             {NAV_ITEMS.map((nav) => (
                                 <NavItem
                                     key={nav.key}
@@ -164,7 +167,12 @@ export default function Navigation() {
                                 />
                             ))}
                         </ul>
-                        <div className='w-full sm:w-auto flex flex-col sm:flex-row justify-items-stretch mt-6 pt-6 sm:mt-0 sm:pt-0 gap-3 border-t border-border sm:border-none'>
+                        <div className={`
+                            /* Size */ w-full sm:w-auto
+                            /* Layout */ flex flex-col justify-items-stretch sm:flex-row
+                            /* Spacing */ mt-6 pt-6 gap-3 sm:mt-0 sm:pt-0
+                            /* Border */ border-t border-border sm:border-none
+                        `}>
                             <Button variant='surface' icon={Heart} iconPosition='right' responsive='true'>
                                 Bond
                             </Button>

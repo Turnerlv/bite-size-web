@@ -17,12 +17,44 @@ const NavItemSecondary = forwardRef(({
             role="menuitem"
             tabIndex={0}
             ref={ref}
-            className="flex flex-row items-center p-3 rounded-xl gap-3 font-work hover:bg-gray-a-4 focus:custom-focus"
+            className={[
+                // Spacing
+                "p-3 gap-3",
+                // Flex & Grid
+                "flex flex-row items-center",
+                // Radius
+                "rounded-xl",
+                // Text & Typography
+                "font-work",
+                // State/ARIA/Data
+                "hover:bg-gray-a-4 focus:custom-focus"
+            ].join(" ")}
             {...props}
         >
-            <IconComponent className="icon stroke-[1.25] w-8 h-8" />
-            <div className='flex flex-col text-sm'>
-                <h3 className='font-semibold'>{label}</h3>
+            <IconComponent
+                className={[
+                    // Size
+                    "w-8 h-8",
+                    // Other / Unknown
+                    "icon stroke-[1.25]"
+                ].join(" ")}
+            />
+            <div
+                className={[
+                    // Flex & Grid
+                    "flex flex-col",
+                    // Text & Typography
+                    "text-sm"
+                ].join(" ")}
+            >
+                <h3
+                    className={[
+                        // Text & Typography
+                        "font-semibold"
+                    ].join(" ")}
+                >
+                    {label}
+                </h3>
                 <p>{description}</p>
             </div>
 

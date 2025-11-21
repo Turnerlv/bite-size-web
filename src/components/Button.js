@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 const Button = ({
     children,
@@ -8,7 +9,9 @@ const Button = ({
     onClick,
     icon: Icon,
     iconPosition = 'left',
-    responsive = 'false',
+    responsive = false,
+    as = 'button', // only 'button' or 'link' now
+    href,
     ...props
 }) => {
 
@@ -17,21 +20,26 @@ const Button = ({
         true: 'flex flex-row sm:inline-flex justify-center grow',
     }
 
+    // compute responsive class directly so booleans behave as expected
+    const responsiveClass = responsive
+        ? 'flex flex-row sm:inline-flex justify-center grow w-full sm:w-auto'
+        : 'inline-flex';
+
     const baseStyles = `
-    ${responsiveFlex[responsive]} items-center gap-1
-    rounded-full align-text-top
-    font-work font-medium
+    ${responsiveClass} items-center gap-1
+    rounded-full align-text-top justify-center text-center
+    font-work font-medium 
     focus-visible:custom-focus cursor-pointer
   `;
 
 
     const variantStyles = {
         primary: 'bg-primary text-primary-contrast hover:bg-yellow-10',
-        secondary: 'bg-secondary text-secondary-contrast hover:bg-gray-a-11',
-        outline: 'bg-transparent inset-ring inset-ring-foreground text-foreground hover:bg-gray-a-4',
-        soft: 'bg-gray-a-3 text-foreground hover:bg-gray-a-5',
-        surface: 'bg-gray-a-2 inset-ring inset-ring-gray-a-4 text-foreground hover:bg-gray-a-5',
-        ghost: 'bg-transparent text-foreground hover:bg-gray-a-3',
+        secondary: 'bg-secondary text-secondary-contrast hover:bg-gray-a11',
+        outline: 'bg-transparent inset-ring inset-ring-foreground text-foreground hover:bg-gray-a3',
+        soft: 'bg-gray-a3 text-foreground hover:bg-gray-a5',
+        surface: 'bg-gray-a2 inset-ring inset-ring-gray-a4 text-foreground hover:bg-gray-a-5',
+        ghost: 'bg-transparent text-foreground hover:bg-gray-a3',
     };
 
     const sizePadding = {
@@ -97,6 +105,22 @@ const Button = ({
         getPaddingClass()
     );
 
+    // Render Next.js Link directly (no nested anchors/buttons)
+    if (as === 'link' && href) {
+        return (
+            <Link href={href} className={className} {...props}>
+                {Icon && (iconPosition === 'left' || iconPosition === 'only') && (
+                    <Icon className={clsx(iconSize, 'stroke-[1.5] px-1 py-1')} />
+                )}
+                {iconPosition !== 'only' && children}
+                {Icon && iconPosition === 'right' && (
+                    <Icon className={clsx(iconSize, 'stroke-[1.5] px-1 py-1')} />
+                )}
+            </Link>
+        );
+    }
+
+    // Default: render a button
     return (
         <button onClick={onClick} className={className} {...props}>
             {Icon && (iconPosition === 'left' || iconPosition === 'only') && (

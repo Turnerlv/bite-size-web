@@ -19,18 +19,18 @@
   --gray-12: #251f15;
 
   /* Gray alpha light */
-  --gray-a-1: #99660005;
-  --gray-a-2: #a35d000b;
-  --gray-a-3: #5a330014;
-  --gray-a-4: #502c001d;
-  --gray-a-5: #40240024;
-  --gray-a-6: #3922002d;
-  --gray-a-7: #331c0038;
-  --gray-a-8: #2f1b004d;
-  --gray-a-9: #2919007f;
-  --gray-a-10: #2717008a;
-  --gray-a-11: #1d1100a7;
-  --gray-a-12: #110b00ea;
+  --gray-a1: #99660005;
+  --gray-a2: #a35d000b;
+  --gray-a3: #5a330014;
+  --gray-a4: #502c001d;
+  --gray-a5: #40240024;
+  --gray-a6: #3922002d;
+  --gray-a7: #331c0038;
+  --gray-a8: #2f1b004d;
+  --gray-a9: #2919007f;
+  --gray-a10: #2717008a;
+  --gray-a11: #1d1100a7;
+  --gray-a12: #110b00ea;
 
   /* Yellow light */
   --yellow-1: #fefdfa;
@@ -79,18 +79,18 @@
     --gray-12: #f0edea;
 
     /* Gray alpha dark */
-    --gray-a-1: #0012d805;
-    --gray-a-2: #9daef70d;
-    --gray-a-3: #e2e0fe15;
-    --gray-a-4: #e7e5f91d;
-    --gray-a-5: #f6edfc24;
-    --gray-a-6: #fcf5ef2e;
-    --gray-a-7: #fef0ea3e;
-    --gray-a-8: #ffeee05a;
-    --gray-a-9: #ffeedc69;
-    --gray-a-10: #fff0df77;
-    --gray-a-11: #fef5eab4;
-    --gray-a-12: #fffcf9ef;
+    --gray-a1: #0012d805;
+    --gray-a2: #9daef70d;
+    --gray-a3: #e2e0fe15;
+    --gray-a4: #e7e5f91d;
+    --gray-a5: #f6edfc24;
+    --gray-a6: #fcf5ef2e;
+    --gray-a7: #fef0ea3e;
+    --gray-a8: #ffeee05a;
+    --gray-a9: #ffeedc69;
+    --gray-a10: #fff0df77;
+    --gray-a11: #fef5eab4;
+    --gray-a12: #fffcf9ef;
 
     /* Yellow dark */
     --yellow-1: #13110b;
@@ -144,18 +144,18 @@
   --color-gray-12: var(--gray-12);
 
   /* Gray alpha */
-  --color-gray-a-1: var(--gray-a-1);
-  --color-gray-a-2: var(--gray-a-2);
-  --color-gray-a-3: var(--gray-a-3);
-  --color-gray-a-4: var(--gray-a-4);
-  --color-gray-a-5: var(--gray-a-5);
-  --color-gray-a-6: var(--gray-a-6);
-  --color-gray-a-7: var(--gray-a-7);
-  --color-gray-a-8: var(--gray-a-8);
-  --color-gray-a-9: var(--gray-a-9);
-  --color-gray-a-10: var(--gray-a-10);
-  --color-gray-a-11: var(--gray-a-11);
-  --color-gray-a-12: var(--gray-a-12);
+  --color-gray-a1: var(--gray-a1);
+  --color-gray-a2: var(--gray-a2);
+  --color-gray-a3: var(--gray-a3);
+  --color-gray-a4: var(--gray-a4);
+  --color-gray-a5: var(--gray-a5);
+  --color-gray-a6: var(--gray-a6);
+  --color-gray-a7: var(--gray-a7);
+  --color-gray-a8: var(--gray-a8);
+  --color-gray-a9: var(--gray-a9);
+  --color-gray-a10: var(--gray-a10);
+  --color-gray-a11: var(--gray-a11);
+  --color-gray-a12: var(--gray-a12);
 
   /* Yellow */
   --color-yellow-1: var(--yellow-1);
@@ -172,18 +172,18 @@
   --color-yellow-12: var(--yellow-12);
 
   /* Yellow alpha */
-  --color-yellow-a-1: var(--yellow-a-1);
-  --color-yellow-a-2: var(--yellow-a-2);
-  --color-yellow-a-3: var(--yellow-a-3);
-  --color-yellow-a-4: var(--yellow-a-4);
-  --color-yellow-a-5: var(--yellow-a-5);
-  --color-yellow-a-6: var(--yellow-a-6);
-  --color-yellow-a-7: var(--yellow-a-7);
-  --color-yellow-a-8: var(--yellow-a-8);
-  --color-yellow-a-9: var(--yellow-a-9);
-  --color-yellow-a-10: var(--yellow-a-10);
-  --color-yellow-a-11: var(--yellow-a-11);
-  --color-yellow-a-12: var(--yellow-a-12);
+  --color-yellow-a1: var(--yellow-a1);
+  --color-yellow-a2: var(--yellow-a2);
+  --color-yellow-a3: var(--yellow-a3);
+  --color-yellow-a4: var(--yellow-a4);
+  --color-yellow-a5: var(--yellow-a5);
+  --color-yellow-a6: var(--yellow-a6);
+  --color-yellow-a7: var(--yellow-a7);
+  --color-yellow-a8: var(--yellow-a8);
+  --color-yellow-a9: var(--yellow-a9);
+  --color-yellow-a10: var(--yellow-a10);
+  --color-yellow-a11: var(--yellow-a11);
+  --color-yellow-a12: var(--yellow-a12);
 
   /* Semantic colors*/
   --color-background: var(--background);

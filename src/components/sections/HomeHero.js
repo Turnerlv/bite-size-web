@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import Button from '../Button';
-import Link from 'next/link';
 
 export default function Hero() {
     const maskRef = useRef(null);
@@ -45,11 +44,29 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative h-screen bg-repeat bg-center bg-[image:var(--bg-pattern)] overflow-hidden flex items-center justify-center text-foreground">
+        <section className="
+            /* Size */
+            h-screen
+            /* Layout */
+            flex overflow-hidden bg-repeat bg-center bg-[image:var(--bg-pattern)]
+            /* Position */
+            relative
+            /* Flex & Grid */
+            items-center justify-center
+            /* Text & Typography */
+            text-foreground
+        ">
             {/* Desaturation Overlay */}
             <div
                 ref={maskRef}
-                className="pointer-events-none absolute inset-0 z-20 hidden"
+                className="
+                    /* Position */
+                    absolute inset-0 z-20
+                    /* Layout */
+                    hidden
+                    /* Interactivity */
+                    pointer-events-none
+                "
                 style={{
                     backgroundColor: 'var(--color-mask)',
                     WebkitBackdropFilter: 'grayscale(100%)',
@@ -62,18 +79,50 @@ export default function Hero() {
             />
 
             {/* Content */}
-            <div className="flex flex-col z-30 items-center page-padding">
-                <h1 className="mb-4 text-center relative heading-1 text-foreground">
+            <div className="
+                /* Layout */
+                flex flex-col
+                /* Position */
+                z-30
+                /* Flex & Grid */
+                items-center
+                /* Other */
+                page-padding
+            ">
+                <h1 className="
+                    /* Spacing */
+                    mb-4
+                    /* Position */
+                    relative
+                    /* Text & Typography */
+                    text-center text-foreground
+                    /* Other */
+                    heading-1
+                ">
                     Design meets code, one bite at a time.
                 </h1>
-                <p className="mb-10 text-foreground font-work text-center text-lg text-medium max-w-2xl">
+                <p className="
+                    /* Spacing */
+                    mb-10
+                    /* Text & Typography */
+                    font-work text-center text-lg text-medium text-foreground
+                    /* Size */
+                    max-w-2xl
+                ">
                     A growing playground of smart, interactive UI patterns. Built for curious designers, developers, and creative coders who love the frontend.
                 </p>
-                <div className="flex gap-4 justify-center">
-                    <Link href="/bites">
-                        <Button variant='primary' size='lg' >Explore patterns</Button>
-                    </Link>
-                    <Button variant='outline' size='lg' >Learn about us</Button>
+                <div className="
+                    /* Size */
+                    w-full max-w-sm
+                    /* Layout */
+                    flex flex-col sm:flex-row
+                    /* Spacing */
+                    gap-4
+                    /* Flex & Grid */
+                    justify-center
+                ">
+                    <Button as="link" href="/bites" responsive={true} variant='primary' size='lg'>Explore patterns</Button>
+                    <Button responsive={true} variant='outline' size='lg' >Learn about us</Button>
                 </div>
             </div>
         </section>

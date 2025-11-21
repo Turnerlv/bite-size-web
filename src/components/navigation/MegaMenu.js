@@ -51,14 +51,64 @@ export const MegaMenu = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             aria-label={`${itemKey} submenu`}
-            className="focus:outline-none mx-auto w-full flex-shrink-0 max-w-[1200px] pt-4"
+            className={[
+                // Size
+                "w-full max-w-[1200px]",
+                // Spacing
+                "mx-auto pt-4",
+                // Flex & Grid
+                "flex-shrink-0",
+                // Effects
+                "focus:outline-none",
+            ].join(" ")}
         >
-            <div className='flex flex-col gap-4 max-w-7xl mx-auto pr-8 sm:pl-12 sm:pr-4 md:pl-17 md:pr-8 sm:py-6 sm:border-t border-border'>
-                <div className='flex flex-row gap-1 -ml-10 sm:ml-0 items-center'>
-                    <div className='flex sm:hidden'><Button variant='ghost' icon={ChevronLeft} iconPosition='only' onClick={onClose}></Button></div>
-                    <h2 className='text-lg font-rubik font-medium'>{label}</h2>
+            <div
+                className={[
+                    // Size
+                    "max-w-7xl",
+                    // Spacing
+                    "gap-4 mx-auto pr-8 sm:pl-12 sm:pr-4 md:pl-17 md:pr-8 sm:py-6",
+                    // Flex & Grid
+                    "flex flex-col",
+                    // Border
+                    "sm:border-t border-border",
+                ].join(" ")}
+            >
+                <div
+                    className={[
+                        // Flex & Grid
+                        "flex flex-row items-center",
+                        // Spacing
+                        "gap-1 -ml-10 sm:ml-0",
+                    ].join(" ")}
+                >
+                    <div
+                        className={[
+                            // Flex & Grid
+                            "flex",
+                            // Layout (responsive)
+                            "sm:hidden",
+                        ].join(" ")}
+                    >
+                        <Button variant="ghost" icon={ChevronLeft} iconPosition="only" onClick={onClose}></Button>
+                    </div>
+                    <h2
+                        className={[
+                            // Text & Typography
+                            "text-lg font-rubik font-medium",
+                        ].join(" ")}
+                    >
+                        {label}
+                    </h2>
                 </div>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+                <div
+                    className={[
+                        // Flex & Grid
+                        "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+                        // Spacing
+                        "gap-6",
+                    ].join(" ")}
+                >
                     {items.map((item, index) => (
                         <NavItemSecondary
                             key={index}
