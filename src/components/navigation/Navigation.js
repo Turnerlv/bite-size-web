@@ -9,6 +9,7 @@ import DarkToggle from './DarkToggle';
 import Link from 'next/link';
 import Button from '../Button';
 import { Heart, Menu, X, ChevronLeft } from 'lucide-react';
+import { useDrawer } from '@/components/DrawerContext';
 
 export default function Navigation() {
     const { isOpen, open, close } = useDisclosure(false);
@@ -20,6 +21,9 @@ export default function Navigation() {
     const triggerRefs = useRef({});
     const closeTimeoutRef = useRef(null);
     const previousOpenKey = useRef(null);
+
+    const { openDrawer } = useDrawer();
+    const buttonRef = useRef(null);
 
 
     const handleOpen = (key) => {
@@ -103,7 +107,7 @@ export default function Navigation() {
     return (
         <nav className="
             /* Size */ w-full
-            /* Position */ fixed z-999
+            /* Position */ fixed z-40
             /* Layout */ flex flex-col justify-top sm:justify-center
             /* Border */ border-b border-border
             /* Background */ bg-surface backdrop-blur-md
@@ -173,7 +177,13 @@ export default function Navigation() {
                             /* Spacing */ mt-6 pt-6 gap-3 sm:mt-0 sm:pt-0
                             /* Border */ border-t border-border sm:border-none
                         `}>
-                            <Button variant='surface' icon={Heart} iconPosition='right' responsive='true'>
+                            <Button
+                                variant='surface'
+                                icon={Heart}
+                                iconPosition='right'
+                                responsive='true'
+                                onClick={() => openDrawer({ title: 'Bond', node: <div>Bond content</div>, triggerEl: buttonRef.current, side: 'bottom' })}
+                            >
                                 Bond
                             </Button>
                             <DarkToggle isMobile={isMobile} />

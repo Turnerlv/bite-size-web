@@ -1,6 +1,6 @@
 import { Rubik, Work_Sans, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Navigation from "../components/navigation/Navigation";
+import AppShell from "@/components/AppShell";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -28,8 +28,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${rubik.variable} ${workSans.variable} ${robotoMono.variable} antialiased`}
       >
-        <Navigation />
-        {children}
+        <AppShell> {children}
+        </AppShell>
       </body>
     </html>
   );
