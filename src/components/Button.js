@@ -35,11 +35,13 @@ const Button = ({
 
     const variantStyles = {
         primary: 'bg-primary text-primary-contrast hover:bg-yellow-10',
-        secondary: 'bg-secondary text-secondary-contrast hover:bg-gray-a11',
+        secondary: 'bg-secondary text-secondary-contrast hover:bg-gray-12',
+        contrast: 'bg-primary-contrast text-contrast-surface hover:bg-[#110b00ea]',
         outline: 'bg-transparent inset-ring inset-ring-foreground text-foreground hover:bg-gray-a3',
         soft: 'bg-gray-a3 text-foreground hover:bg-gray-a5',
-        surface: 'bg-gray-a2 inset-ring inset-ring-gray-a4 text-foreground hover:bg-gray-a-5',
+        surface: 'bg-gray-a2 inset-ring inset-ring-gray-a4 text-foreground hover:bg-gray-a5',
         ghost: 'bg-transparent text-foreground hover:bg-gray-a3',
+        contrast_link: 'bg-transparent text-primary-contrast hover:bg-[#5a330014]',
     };
 
     const sizePadding = {

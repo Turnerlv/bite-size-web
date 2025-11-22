@@ -30,7 +30,7 @@ export const NavItem = forwardRef(({
                     /* Interactivity */
                     cursor-pointer
                     /* State/ARIA/Data */
-                    hover:bg-gray-a-3 focus:custom-focus
+                    hover:bg-gray-a3 focus:custom-focus
                 `}
                 onClick={onClick}
                 aria-haspopup="true"

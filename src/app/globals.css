@@ -16,7 +16,7 @@
   --gray-9: #948c80;
   --gray-10: #8a8175;
   --gray-11: #6b6358;
-  --gray-12: #251f15;
+  --gray-12: #484137;
 
   /* Gray alpha light */
   --gray-a1: #99660005;
@@ -30,7 +30,7 @@
   --gray-a9: #2919007f;
   --gray-a10: #2717008a;
   --gray-a11: #1d1100a7;
-  --gray-a12: #110b00ea;
+  --gray-a12: #170e00c8;
 
   /* Yellow light */
   --yellow-1: #fefdfa;
@@ -187,12 +187,13 @@
 
   /* Semantic colors*/
   --color-background: var(--background);
-  --color-foreground: var(--color-gray-12);
+  --color-foreground: var(--contrast);
   --color-surface: --alpha(var(--color-background) / 80%);
   --color-border: var(--color-gray-4);
   --color-text-muted: var(--color-gray-11);
   --color-primary: var(--color-yellow-9);
   --color-primary-contrast: #0e0c0a;
+  --color-contrast-surface: #faf8f5;
   --color-secondary: var(--contrast);
   --color-secondary-contrast: var(--color-gray-1);
   --color-mask: --alpha(var(--color-background) / 60%);
@@ -270,4 +271,12 @@ svg text {
   font-family: "Roboto Mono", monospace !important;
   font-weight: 400;
   /* or 500/700 to match your AE layer */
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: none;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: var(--color-gray-a11);
 }
