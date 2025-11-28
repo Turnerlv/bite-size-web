@@ -12,7 +12,7 @@ export default function Drawer({
     onClose,
     title,
     children,
-    side = 'right',
+    side = 'bottom', // Change back to 'right' as default
     triggerRef, // for focus return
 }) {
     const panelRef = React.useRef(null);
@@ -55,10 +55,10 @@ export default function Drawer({
 
     // Position by side
     const sidePosition = {
-        right: 'right-0 top-0 h-full w-80',
-        left: 'left-0 top-0 h-full w-80',
-        bottom: 'bottom-0 left-0 w-full h-80',
-        top: 'top-0 left-0 w-full h-80',
+        right: 'right-0 top-0 h-[min(100vh,75vh)] w-80',
+        left: 'left-0 top-0 h-[min(100vh,75vh)] w-80',
+        bottom: 'bottom-0 w-full h-[max(85vh,85%)]',
+        top: 'top-0 left-0 w-full h-[max(75vh,75%)]',
     };
 
     // Closed transform per side
@@ -69,7 +69,13 @@ export default function Drawer({
         top: '-translate-y-full',
     };
 
-    const openTransform = 'translate-x-0 translate-y-0';
+    // Open transform per side (reset only the relevant axis)
+    const openTransform = {
+        right: 'translate-x-0',
+        left: 'translate-x-0',
+        bottom: 'translate-y-0',
+        top: 'translate-y-0',
+    };
 
     return (
         <div
@@ -98,14 +104,14 @@ export default function Drawer({
             <div
                 ref={panelRef}
                 className={cx(
-                    'absolute bg-background border border-border shadow-xl p-4 outline-none',
+                    'absolute bg-background border border-border shadow-xl py-6 page-padding outline-none flex flex-col items-center',
                     'transition-transform duration-300 will-change-transform',
                     sidePosition[side],
-                    open ? openTransform : closedTransform[side]
+                    open ? openTransform[side] : closedTransform[side]
                 )}
             >
-                <header className="flex items-center justify-between gap-4 mb-4">
-                    <h2 id={titleId} className="text-lg font-semibold">
+                <header className="w-full max-w-screen-md flex items-center justify-between gap-4 mb-8">
+                    <h2 id={titleId} className="heading-3">
                         {title}
                     </h2>
                     <Button
@@ -120,7 +126,7 @@ export default function Drawer({
                     </Button>
                 </header>
 
-                <div id={descriptionId}>
+                <div id={descriptionId} className="max-w-screen-md w-full ">
                     {children}
                 </div>
             </div>

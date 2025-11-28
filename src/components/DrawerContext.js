@@ -8,15 +8,14 @@ import Drawer from '@/components/Drawer';
 const DrawerContext = createContext(null);
 
 export function DrawerProvider({ children }) {
-    // Your hook
     const { isOpen, open, close } = useDisclosure(false);
 
     const triggerRef = useRef(null);
     const [content, setContent] = useState(null);
     const [title, setTitle] = useState('');
-    const [side, setSide] = useState('right');
+    const [side, setSide] = useState('bottom');
 
-    const openDrawer = ({ title = '', node, triggerEl, side: sideOption = 'right' }) => {
+    const openDrawer = ({ title = '', node, triggerEl, side: sideOption = 'bottom' }) => {
         setTitle(title);
         setContent(node);
         setSide(sideOption);
@@ -25,6 +24,7 @@ export function DrawerProvider({ children }) {
             triggerRef.current = triggerEl;
         }
 
+        // Open after state updates are batched
         open();
     };
 

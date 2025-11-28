@@ -10,6 +10,7 @@ import Link from 'next/link';
 import Button from '../Button';
 import { Heart, Menu, X, ChevronLeft } from 'lucide-react';
 import { useDrawer } from '@/components/DrawerContext';
+import ContactForm from '../ContactForm';
 
 export default function Navigation() {
     const { isOpen, open, close } = useDisclosure(false);
@@ -23,6 +24,7 @@ export default function Navigation() {
     const previousOpenKey = useRef(null);
 
     const { openDrawer } = useDrawer();
+    const { closeDrawer } = useDrawer();
     const buttonRef = useRef(null);
 
 
@@ -104,6 +106,7 @@ export default function Navigation() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+
     return (
         <nav className="
             /* Size */ w-full
@@ -182,7 +185,7 @@ export default function Navigation() {
                                 icon={Heart}
                                 iconPosition='right'
                                 responsive='true'
-                                onClick={() => openDrawer({ title: 'Bond', node: <div>Bond content</div>, triggerEl: buttonRef.current, side: 'bottom' })}
+                                onClick={() => openDrawer({ title: 'Shoot us a message', node: <ContactForm cancel={closeDrawer} />, triggerEl: buttonRef.current, side: 'bottom' })}
                             >
                                 Bond
                             </Button>

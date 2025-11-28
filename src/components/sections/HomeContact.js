@@ -1,7 +1,15 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import Button from '../Button';
+import { useDrawer } from '@/components/DrawerContext';
+import ContactForm from '../ContactForm';
 
 const HomeContact = () => {
+    const { openDrawer } = useDrawer();
+    const { closeDrawer } = useDrawer();
+    const buttonRef = useRef(null);
+
     return (
         <section className="
             /* Flex & Grid */
@@ -34,8 +42,14 @@ const HomeContact = () => {
                         <p>Get professionals to do the nasty bits. We don't bite...much.</p>
                     </div>
                     <div className='flex flex-col sm:flex-row gap-4'>
-                        <Button variant='contrast' responsive={false}>Drop us a line</Button>
-                        <Button variant='contrast_link' responsive={false}>Check out or services</Button>
+                        <Button
+                            variant='contrast'
+                            responsive={false}
+                            onClick={() => openDrawer({ title: 'Shoot us a message', node: <ContactForm cancel={closeDrawer} />, triggerEl: buttonRef.current, side: 'bottom' })}
+                        >
+                            Drop us a line
+                        </Button>
+                        <Button variant='contrast_link' responsive={false}>Check out our services</Button>
                     </div>
                 </div>
             </div>
