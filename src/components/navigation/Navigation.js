@@ -126,7 +126,7 @@ export default function Navigation() {
                     /* Layout */ flex items-center justify-between
                     /* Transforms & Animation */ translate-y-[-2px] sm:w-fit
                 ">
-                    <Link href='.' className="
+                    <Link href='/' className="
                         /* State/ARIA/Data */ focus-visible:custom-focus
                     ">
                         <img

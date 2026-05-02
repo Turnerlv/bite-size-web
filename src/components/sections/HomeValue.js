@@ -8,7 +8,7 @@ export default function ValueProp() {
                 <div className='w-full align-middle flex flex-col justify-center'>
                     <h2 className='mb-5 heading-2 text-primary-contrast'>What is Bite Size Design?</h2>
                     <p className="text-primary-contrast font-work text-medium">
-                        Bite Size Design is a personal studio project focused on creative coding, reusable UI patterns, and frontend experimentation. Every pattern is made with intention—showing how thoughtful design and clean code can work together to scale ideas, not complexity.
+                        Bite Size Design is a studio exploring the space where design and frontend engineering collide. We build reusable UI patterns, creative prototypes, and modern interaction ideas—each one crafted to show how thoughtful design and clean code fuel better products.
                     </p>
                 </div>
                 <AnimatedIllustration

@@ -4,64 +4,70 @@
 @variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  /* Gray light */
-  --gray-1: #fdfcfa;
-  --gray-2: #fbf8f4;
-  --gray-3: #f2efeb;
-  --gray-4: #ebe7e2;
-  --gray-5: #e4e0db;
-  --gray-6: #dcd8d2;
-  --gray-7: #d2cdc7;
-  --gray-8: #c0bab2;
-  --gray-9: #948c80;
-  --gray-10: #8a8175;
-  --gray-11: #6b6358;
-  --gray-12: #484137;
+  /* Gray light - Warm Sepia Tones */
+  --gray-1: #fdfaf6;
+  /* Soft parchment */
+  --gray-2: #f7f2eb;
+  /* Hover states */
+  --gray-3: #ece4d9;
+  /* Borders */
+  --gray-4: #e2d8c9;
+  --gray-5: #d8cdbc;
+  --gray-6: #cfc1ae;
+  --gray-7: #c1b29d;
+  --gray-8: #a89883;
+  --gray-9: #8a7a65;
+  --gray-10: #7d6f5c;
+  --gray-11: #635749;
+  /* Body text */
+  --gray-12: #2d2822;
+  /* Headings */
 
-  /* Gray alpha light */
-  --gray-a1: #99660005;
-  --gray-a2: #a35d000b;
-  --gray-a3: #5a330014;
-  --gray-a4: #502c001d;
-  --gray-a5: #40240024;
-  --gray-a6: #3922002d;
-  --gray-a7: #331c0038;
-  --gray-a8: #2f1b004d;
-  --gray-a9: #2919007f;
-  --gray-a10: #2717008a;
-  --gray-a11: #1d1100a7;
-  --gray-a12: #170e00c8;
+  /* Gray alpha light - Tinted for blending */
+  --gray-a1: #80400005;
+  --gray-a2: #7045000d;
+  --gray-a3: #603a001f;
+  --gray-a4: #5a38002d;
+  --gray-a5: #5032003c;
+  --gray-a6: #4b30004a;
+  --gray-a7: #452d005b;
+  --gray-a8: #3f2a0076;
+  --gray-a9: #38260095;
+  --gray-a10: #352400a0;
+  --gray-a11: #2d1f00b4;
+  --gray-a12: #1c1400d9;
 
-  /* Yellow light */
-  --yellow-1: #fefdfa;
-  --yellow-2: #fffbe9;
-  --yellow-3: #fff5bc;
-  --yellow-4: #ffed97;
-  --yellow-5: #ffe374;
-  --yellow-6: #f5d66f;
-  --yellow-7: #e3c666;
-  --yellow-8: #d0af39;
-  --yellow-9: #ffd500;
-  --yellow-10: #f8cc18;
-  --yellow-11: #947400;
-  --yellow-12: #443b1f;
+  /* Yellow light - Golden Amber (Easier on eyes) */
+  --yellow-1: #fffef5;
+  --yellow-2: #fff9e2;
+  --yellow-3: #fdf0ad;
+  --yellow-4: #fce47c;
+  --yellow-5: #fad64d;
+  --yellow-6: #edc33a;
+  --yellow-7: #d9af29;
+  --yellow-8: #c2991a;
+  --yellow-9: #f5c400;
+  /* Main Interactive - Warm but bold */
+  --yellow-10: #e6b800;
+  --yellow-11: #8c6d00;
+  --yellow-12: #3d3000;
 
   /* Yellow alpha light */
   --yellow-a1: #cc990005;
   --yellow-a2: #ffd10016;
-  --yellow-a3: #ffd90043;
-  --yellow-a4: #ffd30068;
-  --yellow-a5: #ffcc008b;
-  --yellow-a6: #eeb70090;
-  --yellow-a7: #d1a00099;
-  --yellow-a8: #c39800c6;
-  --yellow-a9: #ffd500;
-  --yellow-a10: #f7c700e7;
-  --yellow-a11: #947400;
+  --yellow-a3: #f5cf0043;
+  --yellow-a4: #f5c40068;
+  --yellow-a5: #f5ba008b;
+  --yellow-a6: #e0a30090;
+  --yellow-a7: #c98e0099;
+  --yellow-a8: #b37e00c6;
+  --yellow-a9: #f5c400;
+  --yellow-a10: #e6b000e7;
+  --yellow-a11: #8c6d00;
   --yellow-a12: #2a2000e0;
 
-  --background: #faf8f5;
-  --contrast: #0e0c0a;
+  --background: #fdfaf6;
+  --contrast: #2d2822;
 
   @variant dark {
     /* Gray dark */
@@ -208,7 +214,7 @@
 /* In a CSS file processed by Tailwind (e.g., globals.css, styles.css) */
 @layer components {
   .heading-1 {
-    @apply font-rubik font-bold text-2xl md:text-3xl lg:text-4xl;
+    @apply font-rubik font-bold text-3xl md:text-4xl lg:text-5xl;
   }
 
   .heading-2 {
