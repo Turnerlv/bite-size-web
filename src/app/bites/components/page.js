@@ -89,7 +89,7 @@ export default function ComponentsPage() {
             ">
                 <div>
                     <Badge text="Components" />
-                    <h1 className="heading-1 mt-4">Common components,<br />coded cleanly.</h1>
+                    <h1 className="heading-1 mt-4">* Components (to remove)</h1>
                     <p className="font-work text-text-muted max-w-lg mt-2">
                         Accessible, composable UI building blocks. Each component follows the same sizing, variant, and focus-state conventions.
                     </p>

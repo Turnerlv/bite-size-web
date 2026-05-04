@@ -37,7 +37,7 @@ export default function FoundationsPage() {
             ">
                 <div>
                     <Badge text="Foundations" />
-                    <h1 className="heading-1 mt-4">Base bits &amp; building blocks.</h1>
+                    <h1 className="heading-1 mt-4">* Foundations (to remove)</h1>
                     <p className="font-work text-text-muted max-w-lg mt-2">
                         The primitive layer of the design system — typography, spacing, and shape. Get these right and everything else follows.
                     </p>

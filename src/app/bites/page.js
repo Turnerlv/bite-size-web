@@ -34,7 +34,7 @@ const bitesNav = NAV_ITEMS.find((n) => n.key === 'bites');
 
 export const metadata = {
     title: 'Bites — Bite Size Design',
-    description: 'A growing library of UI patterns, components, and frontend experiments.',
+    description: 'A growing library of system architectures, API patterns, and deep-dive technical experiments.',
 };
 
 export default function BitesPage() {
@@ -47,9 +47,9 @@ export default function BitesPage() {
                 text-foreground
             ">
                 <div>
-                    <h1 className="heading-1 mb-3">One bite at a time.</h1>
+                    <h1 className="heading-1 mb-3">One byte at a time.</h1>
                     <p className="font-work text-text-muted max-w-lg">
-                        A growing library of interactive UI patterns, reusable components, and frontend experiments — built to show how good design and clean code work together.
+                        A growing library of system architectures, API patterns, and deep-dive technical experiments — built to show how resilient backends and thoughtful interfaces work together.
                     </p>
                 </div>
             </section>
@@ -73,7 +73,7 @@ export default function BitesPage() {
             {/* Featured Bites */}
             <section className="py-16 page-padding mx-auto max-w-[1200px]">
                 <div className="flex items-center justify-between mb-8">
-                    <h2 className="heading-3">Featured Bites</h2>
+                    <h2 className="heading-3">Featured Architectures</h2>
                     <Button as="link" href="/bites/categories" variant="ghost" size="sm">
                         Browse all →
                     </Button>

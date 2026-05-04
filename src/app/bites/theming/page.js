@@ -29,7 +29,7 @@ export default function ThemingPage() {
             ">
                 <div>
                     <Badge text="Theming" />
-                    <h1 className="heading-1 mt-4">Tokens, tints &amp; tweaks.</h1>
+                    <h1 className="heading-1 mt-4">* Theming (to remove)</h1>
                     <p className="font-work text-text-muted max-w-lg mt-2">
                         A Radix-style 12-step color system with warm sepia grays and golden amber accents — built for both light and dark mode from the ground up.
                     </p>

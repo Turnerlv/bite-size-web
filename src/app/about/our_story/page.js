@@ -17,12 +17,12 @@ export default function OurStoryPage() {
                 <div className="w-full flex flex-row items-center justify-between gap-20">
                     <h1 className="flex flex-col">
                         <span className="heading-1 text-primary [text-shadow:-2px_-2px_0_var(--color-foreground)] dark:[text-shadow:none]">Playful on the surface.</span>
-                        <span className="heading-1">Serious underneath.</span>
+                        <span className="heading-1">Bulletproof underneath.</span>
                     </h1>
                     <div className="flex flex-col">
-                        <p>Yes, we publish fun UI “bites” for the community.</p>
+                        <p>Yes, we publish fun architecture 'bites' for the community.</p>
                         <p>Yes, our logo is a pair of chattering teeth.</p>
-                        <p>But we’re serious about building great products.</p>
+                        <p>But we're dead serious about system integrity and the journey of your data.</p>
                     </div>
                 </div>
             </section>

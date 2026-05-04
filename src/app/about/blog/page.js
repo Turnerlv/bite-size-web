@@ -3,58 +3,58 @@ import Button from '@/components/Button';
 
 const posts = [
     {
-        slug: 'design-tokens-primer',
-        title: 'A primer on design tokens',
-        excerpt: 'What design tokens actually are, why they matter, and how to set up a system that doesn\'t become a maintenance nightmare.',
-        category: 'Design Systems',
-        date: 'April 14, 2025',
+        slug: 'data-integrity-best-ux',
+        title: 'Why data integrity is the best UX',
+        excerpt: 'The most impactful user experience improvements often happen in the data layer — not the UI. Here is why integrity is the real design work.',
+        category: 'Architecture',
+        date: 'April 14, 2026',
         readTime: '6 min read',
     },
     {
-        slug: 'tailwind-v4-what-changed',
-        title: 'Tailwind v4: what actually changed',
-        excerpt: 'The new CSS-first config, updated theme API, and @layer utilities — what it means for your workflow and whether it\'s worth migrating.',
-        category: 'CSS',
-        date: 'March 28, 2025',
+        slug: 'robust-webhooks-nextjs',
+        title: 'Building robust webhooks in Next.js',
+        excerpt: 'Idempotency, signature verification, retry queues, and dead-letter handling — the full picture for production-grade webhook endpoints.',
+        category: 'Integrations',
+        date: 'March 28, 2026',
         readTime: '8 min read',
     },
     {
-        slug: 'accessible-focus-states',
-        title: 'Focus states that don\'t suck',
-        excerpt: 'How to design and build focus indicators that satisfy WCAG 2.2, look great, and don\'t conflict with your brand.',
-        category: 'Accessibility',
-        date: 'March 10, 2025',
+        slug: 'error-states-that-dont-suck',
+        title: "Error states that don't suck",
+        excerpt: 'Actionable, human-readable error messages are a developer experience problem as much as a UX problem. Here is how to design both at once.',
+        category: 'Dev Experience',
+        date: 'March 10, 2026',
         readTime: '5 min read',
     },
     {
-        slug: 'radix-ui-composition',
-        title: 'Composing Radix UI components',
-        excerpt: 'Radix gives you primitives — here\'s how to compose them into something that feels like your design system, not a generic UI kit.',
-        category: 'React',
-        date: 'February 20, 2025',
+        slug: 'event-driven-patterns-fintech',
+        title: 'Event-driven patterns for fintech',
+        excerpt: 'How event sourcing, CQRS, and async messaging patterns map to real fintech use cases — and when simpler request-response is the right call.',
+        category: 'Systems',
+        date: 'February 20, 2026',
         readTime: '7 min read',
     },
     {
-        slug: 'dark-mode-strategy',
-        title: 'Dark mode without the headache',
-        excerpt: 'A practical strategy for dark mode: semantic tokens, CSS variables, and how to avoid the "just invert everything" trap.',
-        category: 'Design Systems',
-        date: 'February 3, 2025',
+        slug: 'bridging-design-and-apis',
+        title: 'Bridging design and APIs seamlessly',
+        excerpt: 'The contract between frontend and backend should be designed, not discovered. A practical guide to schema-first thinking across the stack.',
+        category: 'Tech Strategy',
+        date: 'February 3, 2026',
         readTime: '9 min read',
     },
     {
-        slug: 'lottie-performance',
-        title: 'Using Lottie without torching your bundle',
-        excerpt: 'DotLottie, lazy loading, and fallback strategies for keeping your animations silky without making your users wait.',
-        category: 'Performance',
-        date: 'January 15, 2025',
+        slug: 'supabase-without-torching-schema',
+        title: 'Using Supabase without torching your schema',
+        excerpt: 'Row-level security, migration discipline, and foreign key hygiene — the practices that keep a Supabase project maintainable at scale.',
+        category: 'Databases',
+        date: 'January 15, 2026',
         readTime: '4 min read',
     },
 ];
 
 export const metadata = {
     title: 'Blog — Bite Size Design',
-    description: 'Thoughts on design systems, frontend engineering, and the space between design and code.',
+    description: 'Opinions, data flows, and explainers from the messy middle of frontend and backend engineering.',
 };
 
 export default function BlogPage() {
@@ -72,11 +72,11 @@ export default function BlogPage() {
                         <span className="heading-1 text-primary [text-shadow:-2px_-2px_0_var(--color-foreground)] dark:[text-shadow:none]">
                             We blabber.
                         </span>
-                        <span className="heading-1">About building.</span>
+                        <span className="heading-1">About systems.</span>
                     </h1>
                     <div className="max-w-sm">
                         <p className="font-work text-text-muted">
-                            Opinions, experiments, and explainers from the messy middle of design and development.
+                            Opinions, data flows, and explainers from the messy middle of frontend and backend.
                         </p>
                     </div>
                 </div>

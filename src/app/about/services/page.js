@@ -1,64 +1,64 @@
 import Button from '@/components/Button';
-import { Palette, Code2, Layers, GraduationCap } from 'lucide-react';
+import { Network, Code2, Compass, Cpu } from 'lucide-react';
 
 const services = [
     {
-        icon: Palette,
-        title: 'Design Systems',
-        tagline: 'Tokens to components, start to finish.',
+        icon: Network,
+        title: 'Solution Architecture',
+        tagline: 'Systems designed to survive production.',
         description:
-            'We build scalable design systems that connect your brand to your codebase. From color token architecture and typography scales to full component libraries — documented, versioned, and ready to ship.',
+            'We design the blueprint before a line of code is written. From event-driven patterns to data flow diagrams, we map out the architecture that makes your product resilient, scalable, and maintainable.',
         bullets: [
-            'Token architecture & semantic naming',
-            'Light / dark mode strategy',
-            'Component library (Figma + React)',
-            'Contribution guidelines',
+            'System design & architecture diagrams',
+            'Event-driven & async pattern selection',
+            'Data flow and state management strategy',
+            'Technology selection & trade-off analysis',
         ],
     },
     {
         icon: Code2,
-        title: 'Frontend Engineering',
-        tagline: 'Pixel-perfect, accessible, performant.',
+        title: 'API & Developer Experience',
+        tagline: 'APIs that developers actually enjoy using.',
         description:
-            'From interactive prototypes to production-ready UI, we write clean, composable frontend code. We specialize in Next.js, React, and Tailwind — the same stack that powers this site.',
+            'We design and build APIs with the developer as the end user. Schema-first thinking, consistent error contracts, and typed SDKs — so integrating with your platform feels like a feature, not a chore.',
         bullets: [
-            'Next.js App Router builds',
-            'Accessible component development',
-            'Animations & micro-interactions',
-            'Performance optimization',
+            'REST & GraphQL API design',
+            'Webhook architecture & reliability patterns',
+            'SDK & client library development',
+            'API documentation & DX audits',
         ],
     },
     {
-        icon: Layers,
-        title: 'Prototyping & Concepting',
-        tagline: 'Move fast, look great, prove the idea.',
+        icon: Compass,
+        title: 'Technical Product Strategy',
+        tagline: 'Bridge the gap between vision and execution.',
         description:
-            'Sometimes you need to see it to believe it. We craft high-fidelity interactive prototypes that communicate ideas clearly — whether for stakeholder buy-in, user testing, or just your own sanity.',
+            'We work with founders and product leaders to translate business goals into technical roadmaps. No vague tickets — just clear architecture decisions grounded in what your team can actually ship.',
         bullets: [
-            'Interactive UI prototypes',
-            'Motion & animation direction',
-            'Feasibility demos',
-            'Design–dev handoff packages',
+            'Technical roadmap planning',
+            'Build vs. buy analysis',
+            'Engineering team enablement',
+            'Stakeholder-ready architecture documentation',
         ],
     },
     {
-        icon: GraduationCap,
-        title: 'Workshops & Consulting',
-        tagline: 'Level up your team, not just your product.',
+        icon: Cpu,
+        title: 'Fractional Platform Engineering',
+        tagline: 'Senior engineering capacity, without the overhead.',
         description:
-            'We run hands-on workshops and advisory sessions for teams looking to strengthen the relationship between design and engineering. No fluff — just practical skills your team will actually use.',
+            'Embed a senior engineer into your team on a fractional basis. We contribute directly to your platform — infrastructure, integrations, tooling — while raising the engineering bar across the board.',
         bullets: [
-            'Design-to-code workflow sessions',
-            'Tailwind & component system training',
-            'Design system audits & recommendations',
-            'Embedded advisory (fractional)',
+            'Fractional engineering leadership',
+            'Platform & infrastructure improvements',
+            'Third-party integration builds',
+            'Code review & architectural governance',
         ],
     },
 ];
 
 export const metadata = {
     title: 'Services — Bite Size Design',
-    description: 'Design systems, frontend engineering, prototyping, and workshops from Bite Size Design.',
+    description: 'Solution architecture, API design, technical strategy, and fractional engineering from Bite Size Design.',
 };
 
 export default function ServicesPage() {
@@ -74,13 +74,13 @@ export default function ServicesPage() {
                 <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-12 md:gap-20">
                     <h1 className="flex flex-col">
                         <span className="heading-1 text-primary [text-shadow:-2px_-2px_0_var(--color-foreground)] dark:[text-shadow:none]">
-                            Build with us.
+                            Scale with us.
                         </span>
-                        <span className="heading-1">We do the hard bits.</span>
+                        <span className="heading-1">We connect the hard bits.</span>
                     </h1>
                     <div className="flex flex-col gap-4 max-w-sm">
                         <p className="font-work text-text-muted">
-                            Bite Size Design offers design and frontend services for teams who care about the craft — and the code behind it.
+                            Bite Size Design offers Solution Architecture and technical strategy for teams who care about resilient systems — and the data journey behind them.
                         </p>
                         <div>
                             <Button as="link" href="#services" variant="primary" size="md">
@@ -129,7 +129,7 @@ export default function ServicesPage() {
                     <div className="bg-primary px-8 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                         <div className="text-primary-contrast">
                             <h2 className="heading-3 mb-1">Ready to get started?</h2>
-                            <p className="font-work text-sm">Tell us what you're building — we'll figure out the rest.</p>
+                            <p className="font-work text-sm">Tell us what system you're building — we'll figure out the architecture.</p>
                         </div>
                         <Button as="link" href="/" variant="contrast" size="md">
                             Drop us a line

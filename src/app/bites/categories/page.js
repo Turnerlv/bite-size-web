@@ -3,58 +3,58 @@ import ProductCard from '@/components/ProductCard';
 
 const categories = [
     {
-        slug: 'css',
-        label: 'CSS',
-        description: 'Layouts, animations, custom properties, and visual effects.',
+        slug: 'systems',
+        label: 'Systems',
+        description: 'Event-driven patterns, distributed architecture, and state management across the stack.',
         count: 12,
         color: 'bg-yellow-a4',
     },
     {
-        slug: 'react',
-        label: 'React',
-        description: 'Hooks, patterns, compound components, and state management.',
+        slug: 'api-design',
+        label: 'API Design',
+        description: 'REST, GraphQL, schema-first thinking, and contract-driven development.',
         count: 9,
         color: 'bg-gray-a4',
     },
     {
-        slug: 'javascript',
-        label: 'JavaScript',
-        description: 'Array methods, async patterns, algorithms, and utilities.',
+        slug: 'full-stack',
+        label: 'Full-Stack',
+        description: 'End-to-end feature builds connecting frontend to backend with clean data contracts.',
         count: 7,
         color: 'bg-gray-a3',
     },
     {
-        slug: 'accessibility',
-        label: 'Accessibility',
-        description: 'Focus management, ARIA patterns, keyboard navigation, and WCAG.',
+        slug: 'dev-experience',
+        label: 'Dev Experience',
+        description: 'Internal tooling, SDK design, error handling, and developer-first API patterns.',
         count: 5,
         color: 'bg-yellow-a3',
     },
     {
-        slug: 'animation',
-        label: 'Animation',
-        description: 'Motion principles, CSS keyframes, scroll effects, and Lottie.',
+        slug: 'databases',
+        label: 'Databases',
+        description: 'Schema design, migration strategy, indexing, and query optimisation.',
         count: 6,
         color: 'bg-gray-a5',
     },
     {
-        slug: 'design-systems',
-        label: 'Design Systems',
-        description: 'Tokens, theming, component APIs, and documentation.',
+        slug: 'integrations',
+        label: 'Integrations',
+        description: 'Webhooks, third-party APIs, platform connectors, and legacy system wrappers.',
         count: 8,
         color: 'bg-yellow-a4',
     },
     {
-        slug: 'performance',
-        label: 'Performance',
-        description: 'Bundle size, lazy loading, rendering strategies, and metrics.',
+        slug: 'security',
+        label: 'Security',
+        description: 'Auth patterns, input validation, secrets management, and OWASP-aligned practices.',
         count: 4,
         color: 'bg-gray-a4',
     },
     {
         slug: 'devops',
         label: 'DevOps',
-        description: 'CI/CD, deployment, environment config, and git workflows.',
+        description: 'CI/CD pipelines, deployment strategies, environment config, and observability.',
         count: 3,
         color: 'bg-gray-a3',
     },
@@ -62,34 +62,34 @@ const categories = [
 
 const featuredByCategory = [
     {
-        heading: 'Responsive Grid Layout',
-        description: 'Adapt screens to any size',
-        category: 'CSS',
+        heading: 'Event-Driven Webhook Architecture',
+        description: 'Resilient async patterns for real-time pipelines',
+        category: 'Systems',
         preview: '/bite_preview_1.png',
     },
     {
-        heading: 'React Hooks Basics',
-        description: 'Hook fundamentals and state management',
-        category: 'React',
+        heading: 'API Design Principles',
+        description: 'Versioning, error contracts, and DX',
+        category: 'API Design',
         preview: '/bite_preview_2.png',
     },
     {
-        heading: 'JavaScript Arrays',
-        description: 'Essential array methods',
-        category: 'JavaScript',
+        heading: 'Full-Stack Auth Flow',
+        description: 'Token-based auth across the stack',
+        category: 'Full-Stack',
         preview: '/bite_preview_3.png',
     },
     {
-        heading: 'Focus State Patterns',
-        description: 'WCAG-compliant focus indicators',
-        category: 'Accessibility',
+        heading: 'Supabase Schema Strategy',
+        description: 'RLS, migrations, and foreign key hygiene',
+        category: 'Databases',
         preview: '/bite_preview_4.png',
     },
 ];
 
 export const metadata = {
     title: 'Categories — Bites — Bite Size Design',
-    description: 'Browse bites by type — CSS, React, JavaScript, accessibility, animation, and more.',
+    description: 'Browse bites by discipline — systems, API design, full-stack, databases, integrations, security, and more.',
 };
 
 export default function CategoriesPage() {
@@ -103,7 +103,7 @@ export default function CategoriesPage() {
             ">
                 <div>
                     <Badge text="Categories" />
-                    <h1 className="heading-1 mt-4">Browse by bite type.</h1>
+                    <h1 className="heading-1 mt-4">Browse by architecture.</h1>
                     <p className="font-work text-text-muted max-w-lg mt-2">
                         Every bite is tagged by discipline. Find exactly what you're looking for — or discover something new.
                     </p>

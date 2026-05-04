@@ -38,8 +38,8 @@ const HomeContact = () => {
                         /* Spacing */
                         mb-1
                         
-                        ">Ready to bite design in the ass?</h2>
-                        <p>Get professionals to do the nasty bits. We don't bite...much.</p>
+                        ">Ready to bite the bullet on technical debt?</h2>
+                        <p>Get professionals to design systems that actually scale. We don't bite... much.</p>
                     </div>
                     <div className='flex flex-col sm:flex-row gap-4'>
                         <Button

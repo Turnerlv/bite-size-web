@@ -99,7 +99,7 @@ export default function Hero() {
                     /* Other */
                     heading-1
                 ">
-                    Design meets code, one bite at a time.
+                    Systems built one bite at a time.
                 </h1>
                 <p className="
                     /* Spacing */
@@ -109,7 +109,7 @@ export default function Hero() {
                     /* Size */
                     max-w-2xl
                 ">
-                    A growing playground of smart, interactive UI patterns. Built for curious designers, developers, and creative coders who love the frontend.
+                    A growing playground of smart system designs, data flows, and robust API integrations. Built for curious engineers, architects, and creative technologists who care about how it works.
                 </p>
                 <div className="
                     /* Size */
@@ -121,8 +121,8 @@ export default function Hero() {
                     /* Flex & Grid */
                     justify-center
                 ">
-                    <Button as="link" href="/bites" responsive={true} variant='primary' size='lg'>Explore patterns</Button>
-                    <Button responsive={true} variant='outline' size='lg' >Learn about us</Button>
+                    <Button as="link" href="/bites" responsive={true} variant='primary' size='lg'>Explore bites</Button>
+                    <Button as="link" href="/about/our_story" responsive={true} variant='outline' size='lg'>Learn about us</Button>
                 </div>
             </div>
         </section>

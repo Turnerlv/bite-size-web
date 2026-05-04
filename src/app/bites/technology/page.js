@@ -39,20 +39,20 @@ const stack = [
 
 const feasibilityPrinciples = [
     {
-        title: 'Design for the DOM, not just the mockup',
-        body: 'Every pattern on this site is built with real HTML semantics and CSS cascade in mind. No purely visual patterns that can\'t be coded accessibly.',
+        title: 'Data journey first',
+        body: 'Before writing a single component, we map how data moves through the system. The frontend is the last mile — not the starting point.',
     },
     {
         title: 'Progressive enhancement',
         body: 'The hero backdrop-filter effect checks browser support before enabling. Animations are non-breaking enhancements, never load-bearing.',
     },
     {
-        title: 'Composition over configuration',
-        body: 'Components expose props for the variations that exist in the design. No hidden complexity — if you need a different shape, it\'s a new component.',
+        title: 'Resilient APIs',
+        body: 'Every integration pattern accounts for failure. Retry logic, idempotency, and graceful degradation are not afterthoughts — they are part of the design.',
     },
     {
-        title: 'Tokens before classes',
-        body: 'Semantic CSS variables power all theming. Changing a token propagates across the entire system — no find-and-replace across files.',
+        title: 'Design the system, not just the screen',
+        body: 'A great UI backed by a brittle system is a liability. We design the full architecture so the experience can be trusted at scale.',
     },
 ];
 

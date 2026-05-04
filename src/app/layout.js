@@ -19,7 +19,7 @@ const robotoMono = Roboto_Mono({
 
 export const metadata = {
   title: "Bite size design",
-  description: "Resources and services to enable creative technologists to build their best",
+  description: "Systems, architectures, and services to enable teams to build resilient products.",
 };
 
 export default function RootLayout({ children }) {

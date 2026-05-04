@@ -3,40 +3,39 @@ import ProductCard from '../ProductCard';
 
 const featuredBites = [
     {
-        heading: 'Responsive Grid Layout',
-        description: 'Adapt screens to any size',
-        category: 'CSS',
+        heading: 'Event-Driven Webhook Architecture',
+        description: 'Resilient async patterns for real-time data pipelines.',
+        category: 'Systems',
         imageSrc: '/bite_preview_1.png',
     },
     {
-        heading: 'React Hooks Basics',
-        description: 'Hook fundamentals and state management',
-        category: 'React',
+        heading: 'API Design Principles',
+        description: 'Versioning, error contracts, and developer-friendly interfaces.',
+        category: 'API Design',
         imageSrc: '/bite_preview_2.png',
     },
     {
-        heading: 'JavaScript Arrays',
-        description: 'Essential array methods.',
-        category: 'JavaScript',
+        heading: 'Full-Stack Auth Flow',
+        description: 'Token-based auth from frontend session to backend verification.',
+        category: 'Full-Stack',
         imageSrc: '/bite_preview_3.png',
     },
     {
-        heading: 'Tailwind CSS Tips',
-        description:
-            'Pro tips and tricks for styling with Tailwind CSS utility classes.',
-        category: 'CSS',
+        heading: 'Database Schema Strategy',
+        description: 'Normalisation, indexing, and migration patterns that scale.',
+        category: 'Databases',
         imageSrc: '/bite_preview_4.png',
     },
     {
-        heading: 'API Integration',
-        description: 'Best practices for fetching and managing API data in React.',
-        category: 'React',
+        heading: 'CI/CD Pipeline Setup',
+        description: 'Automated testing and deployment from commit to production.',
+        category: 'DevOps',
         imageSrc: '/bite_preview_5.png',
     },
     {
-        heading: 'Git Workflow',
-        description: 'Streamline your development process with Git best practices.',
-        category: 'DevOps',
+        heading: 'DX-First SDK Design',
+        description: 'Typed, documented client libraries that developers actually enjoy.',
+        category: 'Dev Experience',
         imageSrc: '/bite_preview_6.png',
     },
 ];
@@ -44,7 +43,7 @@ const featuredBites = [
 export default function HomeFeaturedBites() {
     return (
         <section className="page-padding mx-auto max-w-[1200px] box-border py-20">
-            <h2 className="heading-2 mb-8">Featured Bites</h2>
+            <h2 className="heading-2 mb-8">Featured Architectures</h2>
 
             <div
                 className="
