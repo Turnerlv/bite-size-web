@@ -8,14 +8,14 @@ This document captures the full design system for the Bite Size Design website. 
 
 ## Tech Stack
 
-| Layer | Tool |
-|---|---|
-| Framework | Next.js 15 (App Router) |
-| Styling | Tailwind CSS v4 |
-| UI Primitives | Radix UI |
-| Icons | Lucide React |
-| Animation | Lottie (DotLottie) |
-| Fonts | Google Fonts via `next/font` |
+| Layer         | Tool                         |
+| ------------- | ---------------------------- |
+| Framework     | Next.js 15 (App Router)      |
+| Styling       | Tailwind CSS v4              |
+| UI Primitives | Radix UI                     |
+| Icons         | Lucide React                 |
+| Animation     | Lottie (DotLottie)           |
+| Fonts         | Google Fonts via `next/font` |
 
 ---
 
@@ -23,10 +23,10 @@ This document captures the full design system for the Bite Size Design website. 
 
 Three font families are loaded via `next/font/google` and exposed as CSS variables:
 
-| Variable | Font | Use |
-|---|---|---|
-| `--font-rubik` / `font-rubik` | Rubik | Headings |
-| `--font-work-sans` / `font-work` | Work Sans | Body copy, UI text |
+| Variable                             | Font        | Use                  |
+| ------------------------------------ | ----------- | -------------------- |
+| `--font-rubik` / `font-rubik`        | Rubik       | Headings             |
+| `--font-work-sans` / `font-work`     | Work Sans   | Body copy, UI text   |
 | `--font-roboto-mono` / `font-roboto` | Roboto Mono | Code, badges, labels |
 
 Default body font: Work Sans, Helvetica, sans-serif.
@@ -35,13 +35,13 @@ Default body font: Work Sans, Helvetica, sans-serif.
 
 Semantic heading utility classes are defined in `@layer components` in `globals.css`:
 
-| Class | Font | Weights | Mobile → Desktop sizes |
-|---|---|---|---|
-| `.heading-1` | Rubik | bold | `text-3xl → text-4xl → text-5xl` |
-| `.heading-2` | Rubik | bold | `text-xl → text-2xl → text-3xl` |
-| `.heading-3` | Rubik | bold | `text-lg → text-xl → text-2xl` |
-| `.heading-4` | Rubik | bold | `text-base → text-lg → text-xl` |
-| `.heading-5` | Rubik | bold | `text-base` (all breakpoints) |
+| Class        | Font  | Weights | Mobile → Desktop sizes           |
+| ------------ | ----- | ------- | -------------------------------- |
+| `.heading-1` | Rubik | bold    | `text-3xl → text-4xl → text-5xl` |
+| `.heading-2` | Rubik | bold    | `text-xl → text-2xl → text-3xl`  |
+| `.heading-3` | Rubik | bold    | `text-lg → text-xl → text-2xl`   |
+| `.heading-4` | Rubik | bold    | `text-base → text-lg → text-xl`  |
+| `.heading-5` | Rubik | bold    | `text-base` (all breakpoints)    |
 
 **Usage:**
 ```html
@@ -57,44 +57,44 @@ The palette is a 12-step Radix-style scale in two hues: **warm gray (sepia)** an
 
 ### Light Mode — Grays (Warm Sepia)
 
-| Token | Hex | Use |
-|---|---|---|
-| `--gray-1` | `#fdfaf6` | Soft parchment, page background |
-| `--gray-2` | `#f7f2eb` | Card backgrounds, hover states |
-| `--gray-3` | `#ece4d9` | Component hover backgrounds |
-| `--gray-4` | `#e2d8c9` | Borders |
-| `--gray-5` | `#d8cdbc` | |
-| `--gray-6` | `#cfc1ae` | |
-| `--gray-7` | `#c1b29d` | |
-| `--gray-8` | `#a89883` | |
-| `--gray-9` | `#8a7a65` | Placeholder text |
-| `--gray-10` | `#7d6f5c` | |
-| `--gray-11` | `#635749` | Muted body text |
-| `--gray-12` | `#2d2822` | Headings, primary text |
+| Token       | Hex       | Use                             |
+| ----------- | --------- | ------------------------------- |
+| `--gray-1`  | `#fdfaf6` | Soft parchment, page background |
+| `--gray-2`  | `#f7f2eb` | Card backgrounds, hover states  |
+| `--gray-3`  | `#ece4d9` | Component hover backgrounds     |
+| `--gray-4`  | `#e2d8c9` | Borders                         |
+| `--gray-5`  | `#d8cdbc` |                                 |
+| `--gray-6`  | `#cfc1ae` |                                 |
+| `--gray-7`  | `#c1b29d` |                                 |
+| `--gray-8`  | `#a89883` |                                 |
+| `--gray-9`  | `#8a7a65` | Placeholder text                |
+| `--gray-10` | `#7d6f5c` |                                 |
+| `--gray-11` | `#635749` | Muted body text                 |
+| `--gray-12` | `#2d2822` | Headings, primary text          |
 
 ### Light Mode — Yellows (Golden Amber)
 
-| Token | Hex | Use |
-|---|---|---|
-| `--yellow-1` | `#fffef5` | |
-| `--yellow-2` | `#fff9e2` | |
-| `--yellow-3` | `#fdf0ad` | |
-| `--yellow-4` | `#fce47c` | |
-| `--yellow-5` | `#fad64d` | |
-| `--yellow-6` | `#edc33a` | |
-| `--yellow-7` | `#d9af29` | |
-| `--yellow-8` | `#c2991a` | |
-| `--yellow-9` | `#f5c400` | **Primary interactive color** |
-| `--yellow-10` | `#e6b800` | Primary hover |
-| `--yellow-11` | `#8c6d00` | |
-| `--yellow-12` | `#3d3000` | |
+| Token         | Hex       | Use                           |
+| ------------- | --------- | ----------------------------- |
+| `--yellow-1`  | `#fffef5` |                               |
+| `--yellow-2`  | `#fff9e2` |                               |
+| `--yellow-3`  | `#fdf0ad` |                               |
+| `--yellow-4`  | `#fce47c` |                               |
+| `--yellow-5`  | `#fad64d` |                               |
+| `--yellow-6`  | `#edc33a` |                               |
+| `--yellow-7`  | `#d9af29` |                               |
+| `--yellow-8`  | `#c2991a` |                               |
+| `--yellow-9`  | `#f5c400` | **Primary interactive color** |
+| `--yellow-10` | `#e6b800` | Primary hover                 |
+| `--yellow-11` | `#8c6d00` |                               |
+| `--yellow-12` | `#3d3000` |                               |
 
 ### Dark Mode Backgrounds
 
-| Token | Light | Dark |
-|---|---|---|
+| Token          | Light     | Dark      |
+| -------------- | --------- | --------- |
 | `--background` | `#fdfaf6` | `#0e0c0a` |
-| `--contrast` | `#2d2822` | `#faf8f5` |
+| `--contrast`   | `#2d2822` | `#faf8f5` |
 
 Dark mode is toggled via `[data-theme="dark"]` on `<html>` (or `.dark` class).
 
@@ -102,17 +102,17 @@ Dark mode is toggled via `[data-theme="dark"]` on `<html>` (or `.dark` class).
 
 These are the tokens to use in components (not the raw gray/yellow scales):
 
-| Tailwind Class | Token | Light Value | Dark Value |
-|---|---|---|---|
-| `bg-background` / `text-background` | `--color-background` | `#fdfaf6` | `#0e0c0a` |
-| `text-foreground` | `--color-foreground` | `#2d2822` | `#faf8f5` |
-| `bg-surface` | `--color-surface` | background at 80% opacity | — |
-| `border-border` | `--color-border` | `gray-4` | dark gray-4 |
-| `text-text-muted` | `--color-text-muted` | `gray-11` | dark gray-11 |
-| `bg-primary` | `--color-primary` | `yellow-9` (#f5c400) | dark yellow-9 |
-| `text-primary-contrast` | `--color-primary-contrast` | `#0e0c0a` | same |
-| `bg-secondary` | `--color-secondary` | `contrast` | — |
-| `text-secondary-contrast` | `--color-secondary-contrast` | `gray-1` | — |
+| Tailwind Class                      | Token                        | Light Value               | Dark Value    |
+| ----------------------------------- | ---------------------------- | ------------------------- | ------------- |
+| `bg-background` / `text-background` | `--color-background`         | `#fdfaf6`                 | `#0e0c0a`     |
+| `text-foreground`                   | `--color-foreground`         | `#2d2822`                 | `#faf8f5`     |
+| `bg-surface`                        | `--color-surface`            | background at 80% opacity | —             |
+| `border-border`                     | `--color-border`             | `gray-4`                  | dark gray-4   |
+| `text-text-muted`                   | `--color-text-muted`         | `gray-11`                 | dark gray-11  |
+| `bg-primary`                        | `--color-primary`            | `yellow-9` (#f5c400)      | dark yellow-9 |
+| `text-primary-contrast`             | `--color-primary-contrast`   | `#0e0c0a`                 | same          |
+| `bg-secondary`                      | `--color-secondary`          | `contrast`                | —             |
+| `text-secondary-contrast`           | `--color-secondary-contrast` | `gray-1`                  | —             |
 
 ### Alpha Variants
 
@@ -130,11 +130,11 @@ Both gray and yellow have alpha variants (`--gray-a1` through `--gray-a12`, same
 
 ## Spacing & Layout
 
-| Utility | Definition |
-|---|---|
-| `.page-padding` | `px-4 md:px-8` — horizontal page gutter |
-| Max content width | `max-w-[1200px] mx-auto` |
-| Nav height offset | `pt-[74px]` or `pt-19` |
+| Utility           | Definition                              |
+| ----------------- | --------------------------------------- |
+| `.page-padding`   | `px-4 md:px-8` — horizontal page gutter |
+| Max content width | `max-w-[1200px] mx-auto`                |
+| Nav height offset | `pt-[74px]` or `pt-19`                  |
 
 ---
 
@@ -190,28 +190,28 @@ html[data-theme='dark']  .nav-logo { content: url('/biteSize_outline_full.svg');
 
 **Props:**
 
-| Prop | Values | Default |
-|---|---|---|
-| `variant` | `primary` `secondary` `contrast` `outline` `soft` `surface` `ghost` `contrast_link` | `primary` |
-| `size` | `xs` `sm` `md` `lg` | `md` |
-| `icon` | Any Lucide icon component | — |
-| `iconPosition` | `left` `right` `only` `default` | `left` |
-| `responsive` | `true` `false` | `false` |
-| `as` | `button` `link` | `button` |
-| `href` | URL string (required when `as="link"`) | — |
+| Prop           | Values                                                                              | Default   |
+| -------------- | ----------------------------------------------------------------------------------- | --------- |
+| `variant`      | `primary` `secondary` `contrast` `outline` `soft` `surface` `ghost` `contrast_link` | `primary` |
+| `size`         | `xs` `sm` `md` `lg`                                                                 | `md`      |
+| `icon`         | Any Lucide icon component                                                           | —         |
+| `iconPosition` | `left` `right` `only` `default`                                                     | `left`    |
+| `responsive`   | `true` `false`                                                                      | `false`   |
+| `as`           | `button` `link`                                                                     | `button`  |
+| `href`         | URL string (required when `as="link"`)                                              | —         |
 
 **Variant styles:**
 
-| Variant | Background | Text | Hover |
-|---|---|---|---|
-| `primary` | `bg-primary` (yellow-9) | `text-primary-contrast` | `bg-yellow-10` |
-| `secondary` | `bg-secondary` | `text-secondary-contrast` | `bg-gray-12` |
-| `contrast` | `bg-primary-contrast` | `text-contrast-surface` | dark |
-| `outline` | transparent | `text-foreground` | `bg-gray-a3` |
-| `soft` | `bg-gray-a3` | `text-foreground` | `bg-gray-a5` |
-| `surface` | `bg-gray-a2` + ring | `text-foreground` | `bg-gray-a5` |
-| `ghost` | transparent | `text-foreground` | `bg-gray-a3` |
-| `contrast_link` | transparent | `text-primary-contrast` | light |
+| Variant         | Background              | Text                      | Hover          |
+| --------------- | ----------------------- | ------------------------- | -------------- |
+| `primary`       | `bg-primary` (yellow-9) | `text-primary-contrast`   | `bg-yellow-10` |
+| `secondary`     | `bg-secondary`          | `text-secondary-contrast` | `bg-gray-12`   |
+| `contrast`      | `bg-primary-contrast`   | `text-contrast-surface`   | dark           |
+| `outline`       | transparent             | `text-foreground`         | `bg-gray-a3`   |
+| `soft`          | `bg-gray-a3`            | `text-foreground`         | `bg-gray-a5`   |
+| `surface`       | `bg-gray-a2` + ring     | `text-foreground`         | `bg-gray-a5`   |
+| `ghost`         | transparent             | `text-foreground`         | `bg-gray-a3`   |
+| `contrast_link` | transparent             | `text-primary-contrast`   | light          |
 
 ---
 
@@ -226,9 +226,9 @@ html[data-theme='dark']  .nav-logo { content: url('/biteSize_outline_full.svg');
 
 **Props:**
 
-| Prop | Default |
-|---|---|
-| `text` | required |
+| Prop    | Default        |
+| ------- | -------------- |
+| `text`  | required       |
 | `color` | `bg-yellow-a4` |
 
 Renders uppercase, `text-yellow-a12`, `font-roboto`, extra-small size (`text-[10px]`).
@@ -255,14 +255,14 @@ Renders uppercase, `text-yellow-a12`, `font-roboto`, extra-small size (`text-[10
 
 **Props:**
 
-| Prop | Values | Default |
-|---|---|---|
-| `size` | `xs` `sm` `md` `lg` | `md` |
-| `variant` | `outline` `subtle` `ghost` | `outline` |
-| `label` | string | — |
-| `description` | string | — |
-| `error` | string | — |
-| `leftIcon` / `rightIcon` | React node | — |
+| Prop                     | Values                     | Default   |
+| ------------------------ | -------------------------- | --------- |
+| `size`                   | `xs` `sm` `md` `lg`        | `md`      |
+| `variant`                | `outline` `subtle` `ghost` | `outline` |
+| `label`                  | string                     | —         |
+| `description`            | string                     | —         |
+| `error`                  | string                     | —         |
+| `leftIcon` / `rightIcon` | React node                 | —         |
 
 Shape: fully rounded (`rounded-full`).
 
@@ -436,12 +436,12 @@ The primary color heading text shadow is a brand pattern used on hero sections:
 
 Located in `src/hooks/a11y/`:
 
-| Hook | Purpose |
-|---|---|
-| `useDisclosure` | Open/close boolean state |
-| `useClickOutside` | Close panel on click outside |
-| `useFocusReturn` | Return focus to trigger on close |
-| `useKeyboardNavigation` | ESC key + focus trapping |
+| Hook                    | Purpose                          |
+| ----------------------- | -------------------------------- |
+| `useDisclosure`         | Open/close boolean state         |
+| `useClickOutside`       | Close panel on click outside     |
+| `useFocusReturn`        | Return focus to trigger on close |
+| `useKeyboardNavigation` | ESC key + focus trapping         |
 
 ---
 
@@ -469,12 +469,12 @@ input:-webkit-autofill {
 
 ## Public Assets
 
-| File | Description |
-|---|---|
-| `/bite_size_hero3.json` | Lottie animation (value prop section) |
-| `/biteSize_solid_full.svg` | Logo — light mode |
-| `/biteSize_outline_full.svg` | Logo — dark mode |
-| `/background_pattern_light.svg` | Tiled background — light mode |
-| `/background_pattern_dark.svg` | Tiled background — dark mode |
-| `/wallpaper_*.svg` | Marketing tile images |
-| `/bite_preview_*.png` | Product card preview images |
+| File                            | Description                           |
+| ------------------------------- | ------------------------------------- |
+| `/bite_size_hero3.json`         | Lottie animation (value prop section) |
+| `/biteSize_solid_full.svg`      | Logo — light mode                     |
+| `/biteSize_outline_full.svg`    | Logo — dark mode                      |
+| `/background_pattern_light.svg` | Tiled background — light mode         |
+| `/background_pattern_dark.svg`  | Tiled background — dark mode          |
+| `/wallpaper_*.svg`              | Marketing tile images                 |
+| `/bite_preview_*.png`           | Product card preview images           |

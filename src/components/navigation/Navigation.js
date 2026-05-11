@@ -113,7 +113,7 @@ export default function Navigation() {
             /* Position */ fixed z-40
             /* Layout */ flex flex-col justify-top sm:justify-center
             /* Border */ border-b border-border
-            /* Background */ bg-surface backdrop-blur-md
+            /* Background */ bg-elevated backdrop-blur-md
         ">
             <div className={`
                 /* Size */ w-full max-w-[1200px]

@@ -1,91 +1,6 @@
 import Badge from '@/components/Badge';
 import ProductCard from '@/components/ProductCard';
-
-const categories = [
-    {
-        slug: 'systems',
-        label: 'Systems',
-        description: 'Event-driven patterns, distributed architecture, and state management across the stack.',
-        count: 12,
-        color: 'bg-yellow-a4',
-    },
-    {
-        slug: 'api-design',
-        label: 'API Design',
-        description: 'REST, GraphQL, schema-first thinking, and contract-driven development.',
-        count: 9,
-        color: 'bg-gray-a4',
-    },
-    {
-        slug: 'full-stack',
-        label: 'Full-Stack',
-        description: 'End-to-end feature builds connecting frontend to backend with clean data contracts.',
-        count: 7,
-        color: 'bg-gray-a3',
-    },
-    {
-        slug: 'dev-experience',
-        label: 'Dev Experience',
-        description: 'Internal tooling, SDK design, error handling, and developer-first API patterns.',
-        count: 5,
-        color: 'bg-yellow-a3',
-    },
-    {
-        slug: 'databases',
-        label: 'Databases',
-        description: 'Schema design, migration strategy, indexing, and query optimisation.',
-        count: 6,
-        color: 'bg-gray-a5',
-    },
-    {
-        slug: 'integrations',
-        label: 'Integrations',
-        description: 'Webhooks, third-party APIs, platform connectors, and legacy system wrappers.',
-        count: 8,
-        color: 'bg-yellow-a4',
-    },
-    {
-        slug: 'security',
-        label: 'Security',
-        description: 'Auth patterns, input validation, secrets management, and OWASP-aligned practices.',
-        count: 4,
-        color: 'bg-gray-a4',
-    },
-    {
-        slug: 'devops',
-        label: 'DevOps',
-        description: 'CI/CD pipelines, deployment strategies, environment config, and observability.',
-        count: 3,
-        color: 'bg-gray-a3',
-    },
-];
-
-const featuredByCategory = [
-    {
-        heading: 'Event-Driven Webhook Architecture',
-        description: 'Resilient async patterns for real-time pipelines',
-        category: 'Systems',
-        preview: '/bite_preview_1.png',
-    },
-    {
-        heading: 'API Design Principles',
-        description: 'Versioning, error contracts, and DX',
-        category: 'API Design',
-        preview: '/bite_preview_2.png',
-    },
-    {
-        heading: 'Full-Stack Auth Flow',
-        description: 'Token-based auth across the stack',
-        category: 'Full-Stack',
-        preview: '/bite_preview_3.png',
-    },
-    {
-        heading: 'Supabase Schema Strategy',
-        description: 'RLS, migrations, and foreign key hygiene',
-        category: 'Databases',
-        preview: '/bite_preview_4.png',
-    },
-];
+import { CATEGORIES_CONTENT, CATEGORY_DATA } from '@/content/static';
 
 export const metadata = {
     title: 'Categories — Bites — Bite Size Design',
@@ -93,6 +8,15 @@ export const metadata = {
 };
 
 export default function CategoriesPage() {
+    const categories = Object.entries(CATEGORY_DATA).map(([slug, data]) => ({
+        slug,
+        label: data.title,
+        description: data.overview,
+        count: data.count,
+        color: data.color,
+    }));
+    const { hero, sections, featuredByCategory } = CATEGORIES_CONTENT;
+
     return (
         <div>
             {/* Hero */}
@@ -102,17 +26,17 @@ export default function CategoriesPage() {
                 text-foreground
             ">
                 <div>
-                    <Badge text="Categories" />
-                    <h1 className="heading-1 mt-4">Browse by architecture.</h1>
+                    <Badge text={hero.badge} />
+                    <h1 className="heading-1 mt-4">{hero.title}</h1>
                     <p className="font-work text-text-muted max-w-lg mt-2">
-                        Every bite is tagged by discipline. Find exactly what you're looking for — or discover something new.
+                        {hero.description}
                     </p>
                 </div>
             </section>
 
             {/* Category Grid */}
             <section className="py-16 page-padding mx-auto max-w-[1200px] border-t border-border">
-                <h2 className="heading-3 mb-8">All Categories</h2>
+                <h2 className="heading-3 mb-8">{sections.allCategoriesTitle}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {categories.map((cat) => (
                         <a
@@ -135,7 +59,7 @@ export default function CategoriesPage() {
 
             {/* Featured */}
             <section className="py-16 page-padding mx-auto max-w-[1200px] border-t border-border">
-                <h2 className="heading-3 mb-8">Popular across categories</h2>
+                <h2 className="heading-3 mb-8">{sections.featuredTitle}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {featuredByCategory.map((bite, idx) => (
                         <ProductCard

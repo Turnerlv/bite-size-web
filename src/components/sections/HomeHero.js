@@ -2,11 +2,13 @@
 
 import { useEffect, useRef } from 'react';
 import Button from '../Button';
+import { HOME_CONTENT } from '@/content/static';
 
 export default function Hero() {
     const maskRef = useRef(null);
     const coordsRef = useRef({ x: 0, y: 0 });
     const animationFrameRef = useRef(null);
+    const { hero } = HOME_CONTENT;
 
     useEffect(() => {
         const mask = maskRef.current;
@@ -99,7 +101,7 @@ export default function Hero() {
                     /* Other */
                     heading-1
                 ">
-                    Systems built one bite at a time.
+                    {hero.titleLines[0]}
                 </h1>
                 <p className="
                     /* Spacing */
@@ -109,7 +111,7 @@ export default function Hero() {
                     /* Size */
                     max-w-2xl
                 ">
-                    A growing playground of smart system designs, data flows, and robust API integrations. Built for curious engineers, architects, and creative technologists who care about how it works.
+                    {hero.description}
                 </p>
                 <div className="
                     /* Size */
@@ -121,8 +123,8 @@ export default function Hero() {
                     /* Flex & Grid */
                     justify-center
                 ">
-                    <Button as="link" href="/bites" responsive={true} variant='primary' size='lg'>Explore bites</Button>
-                    <Button as="link" href="/about/our_story" responsive={true} variant='outline' size='lg'>Learn about us</Button>
+                    <Button as="link" href={hero.ctas.primary.href} responsive={true} variant='primary' size='lg'>{hero.ctas.primary.label}</Button>
+                    <Button as="link" href={hero.ctas.secondary.href} responsive={true} variant='outline' size='lg'>{hero.ctas.secondary.label}</Button>
                 </div>
             </div>
         </section>

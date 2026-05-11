@@ -1,14 +1,17 @@
 import React from "react";
 import AnimatedIllustration from "@/components/AnimatedIllustration";
+import { HOME_CONTENT } from '@/content/static';
 
 export default function ValueProp() {
+    const { value } = HOME_CONTENT;
+
     return (
         <section className='flex w-dvw h-dvh bg-primary items-center justify-center pt-[74px]'>
             <div className='w-full max-w-[1200px] grid md:grid-cols-[3fr_5fr] gap-8 page-padding'>
                 <div className='w-full align-middle flex flex-col justify-center'>
-                    <h2 className='mb-5 heading-2 text-primary-contrast'>What is Bite Size Design?</h2>
+                    <h2 className='mb-5 heading-2 text-primary-contrast'>{value.title}</h2>
                     <p className="text-primary-contrast font-work text-medium">
-                        Bite Size Design is a studio bridging the gap between pixel-perfect design and bulletproof backend systems. We believe the journey of the data and system integrity is the true backbone of great user experiences — and we build to prove it.
+                        {value.description}
                     </p>
                 </div>
                 <AnimatedIllustration

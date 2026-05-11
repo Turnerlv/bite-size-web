@@ -2,7 +2,7 @@ import Hero from '@/components/sections/HomeHero';
 import ValueProp from '@/components/sections/HomeValue';
 import HomeDifferentiator from '@/components/sections/HomeDifferentiator';
 import HomeFeaturedBites from '@/components/sections/HomeFeaturedBites';
-import HomeContact from '@/components/sections/HomeContact';
+import HomeContact from '@/components/sections/Contact';
 
 export default function Home() {
   return (

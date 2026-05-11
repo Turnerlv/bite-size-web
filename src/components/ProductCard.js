@@ -22,7 +22,7 @@ export default function ProductCard({
         <div
             className={[
                 // default card styles
-                'border border-border bg-gray-2 p-3 pt-4',
+                'border border-border bg-surface p-3 pt-4',
                 'flex flex-col justify-between cursor-pointer',
                 // layout styles from parent
                 className,

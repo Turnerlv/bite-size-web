@@ -1,51 +1,94 @@
+'use client';
+
 import React from 'react';
+import Contact from '@/components/sections/Contact';
+import { ABOUT_CONTENT } from '@/content/static';
 
 export default function OurStoryPage() {
+    const { story, values, founder } = ABOUT_CONTENT;
+
     return (
-        <div className="about-page">
-            <section className="            
-            /* Size */
-            h-screen page-padding mx-auto max-w-[1200px]
-            /* Layout */
-            overflow-hidden bg-repeat bg-center
-            /* Position */
-            relative
-            /* Flex & Grid */
-            flex items-center
-            /* Text & Typography */
-            text-foreground">
-                <div className="w-full flex flex-row items-center justify-between gap-20">
-                    <h1 className="flex flex-col">
-                        <span className="heading-1 text-primary [text-shadow:-2px_-2px_0_var(--color-foreground)] dark:[text-shadow:none]">Playful on the surface.</span>
-                        <span className="heading-1">Bulletproof underneath.</span>
+        <div>
+            {/* Hero */}
+            <section className="
+                h-screen w-full max-w-[1200px] mx-auto page-padding
+                overflow-hidden relative
+                flex items-center
+                text-foreground
+            ">
+                <div className="w-full flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20">
+                    <h1 className="flex flex-col shrink-0">
+                        <span className="heading-1 text-primary [text-shadow:-2px_-2px_0_var(--color-foreground)] dark:[text-shadow:none]">{story.hero.titleLines[0]}</span>
+                        <span className="heading-1">{story.hero.titleLines[1]}</span>
                     </h1>
-                    <div className="flex flex-col">
-                        <p>Yes, we publish fun architecture 'bites' for the community.</p>
-                        <p>Yes, our logo is a pair of chattering teeth.</p>
-                        <p>But we're dead serious about system integrity and the journey of your data.</p>
+                    <div className="flex flex-col gap-2 text-text-muted text-center md:text-left max-w-s">
+                        {story.hero.intro.map((line) => (
+                            <p key={line}>{line}</p>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            <section className="section-mission">
-                <h2>Our Mission</h2>
-                <p>We are dedicated to delivering excellence in everything we do.</p>
+            {/* Our Story */}
+            <section className="w-full max-w-[1200px] mx-auto py-20 page-padding">
+                <div className="flex flex-col md:flex-row gap-12 md:gap-20">
+                    <div className="md:w-1/3">
+                        <h2 className="heading-3">{story.title}</h2>
+                    </div>
+                    <div className="md:w-2/3 flex flex-col gap-6">
+                        {story.paragraphs.map((paragraph) => (
+                            <p key={paragraph} className="large-block">{paragraph}</p>
+                        ))}
+                    </div>
+                </div>
             </section>
 
-            <section className="section-values">
-                <h2>Our Values</h2>
-                <p>Integrity, innovation, and customer-first thinking guide our decisions.</p>
+            {/* Quote */}
+            <section className="w-full bg-primary py-16 page-padding">
+                <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center text-center gap-2">
+                    <span className="heading-2 text-primary-contrast leading-none">"</span>
+                    <blockquote className="quote text-primary-contrast max-w-3xl">
+                        {story.quote}
+                    </blockquote>
+                    <span className="heading-2 text-primary-contrast leading-none">"</span>
+                </div>
             </section>
 
-            <section className="section-team">
-                <h2>Our Team</h2>
-                <p>Meet the talented people behind our success.</p>
+            {/* Our Values */}
+            <section className="w-full max-w-[1200px] mx-auto py-20 page-padding">
+                <div className="flex flex-col md:flex-row gap-12 md:gap-20">
+                    <div className="md:w-1/3">
+                        <h2 className="heading-3">{values.title}</h2>
+                    </div>
+                    <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        {values.items.map((item) => (
+                            <div key={item.title} className="flex flex-col gap-2">
+                                <h3 className="heading-5">{item.title}</h3>
+                                <p className="text-text-muted">{item.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </section>
 
-            <section className="section-contact">
-                <h2>Get In Touch</h2>
-                <p>Have questions? We'd love to hear from you.</p>
+            {/* Behind the teeth */}
+            <section className="w-full max-w-[1200px] mx-auto py-20 page-padding">
+                <div className="flex flex-col md:flex-row gap-12 md:gap-20">
+                    <div className="md:w-1/3">
+                        <h2 className="heading-3">{founder.title}</h2>
+                    </div>
+                    <div className="md:w-2/3 flex flex-col gap-8">
+                        <div className="flex flex-col sm:flex-row gap-8">
+                            <div className="w-full sm:w-48 shrink-0 aspect-square bg-gray-3 rounded-lg overflow-hidden" />
+                            <p className="text-text-muted">{founder.bio[0]}</p>
+                        </div>
+                        <p className="text-text-muted">{founder.bio[1]}</p>
+                    </div>
+                </div>
             </section>
+
+            {/* CTA */}
+            <Contact />
         </div>
     );
 }

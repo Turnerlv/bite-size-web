@@ -28,7 +28,7 @@ export default function StyleGuide() {
                     {[
                         { name: 'Background', class: 'bg-background text-foreground' },
                         { name: 'Foreground', class: 'bg-foreground text-background' },
-                        { name: 'Surface', class: 'bg-surface text-foreground' },
+                        { name: 'Elevated', class: 'bg-elevated text-foreground' },
                         { name: 'Border', class: 'bg-border text-foreground' },
                         { name: 'Text Muted', class: 'bg-background text-text-muted' },
                         { name: 'Primary', class: 'bg-primary text-primary-contrast' },
@@ -144,6 +144,39 @@ export default function StyleGuide() {
                     <Button variant='surface' size='lg' iconPosition='default'>Button</Button>
                     <Button variant='surface' size='lg' icon={Heart} iconPosition='left'>Button</Button>
                     <Button variant='surface' size='lg' icon={Heart} iconPosition='only'></Button>
+                </div>
+                <div className="flex gap-4 items-start mb-8">
+                    <Button variant='ghost' size='sm' iconPosition='default'>Button</Button>
+                    <Button variant='ghost' size='sm' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='ghost' size='sm' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='ghost' size='md' iconPosition='default'>Button</Button>
+                    <Button variant='ghost' size='md' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='ghost' size='md' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='ghost' size='lg' iconPosition='default'>Button</Button>
+                    <Button variant='ghost' size='lg' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='ghost' size='lg' icon={Heart} iconPosition='only'></Button>
+                </div>
+                <div className="flex gap-4 items-start mb-8">
+                    <Button variant='contrast' size='sm' iconPosition='default'>Button</Button>
+                    <Button variant='contrast' size='sm' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='contrast' size='sm' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='contrast' size='md' iconPosition='default'>Button</Button>
+                    <Button variant='contrast' size='md' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='contrast' size='md' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='contrast' size='lg' iconPosition='default'>Button</Button>
+                    <Button variant='contrast' size='lg' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='contrast' size='lg' icon={Heart} iconPosition='only'></Button>
+                </div>
+                <div className="flex gap-4 items-start mb-8">
+                    <Button variant='contrast_link' size='sm' iconPosition='default'>Button</Button>
+                    <Button variant='contrast_link' size='sm' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='contrast_link' size='sm' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='contrast_link' size='md' iconPosition='default'>Button</Button>
+                    <Button variant='contrast_link' size='md' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='contrast_link' size='md' icon={Heart} iconPosition='only'></Button>
+                    <Button variant='contrast_link' size='lg' iconPosition='default'>Button</Button>
+                    <Button variant='contrast_link' size='lg' icon={Heart} iconPosition='left'>Button</Button>
+                    <Button variant='contrast_link' size='lg' icon={Heart} iconPosition='only'></Button>
                 </div>
             </section>
 

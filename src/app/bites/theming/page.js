@@ -6,7 +6,7 @@ const yellowScale = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const semanticTokens = [
     { token: '--color-background', class: 'bg-background', label: 'Background', text: 'text-foreground' },
     { token: '--color-foreground', class: 'bg-foreground', label: 'Foreground', text: 'text-background' },
-    { token: '--color-surface', class: 'bg-surface', label: 'Surface', text: 'text-foreground' },
+    { token: '--color-elevated', class: 'bg-elevated', label: 'Elevated', text: 'text-foreground' },
     { token: '--color-border', class: 'bg-border', label: 'Border', text: 'text-foreground' },
     { token: '--color-text-muted', class: 'bg-background', label: 'Text Muted', text: 'text-text-muted' },
     { token: '--color-primary', class: 'bg-primary', label: 'Primary', text: 'text-primary-contrast' },

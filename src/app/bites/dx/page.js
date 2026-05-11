@@ -127,8 +127,8 @@ export default function DXPage() {
                                             item.difficulty === 'Beginner'
                                                 ? 'bg-yellow-a3'
                                                 : item.difficulty === 'Intermediate'
-                                                ? 'bg-yellow-a4'
-                                                : 'bg-yellow-a5'
+                                                    ? 'bg-yellow-a4'
+                                                    : 'bg-yellow-a5'
                                         }
                                     />
                                     <h3 className="heading-5">{item.heading}</h3>

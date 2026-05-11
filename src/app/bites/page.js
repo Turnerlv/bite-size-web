@@ -2,33 +2,7 @@ import Badge from '@/components/Badge';
 import Button from '@/components/Button';
 import ProductCard from '@/components/ProductCard';
 import { NAV_ITEMS } from '@/config/navigation';
-
-const featuredBites = [
-    {
-        heading: 'Responsive Grid Layout',
-        description: 'Adapt screens to any size',
-        category: 'CSS',
-        preview: '/bite_preview_1.png',
-    },
-    {
-        heading: 'React Hooks Basics',
-        description: 'Hook fundamentals and state management',
-        category: 'React',
-        preview: '/bite_preview_2.png',
-    },
-    {
-        heading: 'JavaScript Arrays',
-        description: 'Essential array methods.',
-        category: 'JavaScript',
-        preview: '/bite_preview_3.png',
-    },
-    {
-        heading: 'Tailwind CSS Tips',
-        description: 'Pro tips and tricks for styling with Tailwind CSS utility classes.',
-        category: 'CSS',
-        preview: '/bite_preview_4.png',
-    },
-];
+import { BITES_CONTENT } from '@/content/static';
 
 const bitesNav = NAV_ITEMS.find((n) => n.key === 'bites');
 
@@ -38,6 +12,8 @@ export const metadata = {
 };
 
 export default function BitesPage() {
+    const { hero, featured } = BITES_CONTENT;
+
     return (
         <div>
             {/* Hero */}
@@ -47,9 +23,9 @@ export default function BitesPage() {
                 text-foreground
             ">
                 <div>
-                    <h1 className="heading-1 mb-3">One byte at a time.</h1>
+                    <h1 className="heading-1 mb-3">{hero.title}</h1>
                     <p className="font-work text-text-muted max-w-lg">
-                        A growing library of system architectures, API patterns, and deep-dive technical experiments — built to show how resilient backends and thoughtful interfaces work together.
+                        {hero.description}
                     </p>
                 </div>
             </section>
@@ -73,13 +49,13 @@ export default function BitesPage() {
             {/* Featured Bites */}
             <section className="py-16 page-padding mx-auto max-w-[1200px]">
                 <div className="flex items-center justify-between mb-8">
-                    <h2 className="heading-3">Featured Architectures</h2>
-                    <Button as="link" href="/bites/categories" variant="ghost" size="sm">
-                        Browse all →
+                    <h2 className="heading-3">{featured.title}</h2>
+                    <Button as="link" href={featured.cta.href} variant="ghost" size="sm">
+                        {featured.cta.label}
                     </Button>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {featuredBites.map((bite, idx) => (
+                    {featured.items.map((bite, idx) => (
                         <ProductCard
                             key={idx}
                             heading={bite.heading}

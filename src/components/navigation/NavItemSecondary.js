@@ -21,7 +21,7 @@ const NavItemSecondary = forwardRef(({
                 // Spacing
                 "p-3 gap-3",
                 // Flex & Grid
-                "flex flex-row items-center",
+                "flex flex-row items-start",
                 // Radius
                 "rounded-xl",
                 // Text & Typography
@@ -35,6 +35,8 @@ const NavItemSecondary = forwardRef(({
                 className={[
                     // Size
                     "w-8 h-8",
+                    // Spacing 
+                    "mt-1",
                     // Other / Unknown
                     "icon stroke-[1.25]"
                 ].join(" ")}

@@ -1,6 +1,7 @@
 import Badge from '@/components/Badge';
 import Button from '@/components/Button';
 import { GitBranch, Layers, ArrowRightLeft, Database } from 'lucide-react';
+import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 
 const sections = [
     {
@@ -67,6 +68,13 @@ export default function ArchitecturePage() {
                 flex items-end pb-12
                 text-foreground
             ">
+                <Breadcrumbs
+                    labelMap={{
+                        home: "About",
+                        bites: "Our Story",
+                        architecture: "Architecture Bites",
+                    }}
+                />
                 <div>
                     <Badge text="Architecture" />
                     <h1 className="heading-1 mt-4">Systems that scale.</h1>
@@ -103,8 +111,8 @@ export default function ArchitecturePage() {
                                             item.difficulty === 'Beginner'
                                                 ? 'bg-yellow-a3'
                                                 : item.difficulty === 'Intermediate'
-                                                ? 'bg-yellow-a4'
-                                                : 'bg-yellow-a5'
+                                                    ? 'bg-yellow-a4'
+                                                    : 'bg-yellow-a5'
                                         }
                                     />
                                     <h3 className="heading-5">{item.heading}</h3>

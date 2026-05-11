@@ -194,8 +194,9 @@
   /* Semantic colors*/
   --color-background: var(--background);
   --color-foreground: var(--contrast);
-  --color-surface: --alpha(var(--color-background) / 80%);
-  --color-border: var(--color-gray-4);
+  --color-elevated: --alpha(var(--color-background) / 80%);
+  --color-surface: --alpha(var(--color-gray-2) / 50%);
+  --color-border: var(--color-gray-3);
   --color-text-muted: var(--color-gray-11);
   --color-primary: var(--color-yellow-9);
   --color-primary-contrast: #0e0c0a;
@@ -231,6 +232,14 @@
 
   .heading-5 {
     @apply font-rubik font-bold text-base md:text-base lg:text-base;
+  }
+
+  .quote {
+    @apply font-work text-xl md:text-2xl lg:text-3xl leading-[1.5] italic;
+  }
+
+  .large-block {
+    @apply font-work text-base md:text-lg lg:text-xl leading-[1.8];
   }
 }
 

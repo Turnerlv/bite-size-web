@@ -9,15 +9,15 @@ export const NAV_ITEMS = [
                 icon: 'Notebook',
                 description: 'How we build',
             },
+            // {
+            //     label: 'Services',
+            //     href: '/about/services',
+            //     icon: 'HandCoins',
+            //     description: 'Build with us',
+            // },
             {
-                label: 'Services',
-                href: '/about/services',
-                icon: 'HandCoins',
-                description: 'Build with us',
-            },
-            {
-                label: 'Blog',
-                href: '/about/blog',
+                label: 'Briefs',
+                href: '/about/briefs',
                 icon: 'BookA',
                 description: 'Blabbing about building',
             },
@@ -27,6 +27,12 @@ export const NAV_ITEMS = [
         key: 'bites',
         label: 'Bites',
         items: [
+            {
+                label: 'All Bites',
+                href: '/bites',
+                icon: 'LayoutGrid',
+                description: 'Get your fill on our best, free content',
+            },
             {
                 label: 'Architecture',
                 href: '/bites/architecture',
@@ -45,12 +51,12 @@ export const NAV_ITEMS = [
                 icon: 'Code2',
                 description: 'Developer Experience & tooling',
             },
-            {
-                label: 'Categories',
-                href: '/bites/categories',
-                icon: 'TableProperties',
-                description: 'Browse by architecture type',
-            },
+            // {
+            //     label: 'Categories',
+            //     href: '/bites/categories',
+            //     icon: 'TableProperties',
+            //     description: 'Browse by architecture type',
+            // },
             {
                 label: 'Technology',
                 href: '/bites/technology',

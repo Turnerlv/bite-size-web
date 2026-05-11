@@ -1,56 +1,6 @@
 import Badge from '@/components/Badge';
 import Button from '@/components/Button';
-
-const posts = [
-    {
-        slug: 'data-integrity-best-ux',
-        title: 'Why data integrity is the best UX',
-        excerpt: 'The most impactful user experience improvements often happen in the data layer — not the UI. Here is why integrity is the real design work.',
-        category: 'Architecture',
-        date: 'April 14, 2026',
-        readTime: '6 min read',
-    },
-    {
-        slug: 'robust-webhooks-nextjs',
-        title: 'Building robust webhooks in Next.js',
-        excerpt: 'Idempotency, signature verification, retry queues, and dead-letter handling — the full picture for production-grade webhook endpoints.',
-        category: 'Integrations',
-        date: 'March 28, 2026',
-        readTime: '8 min read',
-    },
-    {
-        slug: 'error-states-that-dont-suck',
-        title: "Error states that don't suck",
-        excerpt: 'Actionable, human-readable error messages are a developer experience problem as much as a UX problem. Here is how to design both at once.',
-        category: 'Dev Experience',
-        date: 'March 10, 2026',
-        readTime: '5 min read',
-    },
-    {
-        slug: 'event-driven-patterns-fintech',
-        title: 'Event-driven patterns for fintech',
-        excerpt: 'How event sourcing, CQRS, and async messaging patterns map to real fintech use cases — and when simpler request-response is the right call.',
-        category: 'Systems',
-        date: 'February 20, 2026',
-        readTime: '7 min read',
-    },
-    {
-        slug: 'bridging-design-and-apis',
-        title: 'Bridging design and APIs seamlessly',
-        excerpt: 'The contract between frontend and backend should be designed, not discovered. A practical guide to schema-first thinking across the stack.',
-        category: 'Tech Strategy',
-        date: 'February 3, 2026',
-        readTime: '9 min read',
-    },
-    {
-        slug: 'supabase-without-torching-schema',
-        title: 'Using Supabase without torching your schema',
-        excerpt: 'Row-level security, migration discipline, and foreign key hygiene — the practices that keep a Supabase project maintainable at scale.',
-        category: 'Databases',
-        date: 'January 15, 2026',
-        readTime: '4 min read',
-    },
-];
+import { BLOG_CONTENT } from '@/content/static';
 
 export const metadata = {
     title: 'Blog — Bite Size Design',
@@ -58,6 +8,8 @@ export const metadata = {
 };
 
 export default function BlogPage() {
+    const { hero, posts } = BLOG_CONTENT;
+
     return (
         <div>
             {/* Hero */}
@@ -70,13 +22,13 @@ export default function BlogPage() {
                 <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-12 md:gap-20">
                     <h1 className="flex flex-col">
                         <span className="heading-1 text-primary [text-shadow:-2px_-2px_0_var(--color-foreground)] dark:[text-shadow:none]">
-                            We blabber.
+                            {hero.titleLines[0]}
                         </span>
-                        <span className="heading-1">About systems.</span>
+                        <span className="heading-1">{hero.titleLines[1]}</span>
                     </h1>
                     <div className="max-w-sm">
                         <p className="font-work text-text-muted">
-                            Opinions, data flows, and explainers from the messy middle of frontend and backend.
+                            {hero.description}
                         </p>
                     </div>
                 </div>

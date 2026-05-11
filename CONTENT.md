@@ -10,10 +10,10 @@ This document maps every public route on the site to its content purpose, messag
 
 The site serves two interlocked audiences and purposes:
 
-| Pillar | Purpose | Audience |
-|---|---|---|
+| Pillar        | Purpose                                                               | Audience                                                         |
+| ------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------- |
 | **Community** | Free UI patterns, components, and experiments to learn from and reuse | Designers learning to code, developers refining their design eye |
-| **Services** | Commercial work — design systems, frontend engineering, consulting | Teams and founders who need expert help building products |
+| **Services**  | Commercial work — design systems, frontend engineering, consulting    | Teams and founders who need expert help building products        |
 
 Every page should reinforce at least one pillar. The brand voice is: **direct, technically confident, and slightly irreverent** — "playful on the surface, serious underneath."
 
@@ -48,13 +48,13 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 **Sections (in order):**
 
-| Section | Component | Content |
-|---|---|---|
-| Hero | `HomeHero` | H1: *"Design meets code, one bite at a time."* Subtext: *"A growing playground of smart, interactive UI patterns..."* CTAs: **Explore patterns** → `/bites` and **Learn about us** → `/about/our_story`. Interactive backdrop-filter grayscale mouse effect. |
-| Value Prop | `HomeValue` | H2: *"What is Bite Size Design?"* Body: Studio description — reusable UI patterns, creative prototypes, modern interaction ideas. Lottie animation right column. Yellow (`bg-primary`) background section. |
-| Differentiator | `HomeDifferentiator` | H2: *"What makes Bite Size Design different?"* Four marketing tiles: **Built for curious minds** / **Process over polish** / **Real patterns, not just pretty pixels** / **Where design and development meet**. |
-| Featured Bites | `HomeFeaturedBites` | H2: *"Featured Bites"* Horizontal scroll on mobile, 4-col grid on desktop. Up to 4 `ProductCard` items pulled from a static featured list. |
-| Contact CTA | `HomeContact` | H3: *"Ready to bite design in the ass?"* Subtext: *"Get professionals to do the nasty bits. We don't bite...much."* Two CTAs: **Drop us a line** (opens contact `Drawer`) and **Check out our services** → `/about/services`. |
+| Section        | Component            | Content                                                                                                                                                                                                                                                      |
+| -------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Hero           | `HomeHero`           | H1: *"Design meets code, one bite at a time."* Subtext: *"A growing playground of smart, interactive UI patterns..."* CTAs: **Explore patterns** → `/bites` and **Learn about us** → `/about/our_story`. Interactive backdrop-filter grayscale mouse effect. |
+| Value Prop     | `HomeValue`          | H2: *"What is Bite Size Design?"* Body: Studio description — reusable UI patterns, creative prototypes, modern interaction ideas. Lottie animation right column. Yellow (`bg-primary`) background section.                                                   |
+| Differentiator | `HomeDifferentiator` | H2: *"What makes Bite Size Design different?"* Four marketing tiles: **Built for curious minds** / **Process over polish** / **Real patterns, not just pretty pixels** / **Where design and development meet**.                                              |
+| Featured Bites | `HomeFeaturedBites`  | H2: *"Featured Bites"* Horizontal scroll on mobile, 4-col grid on desktop. Up to 4 `ProductCard` items pulled from a static featured list.                                                                                                                   |
+| Contact CTA    | `HomeContact`        | H3: *"Ready to bite design in the ass?"* Subtext: *"Get professionals to do the nasty bits. We don't bite...much."* Two CTAs: **Drop us a line** (opens contact `Drawer`) and **Check out our services** → `/about/services`.                                |
 
 **SEO metadata:**
 - Title: `Bite size design`
@@ -68,13 +68,13 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 **Sections (in order):**
 
-| Section | Content |
-|---|---|
-| Hero | H1: *"Playful on the surface. Serious underneath."* (primary accent on first line). Paired copy: *"Yes, we publish fun UI 'bites' for the community. Yes, our logo is a pair of chattering teeth. But we're serious about building great products."* |
-| Our Mission | H2. Mission statement. Placeholder: *"We are dedicated to delivering excellence in everything we do."* — **needs real copy** |
-| Our Values | H2. Core values summary. Placeholder — **needs real copy** |
-| Our Team | H2. Team bios / headshots. Placeholder — **needs real copy** |
-| Get In Touch | H2. Closing contact nudge. Placeholder — **needs real copy** |
+| Section      | Content                                                                                                                                                                                                                                              |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hero         | H1: *"Playful on the surface. Serious underneath."* (primary accent on first line). Paired copy: *"Yes, we publish fun UI 'bites' for the community. Yes, our logo is a pair of chattering teeth. But we're serious about building great products."* |
+| Our Mission  | H2. Mission statement. Placeholder: *"We are dedicated to delivering excellence in everything we do."* — **needs real copy**                                                                                                                         |
+| Our Values   | H2. Core values summary. Placeholder — **needs real copy**                                                                                                                                                                                           |
+| Our Team     | H2. Team bios / headshots. Placeholder — **needs real copy**                                                                                                                                                                                         |
+| Get In Touch | H2. Closing contact nudge. Placeholder — **needs real copy**                                                                                                                                                                                         |
 
 **Content gaps:** Sections below the hero are placeholder copy. Real mission, values, team, and contact content is needed.
 
@@ -86,11 +86,11 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 **Sections (in order):**
 
-| Section | Content |
-|---|---|
-| Hero | H1: *"Build with us. We do the hard bits."* (primary accent on first line). Subtext: *"Bite Size Design offers design and frontend services for teams who care about the craft — and the code behind it."* CTA: **See what we offer** (anchor scroll to `#services`). |
-| Services Grid | Four service cards (2-col on md+): **Design Systems** / **Frontend Engineering** / **Prototyping & Concepting** / **Workshops & Consulting**. Each has icon, title, tagline (Roboto Mono, primary color), description, and 4 bullet deliverables. |
-| CTA Banner | H2: *"Ready to get started?"* Subtext: *"Tell us what you're building — we'll figure out the rest."* CTA: **Drop us a line** → `/` (should link to contact drawer or `/contact` if added). |
+| Section       | Content                                                                                                                                                                                                                                                               |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hero          | H1: *"Build with us. We do the hard bits."* (primary accent on first line). Subtext: *"Bite Size Design offers design and frontend services for teams who care about the craft — and the code behind it."* CTA: **See what we offer** (anchor scroll to `#services`). |
+| Services Grid | Four service cards (2-col on md+): **Design Systems** / **Frontend Engineering** / **Prototyping & Concepting** / **Workshops & Consulting**. Each has icon, title, tagline (Roboto Mono, primary color), description, and 4 bullet deliverables.                     |
+| CTA Banner    | H2: *"Ready to get started?"* Subtext: *"Tell us what you're building — we'll figure out the rest."* CTA: **Drop us a line** → `/` (should link to contact drawer or `/contact` if added).                                                                            |
 
 **Content gaps:** CTA links back to `/` — should open the contact drawer or point to a dedicated contact page.
 
@@ -102,21 +102,21 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 **Sections (in order):**
 
-| Section | Content |
-|---|---|
-| Hero | H1: *"We blabber. About building."* Subtext: *"Opinions, experiments, and explainers from the messy middle of design and development."* |
-| Post Grid | 3-col grid (1-col mobile). Each post card: category badge, read time, title, excerpt, date, and **Read →** button. |
+| Section   | Content                                                                                                                                 |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Hero      | H1: *"We blabber. About building."* Subtext: *"Opinions, experiments, and explainers from the messy middle of design and development."* |
+| Post Grid | 3-col grid (1-col mobile). Each post card: category badge, read time, title, excerpt, date, and **Read →** button.                      |
 
 **Current posts (static data):**
 
-| Title | Category | Date | Read Time |
-|---|---|---|---|
-| A primer on design tokens | Design Systems | Apr 14, 2025 | 6 min |
-| Tailwind v4: what actually changed | CSS | Mar 28, 2025 | 8 min |
-| Focus states that don't suck | Accessibility | Mar 10, 2025 | 5 min |
-| Composing Radix UI components | React | Feb 20, 2025 | 7 min |
-| Dark mode without the headache | Design Systems | Feb 3, 2025 | 9 min |
-| Using Lottie without torching your bundle | Performance | Jan 15, 2025 | 4 min |
+| Title                                     | Category       | Date         | Read Time |
+| ----------------------------------------- | -------------- | ------------ | --------- |
+| A primer on design tokens                 | Design Systems | Apr 14, 2025 | 6 min     |
+| Tailwind v4: what actually changed        | CSS            | Mar 28, 2025 | 8 min     |
+| Focus states that don't suck              | Accessibility  | Mar 10, 2025 | 5 min     |
+| Composing Radix UI components             | React          | Feb 20, 2025 | 7 min     |
+| Dark mode without the headache            | Design Systems | Feb 3, 2025  | 9 min     |
+| Using Lottie without torching your bundle | Performance    | Jan 15, 2025 | 4 min     |
 
 **Content gaps:** Post data is currently static — no individual post routes (`/about/blog/[slug]`) exist yet. A dynamic route and MDX/CMS pipeline is needed to make posts navigable.
 
@@ -128,11 +128,11 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 **Sections (in order):**
 
-| Section | Content |
-|---|---|
-| Hero | H1: *"One bite at a time."* Subtext: *"A growing library of interactive UI patterns, reusable components, and frontend experiments..."* |
-| Section Nav | Five linked tiles, one per Bites sub-section: Foundations / Theming / Components / Categories / Technology. Labels and descriptions pulled from `NAV_ITEMS` config. |
-| Featured Bites | H2: *"Featured Bites"* with **Browse all →** link to `/bites/categories`. Static 4-item `ProductCard` grid. |
+| Section        | Content                                                                                                                                                             |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hero           | H1: *"One bite at a time."* Subtext: *"A growing library of interactive UI patterns, reusable components, and frontend experiments..."*                             |
+| Section Nav    | Five linked tiles, one per Bites sub-section: Foundations / Theming / Components / Categories / Technology. Labels and descriptions pulled from `NAV_ITEMS` config. |
+| Featured Bites | H2: *"Featured Bites"* with **Browse all →** link to `/bites/categories`. Static 4-item `ProductCard` grid.                                                         |
 
 ---
 
@@ -142,12 +142,12 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 **Sections:**
 
-| Section | Content |
-|---|---|
-| Hero | Badge: `Foundations`. H1: *"Base bits & building blocks."* Subtext about the primitive layer of the system. |
-| Typography | Heading scale (h1–h5) rendered live with class name, size range, and font metadata. Body and code examples below. |
-| Spacing Scale | Visual bar chart of Tailwind spacing steps 1–24. Labels show step number and pixel value. |
-| Border Radius | Swatch grid showing `rounded-none` through `rounded-full` with visual squares. |
+| Section       | Content                                                                                                           |
+| ------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Hero          | Badge: `Foundations`. H1: *"Base bits & building blocks."* Subtext about the primitive layer of the system.       |
+| Typography    | Heading scale (h1–h5) rendered live with class name, size range, and font metadata. Body and code examples below. |
+| Spacing Scale | Visual bar chart of Tailwind spacing steps 1–24. Labels show step number and pixel value.                         |
+| Border Radius | Swatch grid showing `rounded-none` through `rounded-full` with visual squares.                                    |
 
 ---
 
@@ -157,13 +157,13 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 **Sections:**
 
-| Section | Content |
-|---|---|
-| Hero | Badge: `Theming`. H1: *"Tokens, tints & tweaks."* |
+| Section         | Content                                                                                                                          |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Hero            | Badge: `Theming`. H1: *"Tokens, tints & tweaks."*                                                                                |
 | Semantic Tokens | Grid of semantic token swatches: Background, Foreground, Surface, Border, Text Muted, Primary, Secondary. Each shows token name. |
-| Gray Scale | 12-step warm sepia palette rendered as color squares. |
-| Yellow Scale | 12-step golden amber palette. Step 9 (`#f5c400`) highlighted as primary interactive. |
-| Dark Mode | Side-by-side light (`#fdfaf6`) and dark (`#0e0c0a`) background swatches with explanation of the `data-theme` switching strategy. |
+| Gray Scale      | 12-step warm sepia palette rendered as color squares.                                                                            |
+| Yellow Scale    | 12-step golden amber palette. Step 9 (`#f5c400`) highlighted as primary interactive.                                             |
+| Dark Mode       | Side-by-side light (`#fdfaf6`) and dark (`#0e0c0a`) background swatches with explanation of the `data-theme` switching strategy. |
 
 ---
 
@@ -173,11 +173,11 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 **Sections:**
 
-| Section | Content |
-|---|---|
-| Hero | Badge: `Components`. H1: *"Common components, coded cleanly."* |
-| Button Showcase | Live rendered buttons: all 6 primary variants, 4 sizes, and 3 icon positions (left / right / only). |
-| All Components | Grid of all 10 components: name, category badge, description, and status. Categories: Action, Display, Form, Overlay, Navigation. |
+| Section         | Content                                                                                                                           |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Hero            | Badge: `Components`. H1: *"Common components, coded cleanly."*                                                                    |
+| Button Showcase | Live rendered buttons: all 6 primary variants, 4 sizes, and 3 icon positions (left / right / only).                               |
+| All Components  | Grid of all 10 components: name, category badge, description, and status. Categories: Action, Display, Form, Overlay, Navigation. |
 
 **Components listed:** Button, Badge, Input, Select, TextArea, ProductCard, MarketingTile, Drawer, Navigation, Footer.
 
@@ -189,11 +189,11 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 **Sections:**
 
-| Section | Content |
-|---|---|
-| Hero | Badge: `Categories`. H1: *"Browse by bite type."* |
-| All Categories | 4-col grid of category cards: label, bite count, description, and **Browse →** link to `/bites/categories/[slug]`. |
-| Popular across categories | 4-col `ProductCard` grid of cross-category featured bites. |
+| Section                   | Content                                                                                                            |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Hero                      | Badge: `Categories`. H1: *"Browse by bite type."*                                                                  |
+| All Categories            | 4-col grid of category cards: label, bite count, description, and **Browse →** link to `/bites/categories/[slug]`. |
+| Popular across categories | 4-col `ProductCard` grid of cross-category featured bites.                                                         |
 
 **Categories:** CSS (12), React (9), JavaScript (7), Accessibility (5), Animation (6), Design Systems (8), Performance (4), DevOps (3).
 
@@ -207,12 +207,12 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 **Sections:**
 
-| Section | Content |
-|---|---|
-| Hero | Badge: `Technology`. H1: *"Feasibility FTW."* |
-| The Stack | Four cards: Next.js 15 / Tailwind CSS v4 / Radix UI / Lucide React. Each has icon, name, role tag, description, and external link. |
+| Section                | Content                                                                                                                                          |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Hero                   | Badge: `Technology`. H1: *"Feasibility FTW."*                                                                                                    |
+| The Stack              | Four cards: Next.js 15 / Tailwind CSS v4 / Radix UI / Lucide React. Each has icon, name, role tag, description, and external link.               |
 | Feasibility Principles | Four numbered principles: **Design for the DOM** / **Progressive enhancement** / **Composition over configuration** / **Tokens before classes**. |
-| Key Dependencies | Table of 7 key packages with version and Production/Dev badge. |
+| Key Dependencies       | Table of 7 key packages with version and Production/Dev badge.                                                                                   |
 
 ---
 
@@ -228,14 +228,14 @@ Every page should reinforce at least one pillar. The brand voice is: **direct, t
 
 ## Content Gaps Summary
 
-| Route | Gap | Priority |
-|---|---|---|
-| `/about/our_story` | Mission, values, team, and contact sections are placeholder copy | High |
-| `/about/services` | CTA button links to `/` instead of a contact action | Medium |
-| `/about/blog` | No individual post routes (`/about/blog/[slug]`) — posts are unnavigable | High |
-| `/bites/categories` | Category routes (`/bites/categories/[slug]`) don't exist — browse links are dead | Medium |
-| `/bites/*` | Bite counts are static; no real pattern data source connected | Low (future) |
-| All pages | No OG image or structured metadata for social sharing | Low |
+| Route               | Gap                                                                              | Priority     |
+| ------------------- | -------------------------------------------------------------------------------- | ------------ |
+| `/about/our_story`  | Mission, values, team, and contact sections are placeholder copy                 | High         |
+| `/about/services`   | CTA button links to `/` instead of a contact action                              | Medium       |
+| `/about/blog`       | No individual post routes (`/about/blog/[slug]`) — posts are unnavigable         | High         |
+| `/bites/categories` | Category routes (`/bites/categories/[slug]`) don't exist — browse links are dead | Medium       |
+| `/bites/*`          | Bite counts are static; no real pattern data source connected                    | Low (future) |
+| All pages           | No OG image or structured metadata for social sharing                            | Low          |
 
 ---
 
