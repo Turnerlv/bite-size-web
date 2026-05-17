@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Input } from './form/Input';
 import { TextArea } from './form/TextArea';
 import { Select } from './form/Select';
@@ -11,6 +11,7 @@ export default function ContactForm({ cancel }) {
         message: '',
         reason: ''
     });
+    const panelRef = useRef()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -27,7 +28,7 @@ export default function ContactForm({ cancel }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-8' >
             <div className='w-full flex flex-col sm:flex-row gap-6'>
                 <div className='flex-1'>
                     <Input

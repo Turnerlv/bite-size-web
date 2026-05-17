@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from './Button';
 import { useClickOutside } from '@/hooks/a11y/useClickOutside';
 import { useFocusReturn } from '@/hooks/a11y/useFocusReturn';
@@ -52,6 +52,7 @@ export default function Drawer({
             document.body.style.overflow = prev;
         };
     }, [open]);
+
 
     // Position by side
     const sidePosition = {

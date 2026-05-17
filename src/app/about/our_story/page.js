@@ -16,12 +16,12 @@ export default function OurStoryPage() {
                 flex items-center
                 text-foreground
             ">
-                <div className="w-full flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20">
+                <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-6 md:gap-8 lg:gap-20">
                     <h1 className="flex flex-col shrink-0">
                         <span className="heading-1 text-primary [text-shadow:-2px_-2px_0_var(--color-foreground)] dark:[text-shadow:none]">{story.hero.titleLines[0]}</span>
                         <span className="heading-1">{story.hero.titleLines[1]}</span>
                     </h1>
-                    <div className="flex flex-col gap-2 text-text-muted text-center md:text-left max-w-s">
+                    <div className="flex flex-col gap-1 md:gap-2 text-text-muted text-left max-w-s">
                         {story.hero.intro.map((line) => (
                             <p key={line}>{line}</p>
                         ))}
@@ -46,11 +46,11 @@ export default function OurStoryPage() {
             {/* Quote */}
             <section className="w-full bg-primary py-16 page-padding">
                 <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center text-center gap-2">
-                    <span className="heading-2 text-primary-contrast leading-none">"</span>
-                    <blockquote className="quote text-primary-contrast max-w-3xl">
+                    <span className="heading-2 text-primary-contrast leading-none">&ldquo;</span>
+                    <blockquote className="quote text-primary-contrast">
                         {story.quote}
                     </blockquote>
-                    <span className="heading-2 text-primary-contrast leading-none">"</span>
+                    <span className="heading-2 text-primary-contrast leading-none">&rdquo;</span>
                 </div>
             </section>
 
@@ -64,7 +64,7 @@ export default function OurStoryPage() {
                         {values.items.map((item) => (
                             <div key={item.title} className="flex flex-col gap-2">
                                 <h3 className="heading-5">{item.title}</h3>
-                                <p className="text-text-muted">{item.description}</p>
+                                <p className="text-sm md:text-base text-text-muted">{item.description}</p>
                             </div>
                         ))}
                     </div>

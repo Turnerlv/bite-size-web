@@ -24,13 +24,13 @@ export default function Breadcrumbs({ labelMap = {}, homeLabel = "Home" }) {
     });
 
     return (
-        <nav aria-label="Breadcrumb" className="font-body">
-            <ol className="flex flex-wrap items-center gap-2 text-sm text-foreground">
+        <nav aria-label="Breadcrumb" className="font-roboto uppercase tracking-[0.12em]">
+            <ol className="flex flex-wrap items-center gap-2 text-[11px] text-text-muted">
                 <li>
                     {pathnames.length === 0 ? (
-                        <span className="text-slate-900">{homeLabel}</span>
+                        <span className="text-foreground">{homeLabel}</span>
                     ) : (
-                        <Link href="/" className="">
+                        <Link href="/" className="transition hover:text-foreground">
                             {homeLabel}
                         </Link>
                     )}
@@ -39,13 +39,13 @@ export default function Breadcrumbs({ labelMap = {}, homeLabel = "Home" }) {
                 {crumbs.map(({ to, label, isLast }) => (
                     <React.Fragment key={to}>
                         <li aria-hidden="true">
-                            <ChevronRight className="h-4 w-4 text-slate-400" />
+                            <ChevronRight className="h-3.5 w-3.5 text-text-muted" />
                         </li>
                         <li>
                             {isLast ? (
-                                <span className="font-medium text-slate-900">{label}</span>
+                                <span className="text-foreground">{label}</span>
                             ) : (
-                                <Link href={to} className="transition hover:text-slate-900">
+                                <Link href={to} className="transition hover:text-foreground">
                                     {label}
                                 </Link>
                             )}
