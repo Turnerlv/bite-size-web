@@ -3,6 +3,7 @@ import { Input } from './form/Input';
 import { TextArea } from './form/TextArea';
 import { Select } from './form/Select';
 import Button from './Button';
+import { useKeyboardNavigation } from '@/hooks/a11y/useKeyboardNavigation';
 
 export default function ContactForm({ cancel }) {
     const [formData, setFormData] = useState({
@@ -28,7 +29,7 @@ export default function ContactForm({ cancel }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} className='flex flex-col gap-8' >
+        <form onSubmit={handleSubmit} className='flex flex-col gap-8' ref={() => panelRef}>
             <div className='w-full flex flex-col sm:flex-row gap-6'>
                 <div className='flex-1'>
                     <Input

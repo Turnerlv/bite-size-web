@@ -21,7 +21,7 @@ export function DrawerProvider({ children }) {
         setSide(sideOption);
 
         if (triggerEl) {
-            triggerRef.current = triggerEl;
+            triggerRef.current = triggerEl.current;
         }
 
         // Open after state updates are batched

@@ -43,12 +43,10 @@ export default function Navigation() {
 
     const handleToggle = (key) => {
         if (previousOpenKey.current === key) {
-            console.log("Closed by click")
             previousOpenKey.current = null;
             handleClose();
         } else {
             handleOpen(key);
-            console.log("Opened by click")
         }
     }
 
@@ -80,13 +78,14 @@ export default function Navigation() {
                     itemKey={nav.key}
                     isOpen={activeKey === nav.key}
                     items={nav.items}
-                    triggerRef={triggerRefs.current[nav.key]}
+                    triggerRef={{ current: triggerRefs.current[nav.key] }}
                     onClose={handleClose}
                     focusedIndex={focusedIndex}
                     setFocusedIndex={setFocusedIndex}
                     onMouseEnter={() => handleMouseEnter(nav.key)}
                     onMouseLeave={handleMouseLeave}
                 />
+
             ))}
         </>
     );
@@ -181,11 +180,12 @@ export default function Navigation() {
                             /* Border */ border-t border-border sm:border-none
                         `}>
                             <Button
+                                ref={buttonRef}
                                 variant='surface'
                                 icon={Heart}
                                 iconPosition='right'
                                 responsive='true'
-                                onClick={() => openDrawer({ title: 'Shoot us a message', node: <ContactForm cancel={closeDrawer} />, triggerEl: buttonRef.current, side: 'bottom' })}
+                                onClick={() => openDrawer({ title: 'Shoot us a message', node: <ContactForm cancel={closeDrawer} />, triggerEl: buttonRef, side: 'bottom' })}
                             >
                                 Bond
                             </Button>

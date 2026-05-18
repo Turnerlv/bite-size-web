@@ -39,9 +39,10 @@ const HomeContact = () => {
                 </div>
                 <div className='flex flex-col sm:flex-row gap-4'>
                     <Button
+                        ref={buttonRef}
                         variant='contrast'
                         responsive={false}
-                        onClick={() => openDrawer({ title: 'Shoot us a message', node: <ContactForm cancel={closeDrawer} />, triggerEl: buttonRef.current, side: 'bottom' })}
+                        onClick={() => openDrawer({ title: 'Shoot us a message', node: <ContactForm cancel={closeDrawer} />, triggerEl: buttonRef, side: 'bottom' })}
                     >
                         {contact.ctas.primary.label}
                     </Button>

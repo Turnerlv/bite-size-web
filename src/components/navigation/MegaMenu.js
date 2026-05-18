@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import NavItemSecondary from './NavItemSecondary';
 import { useKeyboardNavigation } from '@/hooks/a11y/useKeyboardNavigation';
 import { useClickOutside } from '@/hooks/a11y/useClickOutside';
@@ -19,6 +19,12 @@ export const MegaMenu = ({
     onMouseLeave
 }) => {
     const panelRef = useRef();
+    const closeReasonRef = useRef();
+
+    // const handleEscapeClose = useCallback(() => {
+    //     triggerRef?.current?.focus();
+    // }, [triggerRef, onClose]);
+
     const {
         itemRefs,
         focusedIndex,
@@ -30,8 +36,6 @@ export const MegaMenu = ({
         setFocusedIndex(-1);
         onClose();
     });
-
-    useFocusReturn(isOpen, triggerRef);
 
     useEffect(() => {
         if (isOpen) {
@@ -45,7 +49,7 @@ export const MegaMenu = ({
         <div
             id={`menu-${itemKey}`}
             role="menu"
-            tabIndex={1}
+            tabIndex={-1}
             ref={panelRef}
             onKeyDown={handleKeyDown}
             onMouseEnter={onMouseEnter}

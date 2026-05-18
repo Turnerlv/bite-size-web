@@ -24,6 +24,12 @@ export const useKeyboardNavigation = (itemCount, onClose) => {
                 e.preventDefault();
                 setFocusedIndex(itemCount - 1);
                 break;
+            case 'Enter':
+                if (focusedIndex >= 0 && itemRefs.current[focusedIndex]) {
+                    e.preventDefault();
+                    itemRefs.current[focusedIndex].click();
+                }
+                break;
             case 'Escape':
                 e.preventDefault();
                 if (focusedIndex !== -1) setFocusedIndex(-1);

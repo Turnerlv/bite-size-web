@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef, useId } from 'react';
 import Button from './Button';
 import { useClickOutside } from '@/hooks/a11y/useClickOutside';
 import { useFocusReturn } from '@/hooks/a11y/useFocusReturn';
@@ -15,36 +15,45 @@ export default function Drawer({
     side = 'bottom', // Change back to 'right' as default
     triggerRef, // for focus return
 }) {
-    const panelRef = React.useRef(null);
-    const titleId = React.useId();
-    const descriptionId = React.useId();
+    const panelRef = useRef(null);
+    const [focusableCount, setFocusableCount] = useState(0)
+
+    const titleId = useId();
+    const descriptionId = useId();
 
     const cx = (...classes) => classes.filter(Boolean).join(' ');
 
+    const {
+        itemRefs,
+        setFocusedIndex,
+        handleKeyDown
+    } = useKeyboardNavigation(focusableCount, onClose);
+
     // 1) Click outside to close
-    useClickOutside({
-        ref: panelRef,
-        enabled: open,
-        onOutsideClick: () => {
-            if (open) onClose();
-        },
+    useClickOutside(panelRef, () => {
+        setFocusedIndex(-1);
+        onClose();
     });
 
     // 2) Focus return to trigger when drawer closes
-    useFocusReturn({
-        open,
-        returnRef: triggerRef,
-    });
+    useFocusReturn(open, triggerRef);
 
-    // 3) Keyboard handling: ESC + focus trapping / navigation
-    useKeyboardNavigation({
-        enabled: open,
-        containerRef: panelRef,
-        onEscape: onClose,
-    });
+    // 3) Focus first form element on open
+    useEffect(() => {
+        if (!open || !panelRef.current) return
+
+        const nodes = Array.from(
+            panelRef.current.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+        )
+
+        itemRefs.current = nodes;
+        setFocusableCount(nodes.legth);
+        setFocusedIndex(1)
+        nodes[0]?.focus();
+    }, [open, children, itemRefs, setFocusedIndex]);
 
     // 4) Lock page scroll while open
-    React.useEffect(() => {
+    useEffect(() => {
         if (!open) return;
         const prev = document.body.style.overflow;
         document.body.style.overflow = 'hidden';
@@ -52,7 +61,6 @@ export default function Drawer({
             document.body.style.overflow = prev;
         };
     }, [open]);
-
 
     // Position by side
     const sidePosition = {
@@ -104,9 +112,11 @@ export default function Drawer({
             {/* Drawer panel */}
             <div
                 ref={panelRef}
+                tabIndex={-1}
+                onKeyDown={handleKeyDown}
                 className={cx(
                     'absolute bg-background border border-border shadow-xl py-6 page-padding outline-none flex flex-col items-center',
-                    'transition-transform duration-300 will-change-transform',
+                    'transition-transform duration-300 will-change-transform focus:border focus:border-primary',
                     sidePosition[side],
                     open ? openTransform[side] : closedTransform[side]
                 )}
@@ -127,7 +137,10 @@ export default function Drawer({
                     </Button>
                 </header>
 
-                <div id={descriptionId} className="max-w-screen-md w-full ">
+                <div
+                    id={descriptionId}
+                    className="max-w-screen-md w-full"
+                >
                     {children}
                 </div>
             </div>

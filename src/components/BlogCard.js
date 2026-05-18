@@ -3,7 +3,7 @@ import Badge from '@/components/Badge';
 
 export default function BlogCard({ post }) {
     return (
-        <Link href={`/about/briefs/${post.slug}`} className="block group">
+        <Link href={`/about/briefs/${post.slug}`} className="block group focus-visible:custom-focus">
             <article className="flex items-start sm:grid sm:grid-cols-4 md:grid-cols-3 gap-4 sm:gap-6 py-7 border-b border-border last:border-0 hover:bg-gray-a2 transition-colors -mx-4 px-4 md:-mx-0 md:px-0">
                 {/* Thumbnail */}
                 <div className="min-w-[100px] max-w-[125px] w-full sm:max-w-none sm:col-span-1 aspect-square md:aspect-16/9 bg-gray-3 rounded-md" />
