@@ -15,7 +15,7 @@ import ContactForm from '../ContactForm';
 export default function Navigation() {
     const { isOpen, open, close } = useDisclosure(false);
     const [activeKey, setActiveKey] = useState(null);
-    const [focusedIndex, setFocusedIndex] = useState(-1);
+    const [openInteraction, setOpenInteraction] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
     const [menu, setMenu] = useState('hidden');
 
@@ -28,32 +28,32 @@ export default function Navigation() {
     const buttonRef = useRef(null);
 
 
-    const handleOpen = (key) => {
+    const handleOpen = (key, interaction = 'toggle') => {
         previousOpenKey.current = key;
+        setOpenInteraction(interaction);
         setActiveKey(key);
-        setFocusedIndex(0);
         open();
     };
 
     const handleClose = () => {
         setActiveKey(null);
-        setFocusedIndex(-1);
+        setOpenInteraction(null);
+        previousOpenKey.current = null;
         close();
     };
 
     const handleToggle = (key) => {
         if (previousOpenKey.current === key) {
-            previousOpenKey.current = null;
             handleClose();
         } else {
-            handleOpen(key);
+            handleOpen(key, 'toggle');
         }
     }
 
     const handleMouseEnter = (key) => {
         if (isMobile) return;
         clearTimeout(closeTimeoutRef.current);
-        handleOpen(key);
+        handleOpen(key, 'hover');
     };
 
     const handleMouseLeave = () => {
@@ -69,6 +69,15 @@ export default function Navigation() {
         previousOpenKey.current = null;
     };
 
+    useEffect(() => {
+        if (!open || !isMobile) return;
+        const prev = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = prev;
+        };
+    }, [open]);
+
     const megaMenu = (
         <>
             {NAV_ITEMS.map((nav) => (
@@ -77,11 +86,10 @@ export default function Navigation() {
                     key={nav.key}
                     itemKey={nav.key}
                     isOpen={activeKey === nav.key}
+                    openInteraction={openInteraction}
                     items={nav.items}
                     triggerRef={{ current: triggerRefs.current[nav.key] }}
                     onClose={handleClose}
-                    focusedIndex={focusedIndex}
-                    setFocusedIndex={setFocusedIndex}
                     onMouseEnter={() => handleMouseEnter(nav.key)}
                     onMouseLeave={handleMouseLeave}
                 />
@@ -185,7 +193,7 @@ export default function Navigation() {
                                 icon={Heart}
                                 iconPosition='right'
                                 responsive='true'
-                                onClick={() => openDrawer({ title: 'Shoot us a message', node: <ContactForm cancel={closeDrawer} />, triggerEl: buttonRef, side: 'bottom' })}
+                                onClick={() => openDrawer({ title: 'Shoot us a message', node: <ContactForm cancel={closeDrawer} />, triggerEl: buttonRef, side: 'bottom', urlParam: 'contact' })}
                             >
                                 Bond
                             </Button>

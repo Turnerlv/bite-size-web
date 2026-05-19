@@ -27,7 +27,7 @@ const NavItemSecondary = forwardRef(({
                 // Text & Typography
                 "font-work",
                 // State/ARIA/Data
-                "hover:bg-gray-a-4 focus:custom-focus"
+                "hover:bg-gray-a4 focus-visible:custom-focus"
             ].join(" ")}
             {...props}
         >

@@ -48,7 +48,7 @@ export const HOME_CONTENT = {
     },
     featuredBites: {
         title: 'Featured Architectures',
-        items: [
+        bitesRaw: [
             {
                 heading: 'Event-Driven Webhook Architecture',
                 description: 'Resilient async patterns for real-time data pipelines.',
@@ -74,6 +74,12 @@ export const HOME_CONTENT = {
                 preview: '/bite_preview_4.png',
             },
         ],
+        get bites() {
+            return this.bitesRaw.map(bite => ({
+                ...bite,
+                slug: bite.heading.trim().toLowerCase().replace(/\s+/g, '-')
+            }));
+        },
     },
     contact: {
         title: 'Ready to bite the bullet on technical debt?',

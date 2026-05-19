@@ -16,15 +16,11 @@ export default function HomeFeaturedBites() {
           lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible lg:snap-none
         "
             >
-                {featuredBites.items.slice(0, 4).map((bite, idx) => (
+                {featuredBites.bites.slice(0, 4).map((bite) => (
                     <ProductCard
-                        key={idx}
-                        heading={bite.heading}
-                        description={bite.description}
-                        category={bite.category}
-                        preview={bite.preview}
-                        // Uncomment if you add routes later: route={bite.route}
-
+                        key={bite.slug}
+                        id={bite.slug}
+                        bite={bite}
                         className="
               snap-start
               shrink-0 basis-[280px] max-w-[280px]

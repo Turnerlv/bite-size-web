@@ -42,7 +42,7 @@ const HomeContact = () => {
                         ref={buttonRef}
                         variant='contrast'
                         responsive={false}
-                        onClick={() => openDrawer({ title: 'Shoot us a message', node: <ContactForm cancel={closeDrawer} />, triggerEl: buttonRef, side: 'bottom' })}
+                        onClick={() => openDrawer({ title: 'Shoot us a message', node: <ContactForm cancel={closeDrawer} />, triggerEl: buttonRef, side: 'bottom', urlParam: 'contact' })}
                     >
                         {contact.ctas.primary.label}
                     </Button>

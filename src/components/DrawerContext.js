@@ -8,17 +8,19 @@ import Drawer from '@/components/Drawer';
 const DrawerContext = createContext(null);
 
 export function DrawerProvider({ children }) {
-    const { isOpen, open, close } = useDisclosure(false);
+    const [urlKey, setUrlKey] = useState(undefined);
+    const { isOpen, open, close } = useDisclosure(false, { urlKey });
 
     const triggerRef = useRef(null);
     const [content, setContent] = useState(null);
     const [title, setTitle] = useState('');
     const [side, setSide] = useState('bottom');
 
-    const openDrawer = ({ title = '', node, triggerEl, side: sideOption = 'bottom' }) => {
+    const openDrawer = ({ title = '', node, triggerEl, side: sideOption = 'bottom', urlParam }) => {
         setTitle(title);
         setContent(node);
         setSide(sideOption);
+        setUrlKey(urlParam ?? undefined);
 
         if (triggerEl) {
             triggerRef.current = triggerEl.current;

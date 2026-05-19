@@ -1,11 +1,17 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export const useFocusReturn = (isOpen, triggerRef, shouldReturnFocus) => {
+    const wasOpenRef = useRef(false);
+
     useEffect(() => {
-        if (!isOpen && triggerRef?.current) {
+        const wasOpen = wasOpenRef.current;
+
+        if (wasOpen && !isOpen && shouldReturnFocus && triggerRef?.current) {
             triggerRef.current.focus();
         }
-    }, [isOpen, triggerRef]);
+
+        wasOpenRef.current = isOpen;
+    }, [isOpen, triggerRef, shouldReturnFocus]);
 };

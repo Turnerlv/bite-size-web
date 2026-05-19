@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef } from 'react';
 import NavItemSecondary from './NavItemSecondary';
 import { useKeyboardNavigation } from '@/hooks/a11y/useKeyboardNavigation';
 import { useClickOutside } from '@/hooks/a11y/useClickOutside';
@@ -12,6 +12,7 @@ export const MegaMenu = ({
     label,
     itemKey,
     isOpen,
+    openInteraction,
     triggerRef,
     items,
     onClose,
@@ -19,29 +20,47 @@ export const MegaMenu = ({
     onMouseLeave
 }) => {
     const panelRef = useRef();
-    const closeReasonRef = useRef();
-
-    // const handleEscapeClose = useCallback(() => {
-    //     triggerRef?.current?.focus();
-    // }, [triggerRef, onClose]);
+    const closeReasonRef = useRef(null);
 
     const {
         itemRefs,
         focusedIndex,
         setFocusedIndex,
         handleKeyDown
-    } = useKeyboardNavigation(items.length, onClose);
+    } = useKeyboardNavigation(items.length, () => closeWithReason('escape'));
 
-    useClickOutside(panelRef, () => {
+    const closeWithReason = (reason) => {
+        closeReasonRef.current = reason;
         setFocusedIndex(-1);
         onClose();
+    };
+
+    const handlePanelMouseLeave = () => {
+        closeReasonRef.current = 'mouse';
+        setFocusedIndex(-1);
+        onMouseLeave?.();
+    };
+
+    const shouldReturnFocus = closeReasonRef.current === 'escape';
+    useFocusReturn(isOpen, triggerRef, shouldReturnFocus);
+
+    useClickOutside(panelRef, () => {
+        closeWithReason('outside');
     });
 
     useEffect(() => {
         if (isOpen) {
+            closeReasonRef.current = null;
             panelRef.current?.focus();
+            if (openInteraction === 'hover') {
+                setFocusedIndex(-1);
+            } else {
+                setFocusedIndex(0);
+            }
+        } else {
+            setFocusedIndex(-1);
         }
-    }, [isOpen]);
+    }, [isOpen, openInteraction, setFocusedIndex]);
 
     if (!isOpen) return null;
 
@@ -53,7 +72,7 @@ export const MegaMenu = ({
             ref={panelRef}
             onKeyDown={handleKeyDown}
             onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            onMouseLeave={handlePanelMouseLeave}
             aria-label={`${itemKey} submenu`}
             className={[
                 // Size
@@ -94,7 +113,7 @@ export const MegaMenu = ({
                             "sm:hidden",
                         ].join(" ")}
                     >
-                        <Button variant="ghost" icon={ChevronLeft} iconPosition="only" onClick={onClose}></Button>
+                        <Button variant="ghost" icon={ChevronLeft} iconPosition="only" onClick={() => closeWithReason('back-button')}></Button>
                     </div>
                     <h2
                         className={[

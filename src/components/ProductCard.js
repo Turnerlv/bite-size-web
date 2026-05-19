@@ -1,25 +1,14 @@
-'use client';
-
 import React from 'react';
 import Badge from './Badge';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function ProductCard({
-    heading,
-    description,
-    category,
-    preview,
-    route,
+    bite,
     className = '',
 }) {
-    const router = useRouter();
-
-    const handleClick = () => {
-        if (route) router.push(route);
-    };
 
     return (
-        <div
+        <Link href={`/bites/${bite.slug}`}
             className={[
                 // default card styles
                 'border border-border bg-surface p-3 pt-4',
@@ -27,27 +16,26 @@ export default function ProductCard({
                 // layout styles from parent
                 className,
             ].join(' ')}
-            onClick={handleClick}
         >
             <div className="mb-3 flex items-start gap-2">
                 <div className="flex-1">
-                    <h3 className="m-0 text-base font-bold">{heading}</h3>
-                    <p className="m-0 text-xs text-gray-11">{description}</p>
+                    <h3 className="m-0 text-base font-bold">{bite.heading}</h3>
+                    <p className="m-0 text-xs text-gray-11">{bite.description}</p>
                 </div>
-                <Badge text={category} />
+                <Badge text={bite.category} />
             </div>
 
-            {preview && (
+            {bite.preview && (
                 <div className="mt-auto">
                     <div className="mt-3 aspect-[4/3] w-full overflow-hidden rounded-md bg-gray-4">
                         <img
-                            src={preview}
-                            alt={heading}
+                            src={bite.preview}
+                            alt={bite.heading}
                             className="h-full w-full object-cover"
                         />
                     </div>
                 </div>
             )}
-        </div>
+        </Link>
     );
 }

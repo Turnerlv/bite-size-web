@@ -2,10 +2,10 @@
 
 import ProductCard from '@/components/ProductCard';
 import Search from '@/components/navigation/Search';
-import { BITES_CONTENT } from '@/content/static';
+import { HOME_CONTENT } from '@/content/static';
 
 export default function BitesPage() {
-    const { featured } = BITES_CONTENT;
+    const { featuredBites } = HOME_CONTENT;
 
     return (
         <div className="pt-[74px]">
@@ -33,13 +33,10 @@ export default function BitesPage() {
                     <h2 className="heading-3">Browse bites</h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {featured.items.map((bite, idx) => (
+                    {featuredBites.bites.map((bite, idx) => (
                         <ProductCard
                             key={idx}
-                            heading={bite.heading}
-                            description={bite.description}
-                            category={bite.category}
-                            preview={bite.preview}
+                            bite={bite}
                         />
                     ))}
                 </div>

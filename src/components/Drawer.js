@@ -116,7 +116,7 @@ export default function Drawer({
                 onKeyDown={handleKeyDown}
                 className={cx(
                     'absolute bg-background border border-border shadow-xl py-6 page-padding outline-none flex flex-col items-center',
-                    'transition-transform duration-300 will-change-transform focus:border focus:border-primary',
+                    'transition-transform duration-300 will-change-transform',
                     sidePosition[side],
                     open ? openTransform[side] : closedTransform[side]
                 )}
