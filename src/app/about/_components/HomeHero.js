@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Button from '../Button';
+import Button from '@/components/Button';
 import { HOME_CONTENT } from '@/content/static';
 
 export default function Hero() {

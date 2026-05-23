@@ -1,8 +1,8 @@
-import Hero from '@/components/sections/HomeHero';
-import ValueProp from '@/components/sections/HomeValue';
-import HomeDifferentiator from '@/components/sections/HomeDifferentiator';
-import HomeFeaturedBites from '@/components/sections/HomeFeaturedBites';
-import HomeContact from '@/components/sections/Contact';
+import Hero from './about/_components/HomeHero';
+import ValueProp from './about/_components/HomeValue';
+import HomeDifferentiator from './about/_components/HomeDifferentiator';
+import HomeFeaturedBites from './about/_components/HomeFeaturedBites';
+import HomeContact from './about/_components/Contact';
 
 export default function Home() {
   return (

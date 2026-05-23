@@ -1,7 +1,7 @@
-import CategoryHeader from '@/components/CategoryHeader';
-import CategoryOverview from '@/components/CategoryOverview';
 import EmptyState from '@/components/EmptyState';
 import { DEVELOPER_EXPERIENCE_CONTENT } from '@/content/static';
+import CategoryHeader from '../_components/CategoryHeader';
+import CategoryOverview from '../_components/CategoryOverview';
 
 export const metadata = {
     title: 'Developer Experience — Bites — Bite Size Design',

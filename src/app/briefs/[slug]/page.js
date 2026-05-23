@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/navigation/Breadcrumbs';
 import Badge from '@/components/Badge';
-import Button from '@/components/Button';
 import { Share2, Bookmark } from 'lucide-react';
 import { BLOG_CONTENT } from '@/content/static';
 

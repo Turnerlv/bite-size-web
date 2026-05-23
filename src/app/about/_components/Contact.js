@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useRef } from 'react';
-import Button from '../Button';
+import Button from '@/components/Button';
 import { useDrawer } from '@/components/DrawerContext';
-import ContactForm from '../ContactForm';
+import ContactForm from '@/components/form/ContactForm';
 import { HOME_CONTENT } from '@/content/static';
 
 const HomeContact = () => {

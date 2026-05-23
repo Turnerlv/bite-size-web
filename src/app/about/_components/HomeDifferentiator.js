@@ -1,5 +1,5 @@
 import React from 'react';
-import Tile from '../MarketingTile';
+import Tile from './MarketingTile';
 import { HOME_CONTENT } from '@/content/static';
 
 const HomeDifferentiator = () => {

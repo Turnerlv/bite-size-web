@@ -10,7 +10,7 @@ import Link from 'next/link';
 import Button from '../Button';
 import { Heart, Menu, X, ChevronLeft } from 'lucide-react';
 import { useDrawer } from '@/components/DrawerContext';
-import ContactForm from '../ContactForm';
+import ContactForm from '../form/ContactForm';
 
 export default function Navigation() {
     const { isOpen, open, close } = useDisclosure(false);

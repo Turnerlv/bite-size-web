@@ -1,7 +1,7 @@
-import FeaturedBlogCard from '@/components/FeaturedBlogCard';
-import BlogCard from '@/components/BlogCard';
 import Button from '@/components/Button';
 import { BLOG_CONTENT } from '@/content/static';
+import BlogCard from './_components/BlogCard';
+import FeaturedBlogCard from './_components/FeaturedBlogCard';
 
 export const metadata = {
     title: 'Briefs — Bite Size Design',

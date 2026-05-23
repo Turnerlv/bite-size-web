@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Input } from './form/Input';
-import { TextArea } from './form/TextArea';
-import { Select } from './form/Select';
-import Button from './Button';
+import { Input } from './Input';
+import { TextArea } from './TextArea';
+import { Select } from './Select';
+import Button from '../Button';
 import { useKeyboardNavigation } from '@/hooks/a11y/useKeyboardNavigation';
 
 export default function ContactForm({ cancel }) {

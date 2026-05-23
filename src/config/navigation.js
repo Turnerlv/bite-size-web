@@ -5,7 +5,7 @@ export const NAV_ITEMS = [
         items: [
             {
                 label: 'Our story',
-                href: '/about/our_story',
+                href: '/about',
                 icon: 'Notebook',
                 description: 'How we build',
             },
@@ -17,7 +17,7 @@ export const NAV_ITEMS = [
             // },
             {
                 label: 'Briefs',
-                href: '/about/briefs',
+                href: '/briefs',
                 icon: 'BookA',
                 description: 'Blabbing about building',
             },

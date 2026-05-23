@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductCard from '../ProductCard';
+import ProductCard from '@/components/ProductCard';
 import { HOME_CONTENT } from '@/content/static';
 
 export default function HomeFeaturedBites() {

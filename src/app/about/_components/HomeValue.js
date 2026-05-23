@@ -1,5 +1,5 @@
 import React from "react";
-import AnimatedIllustration from "@/components/AnimatedIllustration";
+import AnimatedIllustration from "./AnimatedIllustration";
 import { HOME_CONTENT } from '@/content/static';
 
 export default function ValueProp() {

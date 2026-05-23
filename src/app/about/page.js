@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Contact from '@/components/sections/Contact';
+import Contact from './_components/Contact';
 import { ABOUT_CONTENT } from '@/content/static';
 
 export default function OurStoryPage() {
