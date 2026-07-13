@@ -27,6 +27,7 @@ export default function Tabs({
                         <Link
                             key={tab.href || index}
                             href={tab.href}
+                            prefetch={isActive ? false : null}
                             className={`font-work text-base text-text-muted px-4 py-2 border-b-4 transition-colors cursor-pointer hover:bg-gray-a3 focus-visible:custom-focus ${isActive ? 'border-b-primary text-primary' : 'border-b-transparent'
                                 }`}
                         >

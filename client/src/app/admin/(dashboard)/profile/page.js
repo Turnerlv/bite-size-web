@@ -9,9 +9,10 @@ export default async function ProfilePage() {
 
     try {
         if (session?.id) {
-            userData = await usersAPI.server.getById(session.id, { cache: 'no-store' }) ?? {};
+            userData = await usersAPI.server.getById(session.id, { next: { revalidate: 30 } }) ?? {};
         }
     } catch (error) {
+        if (error?.digest?.startsWith('NEXT_REDIRECT')) throw error;
         console.error('Error fetching user:', error);
     }
 

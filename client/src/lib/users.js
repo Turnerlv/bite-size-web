@@ -9,6 +9,7 @@ export async function updateProfileAction(formData) {
         const updated = await usersAPI.server.updateUser(user.id, formData);
         return { success: true, user: updated };
     } catch (error) {
+        if (error?.digest?.startsWith('NEXT_REDIRECT')) throw error;
         return { error: error?.message ?? 'Failed to update profile' };
     }
 }

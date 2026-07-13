@@ -346,7 +346,7 @@ export const EMPTY_STATE_CONTENT = {
         'Currently architecting new patterns in the lab. Check back soon for more insights.',
     cta: {
         label: 'Browse all bites',
-        href: '/bites/categories',
+        href: '/bites/',
     },
 };
 

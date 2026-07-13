@@ -59,6 +59,7 @@ export async function changePasswordAction(formData) {
     return { success: true, error: null };
 
   } catch (error) {
+    if (error?.digest?.startsWith('NEXT_REDIRECT')) throw error;
     return { error: error?.message };
   }
 }

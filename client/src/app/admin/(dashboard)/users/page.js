@@ -10,6 +10,7 @@ export default async function UsersPage() {
     try {
         userList = await usersAPI.server.getAll({ cache: 'no-store' });
     } catch (error) {
+        if (error?.digest?.startsWith('NEXT_REDIRECT')) throw error;
         console.error('Error fetching data:', error);
     }
 

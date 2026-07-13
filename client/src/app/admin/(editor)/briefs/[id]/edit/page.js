@@ -12,6 +12,7 @@ export default async function EditBriefPage({ params}) {
     try {
         post = await briefsAPI.server.getById(id);
     } catch (error) {
+        if (error?.digest?.startsWith('NEXT_REDIRECT')) throw error;
         notFound();
     }
 

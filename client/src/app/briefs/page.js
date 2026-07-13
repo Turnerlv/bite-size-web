@@ -38,33 +38,41 @@ export default async function BlogPage() {
             </section >
 
             <div className='page-padding mx-auto max-w-300'>
-                {/* Featured post */}
-                < section className="max-w-[996px] py-12 border-t border-border" >
-                    <div className="grid grid-cols-1 md:grid-cols-[3fr_12fr] gap-10 md:gap-16">
-                        <div className="pt-1">
-                            <span className="heading-5">Featured brief</span>
-                        </div>
-                        <FeaturedBlogCard post={featured} />
-                    </div>
-                </section >
-                {/* All briefs */}
-                < section className="max-w-[996px] py-12 border-t border-border pb-20" >
-                    <div className="grid grid-cols-1 md:grid-cols-[3fr_12fr] gap-10 md:gap-16">
-                        <div className="pt-1">
-                            <span className="heading-5">All briefs</span>
-                        </div>
-                        <div className="flex flex-col">
-                            {rest.map((post) => (
-                                <BlogCard key={post.slug} post={post} />
-                            ))}
-                            <div className="flex justify-center pt-10">
-                                <Button variant="outline" size="sm">
-                                    Load more briefs
-                                </Button>
+                {briefs.length === 0 ? (
+                    <section className="max-w-[996px] py-12 border-t border-border">
+                        <p className="font-work text-text-muted">No published briefs yet. Check back soon.</p>
+                    </section>
+                ) : (
+                    <>
+                        {/* Featured post */}
+                        <section className="max-w-[996px] py-12 border-t border-border">
+                            <div className="grid grid-cols-1 md:grid-cols-[3fr_12fr] gap-10 md:gap-16">
+                                <div className="pt-1">
+                                    <span className="heading-5">Featured brief</span>
+                                </div>
+                                <FeaturedBlogCard post={featured} />
                             </div>
-                        </div>
-                    </div>
-                </section >
+                        </section>
+                        {/* All briefs */}
+                        <section className="max-w-[996px] py-12 border-t border-border pb-20">
+                            <div className="grid grid-cols-1 md:grid-cols-[3fr_12fr] gap-10 md:gap-16">
+                                <div className="pt-1">
+                                    <span className="heading-5">All briefs</span>
+                                </div>
+                                <div className="flex flex-col">
+                                    {rest.map((post) => (
+                                        <BlogCard key={post.slug} post={post} />
+                                    ))}
+                                    <div className="flex justify-center pt-10">
+                                        <Button variant="outline" size="sm">
+                                            Load more briefs
+                                        </Button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </>
+                )}
             </div>
 
         </div >

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { redirect } from 'next/navigation';
 
 // Client calls
 export const apiClient = axios.create({
@@ -49,6 +50,13 @@ export const serverFetch = async (endpoint, options = {}) => {
         : {};
 
     if (!res.ok) {
+        // 401 on the server side means the JWT has expired or is invalid.
+        // Redirect to login rather than throwing — this mirrors the client-side
+        // apiClient interceptor and gives the user a recoverable path instead of
+        // landing on an error page.
+        if (res.status === 401) {
+            redirect('/login?reason=expired');
+        }
         const message = data?.message ?? data?.error ?? res.statusText;
         throw new Error(message);
     }
