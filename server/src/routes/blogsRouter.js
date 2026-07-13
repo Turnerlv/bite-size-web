@@ -26,10 +26,10 @@ blogsRouter.post('/',
 
 
 // Get all blogs
-blogsRouter.get('/', async (req, res) => {
+blogsRouter.get('/', wrap(async (req, res) => {
     const blogs = await blogQueries.getBlogs()
     res.send(blogs)
-})
+}))
 
 // Get blogs by author
 blogsRouter.get('/by-author/:authorId',
@@ -41,11 +41,11 @@ blogsRouter.get('/by-author/:authorId',
     }))
 
 // Get blog by ID
-blogsRouter.get('/blog-by-id/:id', async (req, res) => {
+blogsRouter.get('/blog-by-id/:id', wrap(async (req, res) => {
     const id = req.params.id
     const blog = await blogQueries.getBlogById(id)
     res.send(blog)
-})
+}))
 
 // Update blog
 blogsRouter.put('/blog-by-id/:id',
@@ -64,11 +64,11 @@ blogsRouter.put('/blog-by-id/:id',
     }))
 
 //Get blog by slug
-blogsRouter.get('/blog-by-slug/:slug', async (req, res) => {
+blogsRouter.get('/blog-by-slug/:slug', wrap(async (req, res) => {
     const slug = req.params.slug
     const blog = await blogQueries.getBlogBySlug(slug)
     res.send(blog)
-})
+}))
 
 // Delete blog
 blogsRouter.delete('/blog-by-id/:id',

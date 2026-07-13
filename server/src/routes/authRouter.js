@@ -17,7 +17,7 @@ authRouter.post('/create-account', wrap(async (req, res) => {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
-        maxAge: 1000 * 60 * 1 // 1 minute
+        maxAge: 1000 * 60 * 15 // 15 minutes
     })
     res.status(201)
     res.send(user)
@@ -34,14 +34,14 @@ authRouter.post('/login', wrap(async (req, res) => {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
-        maxAge: 1000 * 60 // 1 minute
+        maxAge: 1000 * 60 * 15 // 15 minutes
     })
 
     res.cookie('user_context', JSON.stringify(user.user), {
         httpOnly: false,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
-        maxAge: 1000 * 60 // 1 minute
+        maxAge: 1000 * 60 * 15 // 15 minutes
     })
 
     res.send(user)

@@ -14,7 +14,9 @@ VALUES
     (2, 'local', '$2a$10$qS40Ft/Pxrphk0boVOkdD.KVOCB65rir1aCMm0K36V./GCxvJsSm.');
 
 -- 4. Insert Blogs linked to those specific author IDs
-INSERT INTO blogs (title, description, category, image_url, content, author_id, slug, created_at)
+-- is_published is explicitly TRUE here so seed data is immediately visible in the app.
+-- Real user drafts will correctly default to FALSE until approved.
+INSERT INTO blogs (title, description, category, image_url, content, author_id, slug, is_published, created_at)
 VALUES
     (
         'My First Post', 
@@ -27,7 +29,8 @@ VALUES
             {"data": {"text": "Separating our styling layout from our raw text structure makes managing production data incredibly easy over time."},"type": "paragraph"}
         ]'::jsonb, 
         1, 
-        'my-first-post', 
+        'my-first-post',
+        TRUE,
         CURRENT_TIMESTAMP
     ),
     (
@@ -41,6 +44,7 @@ VALUES
         ]'::jsonb, 
         2, 
         'learning-postgres',
+        TRUE,
         CURRENT_TIMESTAMP
     );
 

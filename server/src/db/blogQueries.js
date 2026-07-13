@@ -27,6 +27,7 @@ const blogQueries = {
                 b.content, 
                 u.name AS author, 
                 b.slug,
+                b.is_published AS "isPublished",
                 b.created_at AS "createdAt"
             FROM inserted_blog AS b
             JOIN users AS u ON b.author_id = u.id;
@@ -46,9 +47,11 @@ const blogQueries = {
                     b.content, 
                     u.name AS author,
                     b.slug,
+                    b.is_published AS "isPublished",
                     b.created_at AS "createdAt"
                 FROM blogs AS b
                 INNER JOIN users AS u ON u.id = b.author_id
+                WHERE b.is_published = TRUE
                 ORDER BY b.created_at DESC;
             `;
         const { rows: allBlogs } = await db.query(query)
@@ -66,6 +69,7 @@ const blogQueries = {
                     b.content, 
                     u.name AS author,
                     b.slug,
+                    b.is_published AS "isPublished",
                     b.created_at AS "createdAt"
                 FROM blogs AS b
                 INNER JOIN users AS u ON u.id = b.author_id
@@ -88,6 +92,7 @@ const blogQueries = {
                 b.author_id,
                 u.name AS author,
                 b.slug,
+                b.is_published AS "isPublished",
                 b.created_at AS "createdAt"
             FROM blogs AS b
             INNER JOIN users AS u ON u.id = b.author_id
@@ -136,10 +141,12 @@ const blogQueries = {
                 b.content, 
                 u.name AS author,
                 b.slug,
+                b.is_published AS "isPublished",
                 b.created_at AS "createdAt"
             FROM blogs AS b
             INNER JOIN users AS u ON u.id = b.author_id
-            WHERE b.slug = $1;
+            WHERE b.slug = $1
+            AND b.is_published = TRUE;
         `;
         const { rows: [blog] } = await db.query(query, [slug])
         blogValidation(blog)
