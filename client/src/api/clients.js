@@ -25,7 +25,9 @@ apiClient.interceptors.response.use(
 );
 
 // Server calls
-const SERVER_URL = 'http://localhost:3000/api';
+const SERVER_URL = process.env.NODE_ENV === 'production' 
+    ? 'http://127.0.0.1:3000/api' 
+    : 'http://localhost:3000/api';
 
 export const serverFetch = async (endpoint, options = {}) => {
     const { cookies } = await import('next/headers');
