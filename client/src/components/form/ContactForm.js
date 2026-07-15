@@ -34,7 +34,7 @@ export default function ContactForm({ cancel }) {
         return (
             <div className='flex my-12 flex-col gap-4 items-center justify-center text-center'>
                 <h2 className='heading-1'>Thanks!</h2>
-                <p className='text-lg text-text-muted'>We'll be in touch soon.</p>
+                <p className='text-lg text-text-muted'>{"We'll be in touch soon."}</p>
             </div>
         );
     }
