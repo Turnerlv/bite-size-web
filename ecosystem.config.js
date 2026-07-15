@@ -6,7 +6,7 @@ module.exports = {
       script: 'src/app.js',
       env: {
         NODE_ENV: 'production',
-        PORT: 3000, 
+        PORT: 3000,
         PGUSER: 'turner',
         PGPASSWORD: 'your_secure_password',
         PGHOST: '127.0.0.1',
