@@ -98,7 +98,7 @@ export default function ContactForm({ cancel }) {
 
             <div className='flex flex-col-reverse sm:flex-row gap-6 justify-end'>
                 <Button type="button" variant='ghost' onClick={cancel} size='lg'>Cancel</Button>
-                <Button type="submit" isLoading={formspreeState.submitting} size='lg'>Let&apos;s talk</Button>
+                <Button type="submit" isLoading={formspreeState.submitting} size='lg'>{"Let's talk"}</Button>
             </div>
         </form>
     );
