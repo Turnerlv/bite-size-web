@@ -23,8 +23,8 @@ export async function createAccountAction(formData) {
     const response = await authAPI.server.createAccount(payload);
 
     const cookieStore = await cookies();
-    cookieStore.set('token', response.token, { httpOnly: true, sameSite: 'strict', maxAge: 30 });
-    cookieStore.set('user_context', JSON.stringify(response.user), { httpOnly: false, sameSite: 'strict', maxAge: 30 });
+    cookieStore.set('token', response.token, { httpOnly: true, sameSite: 'strict', maxAge: 60 * 15 });
+    cookieStore.set('user_context', JSON.stringify(response.user), { httpOnly: false, sameSite: 'strict', maxAge: 60 * 15 });
 
     return { success: true, user: response.user, token: response.token, error: null };
 
@@ -41,8 +41,8 @@ export async function loginAction(formData) {
     const response = await authAPI.server.login(payload);
 
     const cookieStore = await cookies();
-    cookieStore.set('token', response.token, { httpOnly: true, sameSite: 'strict', maxAge: 60 });
-    cookieStore.set('user_context', JSON.stringify(response.user), { httpOnly: false, sameSite: 'strict', maxAge: 60 });
+    cookieStore.set('token', response.token, { httpOnly: true, sameSite: 'strict', maxAge: 60 * 15 });
+    cookieStore.set('user_context', JSON.stringify(response.user), { httpOnly: false, sameSite: 'strict', maxAge: 60 * 15 });
 
     return { success: true, user: response.user, token: response.token, error: null };
 
