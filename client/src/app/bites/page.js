@@ -3,6 +3,7 @@
 import ProductCard from '@/components/ProductCard';
 import Search from '@/components/navigation/Search';
 import { HOME_CONTENT } from '@/content/static';
+import Alert from '@/components/Alert';
 
 export default function BitesPage() {
     const { featuredBites } = HOME_CONTENT;
@@ -10,7 +11,7 @@ export default function BitesPage() {
     return (
         <div className="pt-[74px]">
             <section className="py-16 page-padding mx-auto max-w-[700px]">
-                <div className="w-[540px] mx-auto">
+                <div className="max-w-[540px] mx-auto">
                     <h1 className="
                     /* Spacing */
                     mb-4
