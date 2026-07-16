@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/.next')));
 
     // catch-all wildcard (Express v5 compatible)
-    app.get('/{*splat}', (req, res) => {
+    app.get('/:splat(.*)', (req, res) => {
         res.sendFile(path.join(frontendBuildPath, 'index.html'));
     });
 }
