@@ -11,7 +11,8 @@ export function NotificationProvider({ children }) {
 
     // Thread-safe method to enqueue new toasts with unique IDs
     const showToast = useCallback((title, description, variant = 'default') => {
-        setToasts((prev) => [...prev, { id: crypto.randomUUID(), title, description, variant }]);
+        const uniqueId = `id-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`;
+        setToasts((prev) => [...prev, { id: uniqueId, title, description, variant }]);
     }, []);
 
     return (
